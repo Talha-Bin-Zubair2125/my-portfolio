@@ -16,12 +16,7 @@ import {
   FaBrain,
   FaServer,
 } from "react-icons/fa";
-import {
-  SiMongodb,
-  SiMysql,
-  SiCplusplus,
-  SiVisualstudiocode,
-} from "react-icons/si";
+import { SiMongodb, SiMysql, SiCplusplus, SiVisualstudio } from "react-icons/si";
 
 function Skills() {
   const skillCategories = [
@@ -56,7 +51,7 @@ function Skills() {
       skills: [
         { icon: <FaGitAlt />, name: "Git" },
         { icon: <FaGithub />, name: "GitHub" },
-        { icon: <SiVisualstudiocode />, name: "VS Code" },
+        { icon: <SiVisualstudio />, name: "VS Code" },
       ],
     },
     {
@@ -75,7 +70,7 @@ function Skills() {
       id="Skills"
       className="min-h-screen bg-gradient-to-r from-black via-[#0a2b30] to-black text-white px-6 py-20"
     >
-      {/* Header Section */}
+      {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
