@@ -7,22 +7,45 @@ function EducationalDetails() {
     {
       title: "National University of Modern Languages (NUML)",
       subtitle: "BSc — Computer Science",
-      details:
-        "Semester: 7 • CGPA: 3.04 / 4.00. Focus on Full Stack Development (MERN), Data Structures, and Software Engineering principles. Built several practical web applications as part of coursework and personal projects.",
+      details: (
+        <>
+          <p><strong>Semester:</strong> 7</p>
+          <p><strong>CGPA:</strong> 3.04 / 4.00</p>
+          <p>
+            Focus on Full Stack Development (MERN), Data Structures, and Software
+            Engineering principles. Built several practical web applications as part of
+            coursework and personal projects.
+          </p>
+        </>
+      ),
       icon: <FaUniversity size={36} className="text-cyan-400" />,
     },
     {
       title: "KIPS College",
       subtitle: "Intermediate (ICS)",
-      details:
-        "Marks Obtained: 910 / 1100. Developed strong fundamentals in computing and mathematics, building a strong base for software and web development.",
+      details: (
+        <>
+          <p><strong>Marks Obtained:</strong> 910 / 1100</p>
+          <p>
+            Developed strong fundamentals in computing and mathematics, building a
+            strong base for software and web development.
+          </p>
+        </>
+      ),
       icon: <FaGraduationCap size={36} className="text-cyan-400" />,
     },
     {
       title: "Sir Syed Public School",
       subtitle: "Matriculation (Pre-Medical)",
-      details:
-        "Marks Obtained: 810 / 1100. Early academic background in sciences which later transitioned into technology and programming interests.",
+      details: (
+        <>
+          <p><strong>Marks Obtained:</strong> 810 / 1100</p>
+          <p>
+            Early academic background in sciences which later transitioned into
+            technology and programming interests.
+          </p>
+        </>
+      ),
       icon: <FaSchool size={36} className="text-cyan-400" />,
     },
   ];
@@ -74,9 +97,9 @@ function EducationalDetails() {
                 <p className="text-cyan-300 font-medium mt-1">{item.subtitle}</p>
               </div>
 
-              <p className="text-gray-300 mt-3 leading-relaxed text-sm sm:text-base">
+              <div className="text-gray-300 mt-3 leading-relaxed text-sm sm:text-base space-y-2">
                 {item.details}
-              </p>
+              </div>
             </div>
           </motion.article>
         ))}

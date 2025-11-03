@@ -32,7 +32,7 @@ function Skills() {
       ],
     },
     {
-      title: "Back-End (Learning Phase)",
+      title: "Back-End",
       skills: [
         { icon: <FaNode />, name: "Node.js" },
         { icon: <FaServer />, name: "Express.js" },

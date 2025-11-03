@@ -21,8 +21,8 @@ function Projects() {
 
   return (
     <section
-      id="Project"
-      className="min-h-screen bg-gradient-to-r from-black via-[#0a2b30] to-black text-white px-6 py-20"
+      id="Projects"
+      className="min-h-screen scroll-mt-24 bg-gradient-to-r from-black via-[#0a2b30] to-black text-white px-6 py-20"
     >
       <motion.h1
         initial={{ opacity: 0, y: 60 }}
@@ -35,6 +35,9 @@ function Projects() {
       </motion.h1>
 
       <ProjectCategory title="React Projects" projects={reactProjects} />
+
+      <div className="my-10 h-[1px] bg-cyan-900/40 w-3/4 mx-auto"></div>
+
       <ProjectCategory title="Backend Projects (Node.js + Express)" projects={backendProjects} />
     </section>
   );

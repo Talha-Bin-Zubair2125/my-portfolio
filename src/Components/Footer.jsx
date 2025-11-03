@@ -6,6 +6,7 @@ function Footer() {
   return (
     <>
       <motion.footer
+        id="Contact" // 👈 Added this line for smooth navbar scroll
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
@@ -23,10 +24,18 @@ function Footer() {
           <div>
             <h2 className="text-2xl font-bold mb-3">Links</h2>
             <div className="flex gap-4">
-              <a href="https://www.linkedin.com/in/talha-bin-zubair-8a45a92a0/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.linkedin.com/in/talha-bin-zubair-8a45a92a0/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FaLinkedin className="text-blue-500 hover:scale-110 transition text-2xl" />
               </a>
-              <a href="https://github.com/Talha-Bin-Zubair2125" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/Talha-Bin-Zubair2125"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FaGithub className="hover:scale-110 transition text-2xl" />
               </a>
             </div>
@@ -35,8 +44,12 @@ function Footer() {
           {/* Contact */}
           <div>
             <h2 className="text-2xl font-bold mb-3">Contact</h2>
-            <p className="flex items-center gap-2"><FaEnvelope className="text-cyan-400" /> talhazubair2125@gmail.com</p>
-            <p className="flex items-center gap-2"><FaPhoneAlt className="text-green-400" /> +92-3340979437</p>
+            <p className="flex items-center gap-2">
+              <FaEnvelope className="text-cyan-400" /> talhazubair2125@gmail.com
+            </p>
+            <p className="flex items-center gap-2">
+              <FaPhoneAlt className="text-green-400" /> +92-3340979437
+            </p>
             <a
               href="https://drive.google.com/file/d/1T7Yl_HKhVtcHc-tq0D18PFf9VQ1WRYeT/view"
               target="_blank"
