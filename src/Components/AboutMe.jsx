@@ -1,6 +1,6 @@
 import React from "react";
 
-function AboutMe(props) {
+function AboutMe() {
   return (
     <>
       {/* Parent Section */}
@@ -18,10 +18,26 @@ function AboutMe(props) {
         {/* Description Section */}
         <div className="container mx-auto bg-gradient-to-r from-black via-[#0e1d1f] to-black mix-blend-luminosity rounded-lg p-6 sm:p-10">
           <p className="text-white text-sm sm:text-base md:text-lg leading-relaxed tracking-wide">
-            Hi, I’m Talha Bin Zubair, an enthusiastic Full Stack Web Developer with a strong focus on the MERN stack (MongoDB, Express.js, React.js, Node.js) and modern frontend technologies like HTML, CSS, JavaScript, Tailwind CSS, and Bootstrap. I enjoy transforming creative ideas into clean, functional, and interactive web applications. <br /><br />
-            Currently pursuing my Bachelor's degree in Computer Science, I’ve been actively working on building real-world projects and sharpening both my technical and soft skills. I’m always eager to learn, collaborate, and grow in the tech space. <br /><br />
-            I’m open to internships, freelance roles, and volunteering opportunities where I can contribute to impactful projects while gaining more industry experience. <br /><br />
-            Let’s connect and create something awesome!
+            Hi, I’m <span className="text-blue-400 font-semibold">Talha Bin Zubair</span>,
+            a dedicated <span className="text-blue-400 font-semibold">Full Stack Web Developer</span> with a strong
+            command over the MERN stack (MongoDB, Express.js, React.js, Node.js)
+            and modern frontend technologies such as HTML5, CSS3, JavaScript,
+            Tailwind CSS, and Bootstrap.
+            <br />
+            <br />
+            I love building clean, responsive, and scalable web applications that
+            deliver seamless user experiences. Over time, I’ve developed and
+            deployed several hands-on projects that demonstrate my expertise in both
+            frontend and backend development.
+            <br />
+            <br />
+            I’m passionate about learning new technologies, solving real-world
+            problems, and collaborating on impactful projects that make a
+            difference. My focus is always on writing clean, maintainable code and
+            continuously improving as a developer.
+            <br />
+            <br />
+            Let’s connect and create something amazing together!
           </p>
         </div>
       </div>

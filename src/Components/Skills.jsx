@@ -1,95 +1,83 @@
 import React from 'react';
 
-function Skills(props) {
+function Skills() {
+    const SkillButton = ({ name }) => (
+        <button className="bg-blue-600 text-white px-4 py-2 sm:px-6 sm:py-2 rounded-lg shadow-md hover:shadow-lg hover:bg-blue-700 transition-all duration-200 mt-3">
+            {name}
+        </button>
+    );
+
     return (
         <>
-            {/* Parent */}
-            <div className='flex flex-col justify-center h-full p-4 bg-gradient-to-r from-black via-[#0a2b30] to-[black] text-white' id='Skills'>
-                <h1 className='container mx-auto text-4xl sm:text-5xl lg:text-6xl mb-10 sm:mb-14 lg:mb-16'>Skills</h1>
-
-                {/* Child */}
-                <div className='container mx-auto text-2xl sm:text-3xl lg:text-4xl mb-10 sm:mb-14 lg:mb-16'>
-                    <h1>Web Development (Current Focus)</h1>
+            <div
+                className='flex flex-col justify-center min-h-screen p-4 bg-gradient-to-r from-black via-[#0a2b30] to-black text-white'
+                id='Skills'
+            >
+                {/* Main Heading */}
+                <div className='container mx-auto mb-16'>
+                    <h1 className='text-5xl sm:text-6xl mb-10 font-semibold'>Skills</h1>
+                    <p className="text-2xl sm:text-3xl text-gray-300">
+                        Web Development (Current Focus)
+                    </p>
                 </div>
 
-                <div className='container mx-auto mb-10 sm:mb-14 lg:mb-16'>
-                    <h1 className='text-2xl sm:text-3xl lg:text-4xl mb-5 bg-gradient-to-r from-black via-[#0e1d1f] to-[black] mix-blend-luminosity'>Front End Skills</h1>
+                {/* Front End */}
+                <div className='container mx-auto mb-14'>
+                    <h2 className='text-3xl sm:text-4xl mb-6 bg-gradient-to-r from-black via-[#0e1d1f] to-black mix-blend-luminosity'>
+                        Front End Skills
+                    </h2>
                     <div className='flex flex-wrap gap-4'>
-                        <button className="bg-blue-600 text-white px-4 py-2 sm:px-6 sm:py-2 rounded-lg hover:bg-blue-700 mt-3">
-                            HTML
-                        </button>
-                        <button className="bg-blue-600 text-white px-4 py-2 sm:px-6 sm:py-2 rounded-lg hover:bg-blue-700 mt-3">
-                            CSS
-                        </button>
-                        <button className="bg-blue-600 text-white px-4 py-2 sm:px-6 sm:py-2 rounded-lg hover:bg-blue-700 mt-3">
-                            JavaScript
-                        </button>
-                        <button className="bg-blue-600 text-white px-4 py-2 sm:px-6 sm:py-2 rounded-lg hover:bg-blue-700 mt-3">
-                            React
-                        </button>
+                        {["HTML", "CSS", "JavaScript", "React"].map((skill) => (
+                            <SkillButton key={skill} name={skill} />
+                        ))}
                     </div>
                 </div>
 
-                <div className='container mx-auto mb-10 sm:mb-14 lg:mb-16'>
-                    <h1 className='text-2xl sm:text-3xl lg:text-4xl mb-5 bg-gradient-to-r from-black via-[#0e1d1f] to-[black] mix-blend-luminosity'>Back-End (Learning Phase)</h1>
+                {/* Back-End */}
+                <div className='container mx-auto mb-14'>
+                    <h2 className='text-3xl sm:text-4xl mb-6 bg-gradient-to-r from-black via-[#0e1d1f] to-black mix-blend-luminosity'>
+                        Back-End (Learning Phase)
+                    </h2>
                     <div className='flex flex-wrap gap-4'>
-                        <button className="bg-blue-600 text-white px-4 py-2 sm:px-6 sm:py-2 rounded-lg hover:bg-blue-700 mt-3">
-                            Node.js
-                        </button>
-                        <button className="bg-blue-600 text-white px-4 py-2 sm:px-6 sm:py-2 rounded-lg hover:bg-blue-700 mt-3">
-                            Express.js
-                        </button>
-                        <button className="bg-blue-600 text-white px-4 py-2 sm:px-6 sm:py-2 rounded-lg hover:bg-blue-700 mt-3">
-                            MySql
-                        </button>
-                        <button className="bg-blue-600 text-white px-4 py-2 sm:px-6 sm:py-2 rounded-lg hover:bg-blue-700 mt-3">
-                            Mongodb
-                        </button>
+                        {["Node.js", "Express.js", "MySQL", "MongoDB"].map((skill) => (
+                            <SkillButton key={skill} name={skill} />
+                        ))}
                     </div>
                 </div>
 
-                <div className='container mx-auto mb-10 sm:mb-14 lg:mb-16'>
-                    <h1 className='text-2xl sm:text-3xl lg:text-4xl mb-5 bg-gradient-to-r from-black via-[#0e1d1f] to-[black] mix-blend-luminosity'>Programming Languages</h1>
+                {/* Programming Languages */}
+                <div className='container mx-auto mb-14'>
+                    <h2 className='text-3xl sm:text-4xl mb-6 bg-gradient-to-r from-black via-[#0e1d1f] to-black mix-blend-luminosity'>
+                        Programming Languages
+                    </h2>
                     <div className='flex flex-wrap gap-4'>
-                        <button className="bg-blue-600 text-white px-4 py-2 sm:px-6 sm:py-2 rounded-lg hover:bg-blue-700 mt-3">
-                            C++
-                        </button>
-                        <button className="bg-blue-600 text-white px-4 py-2 sm:px-6 sm:py-2 rounded-lg hover:bg-blue-700 mt-3">
-                            JAVA
-                        </button>
-                        <button className="bg-blue-600 text-white px-4 py-2 sm:px-6 sm:py-2 rounded-lg hover:bg-blue-700 mt-3">
-                            Python
-                        </button>
+                        {["C++", "Java", "Python"].map((skill) => (
+                            <SkillButton key={skill} name={skill} />
+                        ))}
                     </div>
                 </div>
 
-                <div className='container mx-auto mb-10 sm:mb-14 lg:mb-16'>
-                    <h1 className='text-2xl sm:text-3xl lg:text-4xl mb-5 bg-gradient-to-r from-black via-[#0e1d1f] to-[black] mix-blend-luminosity'>Version Control & Tools</h1>
+                {/* Version Control & Tools */}
+                <div className='container mx-auto mb-14'>
+                    <h2 className='text-3xl sm:text-4xl mb-6 bg-gradient-to-r from-black via-[#0e1d1f] to-black mix-blend-luminosity'>
+                        Version Control & Tools
+                    </h2>
                     <div className='flex flex-wrap gap-4'>
-                        <button className="bg-blue-600 text-white px-4 py-2 sm:px-6 sm:py-2 rounded-lg hover:bg-blue-700 mt-3">
-                            Git & GitHub
-                        </button>
-                        <button className="bg-blue-600 text-white px-4 py-2 sm:px-6 sm:py-2 rounded-lg hover:bg-blue-700 mt-3">
-                            VS Code
-                        </button>
+                        {["Git & GitHub", "VS Code"].map((skill) => (
+                            <SkillButton key={skill} name={skill} />
+                        ))}
                     </div>
                 </div>
 
-                <div className='container mx-auto mb-10 sm:mb-14 lg:mb-16'>
-                    <h1 className='text-2xl sm:text-3xl lg:text-4xl mb-5 bg-gradient-to-r from-black via-[#0e1d1f] to-[black] mix-blend-luminosity'>Soft Skills</h1>
+                {/* Soft Skills */}
+                <div className='container mx-auto'>
+                    <h2 className='text-3xl sm:text-4xl mb-6 bg-gradient-to-r from-black via-[#0e1d1f] to-black mix-blend-luminosity'>
+                        Soft Skills
+                    </h2>
                     <div className='flex flex-wrap gap-4'>
-                        <button className="bg-blue-600 text-white px-4 py-2 sm:px-6 sm:py-2 rounded-lg hover:bg-blue-700 mt-3">
-                            Team Collaboration
-                        </button>
-                        <button className="bg-blue-600 text-white px-4 py-2 sm:px-6 sm:py-2 rounded-lg hover:bg-blue-700 mt-3">
-                            Problem Solving
-                        </button>
-                        <button className="bg-blue-600 text-white px-4 py-2 sm:px-6 sm:py-2 rounded-lg hover:bg-blue-700 mt-3">
-                            Continuous Learning
-                        </button>
-                        <button className="bg-blue-600 text-white px-4 py-2 sm:px-6 sm:py-2 rounded-lg hover:bg-blue-700 mt-3">
-                            Time Management
-                        </button>
+                        {["Team Collaboration", "Problem Solving", "Continuous Learning", "Time Management"].map((skill) => (
+                            <SkillButton key={skill} name={skill} />
+                        ))}
                     </div>
                 </div>
             </div>
