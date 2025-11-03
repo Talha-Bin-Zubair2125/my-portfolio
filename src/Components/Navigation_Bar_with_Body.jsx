@@ -1,9 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 function Navigation_Bar_with_Body() {
+  const [activeSection, setActiveSection] = useState("Home");
+
+  // 🔹 Detect active section while scrolling
+  useEffect(() => {
+    const sections = document.querySelectorAll("section, div[id]");
+    const handleScroll = () => {
+      let current = "";
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 150; // Offset for navbar
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+      setActiveSection(current);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navItems = ["Home", "About", "Goal", "Projects", "Skills", "Contact"];
+
   return (
-    <>
+    <div className="scroll-smooth">
       {/* Navbar */}
       <motion.nav
         initial={{ y: -80, opacity: 0 }}
@@ -18,23 +39,27 @@ function Navigation_Bar_with_Body() {
           >
             TALHA.
           </motion.h1>
+
+          {/* Navbar Links */}
           <ul className="hidden md:flex gap-8 text-lg font-medium">
-            {["Home", "About", "Goal", "Projects", "Skills", "Contact"].map(
-              (item) => (
-                <motion.li
-                  key={item}
-                  whileHover={{ scale: 1.1, color: "#22d3ee" }}
-                  className="cursor-pointer transition duration-300 hover:text-cyan-400"
-                >
-                  <a href={`#${item}`}>{item}</a>
-                </motion.li>
-              )
-            )}
+            {navItems.map((item) => (
+              <motion.li
+                key={item}
+                whileHover={{ scale: 1.1 }}
+                className={`cursor-pointer transition duration-300 ${
+                  activeSection === item
+                    ? "text-cyan-400"
+                    : "hover:text-cyan-300"
+                }`}
+              >
+                <a href={`#${item}`}>{item}</a>
+              </motion.li>
+            ))}
           </ul>
         </div>
       </motion.nav>
 
-      {/* Body */}
+      {/* Body Section */}
       <div
         id="Home"
         className="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-black via-[#0a2b30] to-black text-white px-4"
@@ -54,7 +79,9 @@ function Navigation_Bar_with_Body() {
           transition={{ delay: 0.3, duration: 1 }}
           className="text-lg sm:text-xl md:text-2xl max-w-2xl text-gray-300"
         >
-          A passionate <span className="text-cyan-400">MERN Stack Developer</span> crafting modern, responsive web experiences.
+          A passionate{" "}
+          <span className="text-cyan-400">MERN Stack Developer</span> crafting
+          modern, responsive web experiences.
         </motion.p>
 
         <motion.a
@@ -65,7 +92,7 @@ function Navigation_Bar_with_Body() {
           View My Work
         </motion.a>
       </div>
-    </>
+    </div>
   );
 }
 
