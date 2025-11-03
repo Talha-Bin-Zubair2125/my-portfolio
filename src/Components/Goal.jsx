@@ -1,57 +1,58 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { Target, Rocket, Code } from "lucide-react";
 
 function Goal() {
+  const goals = [
+    {
+      icon: <Target size={32} />,
+      title: "Career Objective",
+      desc: "To become a skilled full-stack developer capable of delivering reliable and impactful digital solutions.",
+    },
+    {
+      icon: <Rocket size={32} />,
+      title: "Vision",
+      desc: "To innovate and create user-focused applications that make everyday tasks easier and smarter.",
+    },
+    {
+      icon: <Code size={32} />,
+      title: "Mission",
+      desc: "To continuously learn, collaborate, and contribute to the ever-evolving world of web technologies.",
+    },
+  ];
+
   return (
-    <>
-      {/* Parent */}
-      <div
-        className="flex flex-col justify-center h-full p-6 md:p-12 bg-gradient-to-r from-black via-[#0a2b30] to-black text-white"
-        id="Goal"
+    <section
+      id="Goal"
+      className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-black via-[#0a2b30] to-black text-white px-6 py-20"
+    >
+      <motion.h1
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="text-4xl sm:text-5xl font-bold mb-12 text-cyan-400 text-center"
       >
-        {/* Child */}
-        <div className="container mx-auto text-center">
-          {/* Section Title */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-            Goal
-          </h1>
+        My Goals
+      </motion.h1>
 
-          {/* Quote */}
-          <p className="italic text-blue-300 text-base sm:text-lg md:text-xl mb-12">
-            "The best way to predict the future is to create it." — Peter Drucker
-          </p>
-
-          {/* Description */}
-          <div className="text-left bg-gradient-to-r from-black via-[#0e1d1f] to-black mix-blend-luminosity p-6 sm:p-8 md:p-10 rounded-lg shadow-lg leading-relaxed text-base sm:text-lg md:text-xl">
-            <p className="mb-6">
-              My goal is to build responsive, scalable, and user-friendly web
-              applications that solve real-world problems.
-            </p>
-
-            <p className="mb-6">
-              In this portfolio, you'll find projects that reflect my hands-on
-              experience in:
-            </p>
-
-            <ul className="list-disc list-inside ml-4 mb-6 space-y-2 text-blue-200">
-              <li>Designing and developing dynamic user interfaces</li>
-              <li>Creating RESTful APIs and connecting front-end to back-end</li>
-              <li>Working with databases like MongoDB</li>
-              <li>Implementing modern UI/UX principles</li>
-            </ul>
-
-            <p>
-              I'm currently open to internships, freelance projects, and
-              volunteering opportunities where I can apply my skills and
-              continue growing as a developer.
-            </p>
-
-            <p className="mt-6 text-blue-300 font-medium">
-              Let’s connect and build something meaningful together!
-            </p>
-          </div>
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl">
+        {goals.map((goal, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 80 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: i * 0.2 }}
+            viewport={{ once: true }}
+            className="bg-[#0f1f22]/80 backdrop-blur-md p-8 rounded-2xl text-center shadow-lg hover:shadow-cyan-500/30 transition"
+          >
+            <div className="text-cyan-400 mb-4 flex justify-center">{goal.icon}</div>
+            <h2 className="text-2xl font-semibold mb-3">{goal.title}</h2>
+            <p className="text-gray-300">{goal.desc}</p>
+          </motion.div>
+        ))}
       </div>
-    </>
+    </section>
   );
 }
 

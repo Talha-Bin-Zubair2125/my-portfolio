@@ -1,70 +1,78 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { FaUniversity, FaGraduationCap, FaSchool } from "react-icons/fa";
 
 function EducationalDetails() {
+  const items = [
+    {
+      title: "National University of Modern Languages (NUML)",
+      subtitle: "BSc — Computer Science",
+      details:
+        "Semester: 7 • CGPA: 3.04 / 4.00. Focus: Full Stack Development (MERN), data structures, and software engineering principles. Built several practical web applications as part of coursework and personal projects.",
+      icon: <FaUniversity size={36} className="text-cyan-400" />,
+    },
+    {
+      title: "KIPS College",
+      subtitle: "Intermediate (ICS)",
+      details:
+        "Marks Obtained: 910 / 1100. Developed strong fundamentals in computing and mathematics which paved the way to web development and programming.",
+      icon: <FaGraduationCap size={36} className="text-cyan-400" />,
+    },
+    {
+      title: "Sir Syed Public School",
+      subtitle: "Matriculation (Pre-Medical)",
+      details:
+        "Marks Obtained: 810 / 1100. Early academic background in sciences — later transitioned to computing and software development.",
+      icon: <FaSchool size={36} className="text-cyan-400" />,
+    },
+  ];
+
   return (
-    <>
-      {/* Parent Section */}
-      <div
-        className="flex flex-col justify-center py-16 px-4 sm:px-6 lg:px-8 text-white bg-gradient-to-r from-black via-[#0a2b30] to-black"
-        id="EducationalDetails"
+    <section
+      id="EducationalDetails"
+      className="min-h-screen bg-gradient-to-r from-black via-[#0a2b30] to-black text-white px-6 py-20"
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9 }}
+        viewport={{ once: true }}
+        className="max-w-5xl mx-auto text-center mb-12"
       >
-        {/* Section Title */}
-        <div className="container mx-auto text-center mb-12">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
-            Educational Details
-          </h1>
-        </div>
+        <h2 className="text-4xl sm:text-5xl font-bold text-cyan-400">Educational Details</h2>
+        <p className="text-gray-300 mt-4">
+          Formal education and academic milestones that shaped my journey into software development.
+        </p>
+      </motion.div>
 
-        {/* Education Cards */}
-        <div className="container mx-auto flex flex-col gap-12">
-          {/* NUML */}
-          <div className="p-6 sm:p-10 bg-gradient-to-r from-black via-[#0e1d1f] to-black rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-4 text-blue-400">
-              National University of Modern Languages (NUML)
-            </h2>
-            <p className="text-sm sm:text-base md:text-lg leading-relaxed mb-4">
-              Currently pursuing a <span className="text-blue-300 font-medium">Bachelor’s degree in Computer Science</span>.
-              I’ve gained a strong foundation in programming, software development, and
-              problem-solving. My focus lies in <span className="text-blue-300 font-medium">Full Stack Web Development (MERN)</span>
-              and creating modern, responsive user interfaces. My academic journey has strengthened
-              my ability to build real-world digital solutions.
-            </p>
-            <div className="flex flex-wrap justify-between text-blue-200 font-semibold">
-              <p>Semester: 7</p>
-              <p>CGPA: 3.04 / 4.00</p>
+      <div className="max-w-6xl mx-auto grid gap-8 md:grid-cols-3">
+        {items.map((item, idx) => (
+          <motion.article
+            key={idx}
+            initial={{ opacity: 0, scale: 0.98, y: 40 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: idx * 0.15 }}
+            viewport={{ once: true }}
+            className="bg-[#0f1f22]/80 backdrop-blur-md p-6 rounded-2xl shadow-lg hover:shadow-cyan-500/30 transition transform hover:-translate-y-1"
+          >
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0">{item.icon}</div>
+              <div className="flex-1">
+                <h3 className="text-xl sm:text-2xl font-semibold text-white">{item.title}</h3>
+                <p className="text-cyan-300 font-medium mt-1">{item.subtitle}</p>
+              </div>
             </div>
-          </div>
 
-          {/* KIPS */}
-          <div className="p-6 sm:p-10 bg-gradient-to-r from-black via-[#0e1d1f] to-black rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-4 text-blue-400">
-              KIPS College
-            </h2>
-            <p className="text-sm sm:text-base md:text-lg leading-relaxed mb-4">
-              Completed my <span className="text-blue-300 font-medium">Intermediate in Computer Science (ICS)</span>.
-              It was during this phase that I developed my passion for technology and
-              programming, which became the foundation for my journey into
-              software development and full stack web technologies.
-            </p>
-            <p className="text-blue-200 font-semibold">Marks Obtained: 910 / 1100</p>
-          </div>
+            <p className="text-gray-300 mt-4 leading-relaxed text-sm sm:text-base">{item.details}</p>
 
-          {/* Sir Syed */}
-          <div className="p-6 sm:p-10 bg-gradient-to-r from-black via-[#0e1d1f] to-black rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-4 text-blue-400">
-              Sir Syed Public School
-            </h2>
-            <p className="text-sm sm:text-base md:text-lg leading-relaxed mb-4">
-              Completed my <span className="text-blue-300 font-medium">Matriculation in Pre-Medical</span>.
-              Although my early academic focus was on the sciences, my growing interest in
-              computers and technology led me to transition into the field of
-              Computer Science and Web Development.
-            </p>
-            <p className="text-blue-200 font-semibold">Marks Obtained: 810 / 1100</p>
-          </div>
-        </div>
+            <div className="mt-6 flex justify-between items-center text-sm text-gray-400">
+              <span className="px-3 py-1 rounded-full bg-black/30">Duration: —</span>
+              <span className="px-3 py-1 rounded-full bg-black/30">Location: —</span>
+            </div>
+          </motion.article>
+        ))}
       </div>
-    </>
+    </section>
   );
 }
 
