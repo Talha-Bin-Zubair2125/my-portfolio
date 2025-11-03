@@ -15,8 +15,10 @@ import {
   FaLightbulb,
   FaBrain,
   FaServer,
+  FaDatabase,
+  FaCode,
+  FaTools,
 } from "react-icons/fa";
-import { SiMongodb, SiMysql, SiCplusplus, SiVisualstudio } from "react-icons/si";
 
 function Skills() {
   const skillCategories = [
@@ -34,14 +36,14 @@ function Skills() {
       skills: [
         { icon: <FaNode />, name: "Node.js" },
         { icon: <FaServer />, name: "Express.js" },
-        { icon: <SiMysql />, name: "MySQL" },
-        { icon: <SiMongodb />, name: "MongoDB" },
+        { icon: <FaDatabase />, name: "MySQL" },
+        { icon: <FaDatabase />, name: "MongoDB" },
       ],
     },
     {
       title: "Programming Languages",
       skills: [
-        { icon: <SiCplusplus />, name: "C++" },
+        { icon: <FaCode />, name: "C++" },
         { icon: <FaJava />, name: "Java" },
         { icon: <FaPython />, name: "Python" },
       ],
@@ -51,7 +53,7 @@ function Skills() {
       skills: [
         { icon: <FaGitAlt />, name: "Git" },
         { icon: <FaGithub />, name: "GitHub" },
-        { icon: <SiVisualstudio />, name: "VS Code" },
+        { icon: <FaTools />, name: "VS Code" },
       ],
     },
     {
