@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaCertificate } from "react-icons/fa";
 
 function Certifications() {
   const certifications = [
@@ -9,14 +8,14 @@ function Certifications() {
       status: "Completed",
       organization: "Professional Freelancing Training Program",
       link: "https://drive.google.com/file/d/1wRoW94JHR9XDa1H-WnvGDdTXQwY1WtwI/view?usp=sharing",
-      image: "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=1019121673604376", // PFTP
+      image: "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=1019121673604376", // PFTP Logo
     },
     {
       title: "Full Stack Web Development",
       status: "Completed",
       organization: "PNY Trainings",
       link: "https://drive.google.com/file/d/1fNjaWjqYJJaptd1TJTNLLqJsDEU93Eyb/view?usp=sharing",
-      image: "https://th.bing.com/th/id/OIP.l6HEuAtjxKFUZof6g93nxQHaGH?o=7&cb=ucfimgc2rm=3&rs=1", // PNY
+      image: "https://th.bing.com/th/id/OIP.l6HEuAtjxKFUZof6g93nxQHaGH?o=7&cb=ucfimgc2rm=3&rs=1", // PNY Logo
     },
   ];
 
@@ -49,21 +48,16 @@ function Certifications() {
             {/* Institute Logo */}
             {cert.image && (
               <motion.div
-                whileHover={{ scale: 1.1, rotate: 2, boxShadow: "0px 0px 20px rgba(0,255,255,0.5)" }}
-                className="flex justify-center mb-4 bg-[#0a1b1e] p-4 rounded-full"
+                whileHover={{ scale: 1.1, rotate: 2, boxShadow: "0px 0px 20px rgba(0,255,255,0.4)" }}
+                className="flex justify-center mb-6 bg-[#0a1b1e] p-6 rounded-2xl"
               >
                 <img
                   src={cert.image}
                   alt={`${cert.organization} Logo`}
-                  className="h-20 w-20 object-contain rounded-full"
+                  className="h-24 w-auto object-contain"
                 />
               </motion.div>
             )}
-
-            {/* Certificate Icon */}
-            <div className="flex justify-center mb-4">
-              <FaCertificate className="text-5xl text-cyan-400" />
-            </div>
 
             <h2 className="text-2xl font-semibold text-cyan-300 mb-2">
               {cert.title}
@@ -73,7 +67,7 @@ function Certifications() {
               Status: {cert.status}
             </p>
             <motion.a
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.05 }}
               href={cert.link}
               target="_blank"
               rel="noopener noreferrer"
