@@ -10,13 +10,13 @@ function Projects() {
   ];
 
   const backendProjects = [
-    { name: "Random Joke API", link: "https://github.com/Talha-Bin-Zubair2125/backend-projects-hub/tree/main/practice_project_5" },
-    { name: "File Writer", link: "https://github.com/Talha-Bin-Zubair2125/backend-projects-hub/tree/main/practice_project_6" },
-    { name: "Contact Management", link: "https://github.com/Talha-Bin-Zubair2125/backend-projects-hub/tree/main/practice_project_7" },
-    { name: "Basic Blog API (No DB)", link: "https://github.com/Talha-Bin-Zubair2125/backend-projects-hub/tree/main/practice_project_8" },
-    { name: "URL Shortener", link: "https://github.com/Talha-Bin-Zubair2125/backend-projects-hub/" },
-    { name: "Weather API", link: "https://github.com/Talha-Bin-Zubair2125/backend-projects-hub/tree/main/practice_project_9" },
-    { name: "Markdown to HTML Converter", link: "https://github.com/Talha-Bin-Zubair2125/backend-projects-hub/tree/main/practice_project_10" },
+    { name: "Random Joke API", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/practice_project_5" },
+    { name: "File Writer", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/practice_project_6" },
+    { name: "Contact Management", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/practice_project_7" },
+    { name: "Basic Blog API (No DB)", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/practice_project_8" },
+    { name: "Student Management System ", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/practice_project_13" },
+    { name: "Weather API", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/practice_project_9" },
+    { name: "Markdown to HTML Converter", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/practice_project_10" },
   ];
 
   return (
