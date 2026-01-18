@@ -146,7 +146,7 @@ function Footer() {
 
               <motion.a
                 whileHover={{ scale: 1.02 }}
-                href="https://drive.google.com/file/d/1Aj3A8Sj14oew0PrjQSpYmuBm4V6oKYPs/view?usp=sharing"
+                href="https://drive.google.com/file/d/1yvj0B--tO0V_p-zu5s6cpAjGAaXWE2pn/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 mt-6 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-6 py-3 rounded-xl font-bold shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50 transition-all"
