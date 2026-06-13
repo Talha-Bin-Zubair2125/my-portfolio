@@ -96,7 +96,7 @@ function Footer() {
                 </motion.a>
                 <motion.a
                   whileHover={{ scale: 1.02 }}
-                  href="https://drive.google.com/file/d/1isUTzMNloXLR-Kqz59FbpB_JOjvoOKY5/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1tc68--5OJcIFXdHsZoTryde18J0UdHI_/view?usp=drive_link"
                   target="_blank" rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 mt-4 bg-gradient-to-r from-emerald-500 to-green-600 text-white px-6 py-3 rounded-xl font-bold shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 transition-all"
                   style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: "14px" }}
