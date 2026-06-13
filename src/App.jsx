@@ -1,13 +1,13 @@
 import React from "react";
-import Navigation_Bar_with_Body from "./Components/Navigation_Bar_with_Body";
-import AboutMe from "./Components/AboutMe";
-import Goal from "./Components/Goal";
-import Projects from "./Components/Projects";
-import Skills from "./Components/Skills";
-import Certifications from "./Components/Certifications"; // <-- Import here
-import EducationalDetails from "./Components/EducationalDetails";
-import Footer from "./Components/Footer";
-import Experience from "./Components/Experience";
+import Navigation_Bar_with_Body from "./Pages/Navigation_Bar_with_Body";
+import AboutMe from "./Pages/AboutMe";
+import Goal from "./Pages/Goal";
+import Projects from "./Pages/Projects";
+import Skills from "./Pages/Skills";
+import Certifications from "./Pages/Certifications"; 
+import EducationalDetails from "./Pages/EducationalDetails";
+import Footer from "./Pages/Footer";
+import Experience from "./Pages/Experience";
 
 function App() {
   return (
