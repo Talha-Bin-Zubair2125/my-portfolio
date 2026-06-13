@@ -10,8 +10,8 @@ function EducationalDetails() {
       subtitle: "BSc — Computer Science",
       details: (
         <>
-          <p style={{ fontFamily: "'DM Sans', sans-serif" }}><span className="text-emerald-400 font-semibold">Semester:</span> 8</p>
-          <p style={{ fontFamily: "'DM Sans', sans-serif" }}><span className="text-emerald-400 font-semibold">CGPA:</span> 3.12 / 4.00</p>
+          <p style={{ fontFamily: "'DM Sans', sans-serif" }}><span className="text-emerald-400 font-semibold">Graduated</span></p>
+          <p style={{ fontFamily: "'DM Sans', sans-serif" }}><span className="text-emerald-400 font-semibold">CGPA:</span> 3.12 / 4.00 (Till 7th Semester)</p>
           <p className="mt-3 text-gray-400 leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px" }}>
             Focus on Full Stack Development (MERN), Data Structures, and Software Engineering principles. Built several practical web applications as part of coursework and personal projects.
           </p>
@@ -19,7 +19,7 @@ function EducationalDetails() {
       ),
       icon: <FaUniversity size={36} />,
       gradient: "from-emerald-500 to-green-600",
-      year: "2021 – Present",
+      year: "2022 – 2026",
     },
     {
       title: "KIPS College",
