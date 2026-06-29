@@ -26,7 +26,7 @@ function Projects() {
     { name: "Role Based CMS", desc: "Auth + Roles", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/backend_project_21" },
     { name: "Music Player", desc: "API Integration", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/practice_project_19" },
     { name: "File Writer", desc: "File System", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/practice_project_6" },
-    { name: "Markdown Converter", desc: "File Processing", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/practice_project_10" },
+    { name: "Markdown Converter", desc: "Text Utility", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/practice_project_10" },
   ];
 
   return (
@@ -67,8 +67,8 @@ function Projects() {
 
         {/* Final Year Project */}
         <motion.div initial={{ opacity: 0, y: 80 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="max-w-4xl mx-auto mb-20">
-          <div className="flex items-center justify-center gap-4 mb-10">
-            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center shadow-lg">
+          <div className="flex flex-col items-center justify-center gap-4 mb-10">
+            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center shadow-lg mb-2">
               <Smartphone size={28} className="text-white" />
             </div>
             <div className="text-center">
@@ -129,9 +129,9 @@ function Projects() {
 function ProjectCategory({ title, subtitle, icon, projects, gradient, delay }) {
   return (
     <motion.div initial={{ opacity: 0, y: 80 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay }} viewport={{ once: true }} className="max-w-7xl mx-auto mb-16">
-      <div className="flex items-center justify-center gap-4 mb-10">
+      <div className="flex flex-col items-center justify-center gap-2 mb-10">
         <motion.div whileHover={{ rotate: 360 }} transition={{ duration: 0.6 }}
-          className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center shadow-lg`}>
+          className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center shadow-lg mb-2`}>
           <div className="text-white">{icon}</div>
         </motion.div>
         <div className="text-center">
@@ -139,24 +139,28 @@ function ProjectCategory({ title, subtitle, icon, projects, gradient, delay }) {
           {subtitle && <p className="text-emerald-400 mt-1" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", letterSpacing: "0.1em" }}>{subtitle}</p>}
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+      
+      {/* Centralized Grid Wrapper using justify-center */}
+      <div className="flex flex-wrap justify-center gap-5">
         {projects.map((project, i) => (
           <motion.a key={i} href={project.link} target="_blank" rel="noopener noreferrer"
             initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: i * 0.06 }} viewport={{ once: true }}
-            whileHover={{ y: -8, scale: 1.02 }} className="group relative">
+            whileHover={{ y: -8, scale: 1.02 }} className="group relative w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)] xl:w-[calc(25%-15px)] max-w-sm">
             <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-15 rounded-2xl blur-xl transition-opacity duration-500`} />
             <div className="relative rounded-2xl border border-emerald-500/10 group-hover:border-emerald-400/40 transition-all duration-300 p-6 h-full flex flex-col overflow-hidden"
               style={{ background: "linear-gradient(160deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%)", backdropFilter: "blur(12px)" }}>
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-400/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <h3 className="text-white mb-2 group-hover:text-emerald-400 transition-colors"
+              <h3 className="text-white mb-2 group-hover:text-emerald-400 transition-colors text-center sm:text-left"
                 style={{ fontFamily: "'Playfair Display', serif", fontSize: "16px", fontWeight: 700 }}>
                 {project.name}
               </h3>
-              <span className="inline-block text-white mb-4 w-fit rounded-xl bg-emerald-500/10 border border-emerald-500/20"
-                style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11px", fontWeight: 500, padding: "4px 12px", tracking: "wide" }}>
-                {project.desc}
-              </span>
-              <div className="mt-auto flex items-center gap-2 text-gray-400 group-hover:text-emerald-400 transition-colors">
+              <div className="flex justify-center sm:justify-start">
+                <span className="inline-block text-white mb-4 w-fit rounded-xl bg-emerald-500/10 border border-emerald-500/20"
+                  style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11px", fontWeight: 500, padding: "4px 12px", tracking: "wide" }}>
+                  {project.desc}
+                </span>
+              </div>
+              <div className="mt-auto flex items-center justify-center sm:justify-start gap-2 text-gray-400 group-hover:text-emerald-400 transition-colors">
                 <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", fontWeight: 500 }}>View on GitHub</span>
                 <ExternalLink size={14} className="group-hover:translate-x-1 transition-transform" />
               </div>
