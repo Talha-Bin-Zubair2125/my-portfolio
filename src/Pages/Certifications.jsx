@@ -1,5 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
+import ArchTechLogo from "../Images/Arch Technologies Logo.jpg";
+import CodeCelixLogo from "../Images/CodeCelix Logo.webp";
+import PNYLogo from "../Images/PNY Logo.webp";
+import CodeCelixCertificate from "../Images/CodeCelix Internship Certificate.jpg";
+import ArchTechCertificate from "../Images/Arch Technologies Internship Certificate.jpg";
+import PFTPLogo from "../Images/PFTP Logo.webp";
 
 function Certifications() {
   const certifications = [
@@ -8,7 +14,7 @@ function Certifications() {
       title: "Front-End Web Development",
       organization: "Professional Freelancing Training Program",
       link: "https://drive.google.com/file/d/1wRoW94JHR9XDa1H-WnvGDdTXQwY1WtwI/view?usp=sharing",
-      image: "https://tecspectrum.com/wp-content/uploads/2024/10/pftp-dark-logo-800x730.png",
+      image: PFTPLogo,
       color: "from-blue-500 to-indigo-600",
       num: "01",
     },
@@ -17,7 +23,7 @@ function Certifications() {
       title: "Full Stack Web Development",
       organization: "PNY Trainings",
       link: "https://drive.google.com/file/d/1fNjaWjqYJJaptd1TJTNLLqJsDEU93Eyb/view?usp=sharing",
-      image: "https://tse1.mm.bing.net/th/id/OIP.GwOTg-WNEM7xE4KQYpuuhQHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+      image: PNYLogo,
       color: "from-indigo-500 to-purple-600",
       num: "02",
     },
@@ -25,8 +31,8 @@ function Certifications() {
       type: "Internship Certificate",
       title: "Full Stack Web Development",
       organization: "Arch Technologies",
-      link: "https://media.licdn.com/dms/image/v2/D4D2DAQFBhELaT_VSmg/profile-treasury-image-shrink_800_800/B4DZw0sRsGIUAc-/0/1770410549359?e=1781967600&v=beta&t=p8IvJNI8Di4j1hbDvUhjT29uEmSA_IjmOTMa1LNMusM",
-      image: "https://media.licdn.com/dms/image/v2/D4D0BAQFRJEnxY85TQQ/img-crop_100/B4DZVsHlO4HAAQ-/0/1741275683265?e=2147483647&v=beta&t=NBrPmWg-BcShERv2ivOCjqz_dVO7TE0XAbuSWBLUK2g",
+      link: ArchTechCertificate,
+      image: ArchTechLogo,
       color: "from-purple-500 to-pink-600",
       num: "03",
     },
@@ -34,8 +40,8 @@ function Certifications() {
       type: "Internship Certificate",
       title: "Full Stack Web Development",
       organization: "CodeCelix",
-      link: "https://media.licdn.com/dms/image/v2/D4D2DAQE-iXpdB74YBA/profile-treasury-image-shrink_800_800/B4DZ0yPZtuKAAY-/0/1774664393507?e=1781967600&v=beta&t=qcAWu0D2V9_YD_PzBhZnZ4ZXXlpImaqdzNTOGYYcdsI",
-      image: "https://tse4.mm.bing.net/th/id/OIP.PIHf4jnly7l-PnuwHn-JOQHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+      link: CodeCelixCertificate,
+      image: CodeCelixLogo,
       color: "from-pink-500 to-rose-600",
       num: "04",
     },
