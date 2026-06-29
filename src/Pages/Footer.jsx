@@ -1,15 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaLinkedin, FaGithub, FaEnvelope, FaPhoneAlt, FaFileDownload, FaHeart, FaArrowUp } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope, FaPhoneAlt, FaFileDownload, FaArrowUp } from "react-icons/fa";
 
 function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
+  // Added "Awards" to the quick links array
   const quickLinks = [
     { name: "Home", href: "#Home" },
     { name: "About", href: "#About" },
     { name: "Projects", href: "#Projects" },
     { name: "Skills", href: "#Skills" },
+    { name: "Awards", href: "#Awards" },
     { name: "Experience", href: "#Experience" },
     { name: "Contact", href: "#Contact" },
   ];

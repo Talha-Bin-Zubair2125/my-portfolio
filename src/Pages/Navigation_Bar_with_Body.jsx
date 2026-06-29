@@ -14,7 +14,8 @@ function NavigationAndHero() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = ["Home", "About", "Goal", "Projects", "Skills", "Certifications", "Experience", "Contact"];
+  // Added "Awards" to the navigation array
+  const navItems = ["Home", "About", "Goal", "Projects", "Skills", "Certifications", "Awards", "Experience", "Contact"];
 
   return (
     <>

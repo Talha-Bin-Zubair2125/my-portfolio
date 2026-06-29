@@ -7,6 +7,7 @@ import Skills from "./Pages/Skills";
 import Certifications from "./Pages/Certifications"; 
 import EducationalDetails from "./Pages/EducationalDetails";
 import Footer from "./Pages/Footer";
+import Awards from "./Pages/Awards";
 import Experience from "./Pages/Experience";
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
       <Projects />
       <Skills />
       <Certifications /> 
-       <Experience />
+      <Awards />
+      <Experience />
       <Footer />
     </div>
   );

@@ -4,13 +4,13 @@ import { ExternalLink, Code2, Server, Smartphone } from "lucide-react";
 
 function Projects() {
   const finalYearProject = {
-    name: "GoGuide – AR Indoor Mall Navigation",
-    desc: "Final Year Project",
-    tags: ["Unity", "C#", "ARCore", "Firebase"],
+    name: "GoGuide – AR Indoor Mall Navigation System (FYP)",
+    desc: "Unity, C#, ARCore, Android, Firebase",
+    tags: ["Unity", "C#", "ARCore", "Firebase", "Android"],
     achievements: [
-      "Collaborated in a team of 3 to develop an AR-based indoor mall navigation Android app",
-      "Implemented A* pathfinding algorithm with forward-only progress tracker achieving 90%+ accuracy",
-      "Designed interactive UI with mini-map, shop selection interface, and Firebase integration",
+      "Collaborated in a team of 3 to design and develop an AR-based indoor mall navigation Android app using Unity and ARCore",
+      "Designed an interactive UI featuring a mini-map, shop selection interface, and real-time AR markers for a seamless user navigation experience",
+      "Integrated Firebase for cloud-based map storage, user authentication, and Android deployment support",
     ],
   };
 
@@ -18,19 +18,14 @@ function Projects() {
     { name: "Expense Tracker", desc: "CRUD App", link: "https://github.com/Talha-Bin-Zubair2125/my_react_projects_portfolio/tree/main/expense_tracker" },
     { name: "Notes App", desc: "CRUD App", link: "https://github.com/Talha-Bin-Zubair2125/my_react_projects_portfolio/tree/main/notes_app" },
     { name: "To-Do List App", desc: "CRUD App", link: "https://github.com/Talha-Bin-Zubair2125/my_react_projects_portfolio/tree/main/todolistapp_project_8" },
-    { name: "Login & Signup Form", desc: "LocalStorage Auth", link: "https://github.com/Talha-Bin-Zubair2125/my_react_projects_portfolio/tree/main/login_signup_react" },
   ];
 
   const backendProjects = [
+    { name: "AI-Powered Full Stack Notes Application", desc: "React.js, Node.js, Express.js, MongoDB, Groq API", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/notesapp" },
     { name: "Task Management System", desc: "Full Stack", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/practice_project_20" },
     { name: "Role Based CMS", desc: "Auth + Roles", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/backend_project_21" },
     { name: "Music Player", desc: "API Integration", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/practice_project_19" },
-    { name: "Random Joke API", desc: "REST API", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/practice_project_5" },
     { name: "File Writer", desc: "File System", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/practice_project_6" },
-    { name: "Contact Management", desc: "CRUD API", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/practice_project_7" },
-    { name: "Basic Blog API", desc: "No Database", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/practice_project_8" },
-    { name: "Student Management", desc: "Full CRUD", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/practice_project_13" },
-    { name: "Weather API", desc: "External API", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/practice_project_9" },
     { name: "Markdown Converter", desc: "File Processing", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/practice_project_10" },
   ];
 
@@ -98,7 +93,7 @@ function Projects() {
                     </span>
                   ))}
                 </div>
-                <span className="px-5 py-2 rounded-full text-white font-bold bg-gradient-to-r from-emerald-500 to-green-600 shadow-lg"
+                <span className="px-5 py-2 text-center rounded-2xl text-white font-medium bg-gradient-to-r from-emerald-500/20 to-green-600/20 border border-emerald-500/30 shadow-lg"
                   style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", letterSpacing: "0.05em" }}>
                   {finalYearProject.desc}
                 </span>
@@ -157,8 +152,8 @@ function ProjectCategory({ title, subtitle, icon, projects, gradient, delay }) {
                 style={{ fontFamily: "'Playfair Display', serif", fontSize: "16px", fontWeight: 700 }}>
                 {project.name}
               </h3>
-              <span className={`inline-block text-white mb-4 w-fit rounded-full bg-gradient-to-r ${gradient}`}
-                style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11px", fontWeight: 600, padding: "4px 12px" }}>
+              <span className="inline-block text-white mb-4 w-fit rounded-xl bg-emerald-500/10 border border-emerald-500/20"
+                style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11px", fontWeight: 500, padding: "4px 12px", tracking: "wide" }}>
                 {project.desc}
               </span>
               <div className="mt-auto flex items-center gap-2 text-gray-400 group-hover:text-emerald-400 transition-colors">
@@ -171,7 +166,7 @@ function ProjectCategory({ title, subtitle, icon, projects, gradient, delay }) {
           </motion.a>
         ))}
       </div>
-    </motion.div>
+    </motion.div> 
   );
 }
 
