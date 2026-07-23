@@ -1,12 +1,37 @@
-# React + Vite
+# 💼 Personal Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal developer portfolio repository! This website showcases my journey as a **Full-Stack Web Developer & Software Engineer**, highlighting my professional experience, academic background, certifications, technical skill set, awards, and key projects.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📁 Repository Structure
 
-## Expanding the ESLint configuration
+Based on the `my-portfolio/src` directory layout:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```text
+my-portfolio/
+├── public/
+└── src/
+    ├── Images/
+    │   ├── Arch Technologies Internship ...
+    │   ├── Arch Technologies Logo.jpg
+    │   ├── Bg_Img.jpg
+    │   ├── CodeCelix Internship Certificat...
+    │   ├── CodeCelix Logo.webp
+    │   ├── Github_ProfilePic.jpg
+    │   ├── Github_ProfilePic_1.png
+    │   ├── Laptop Award.jpeg
+    │   ├── NUML_LOGO_removebg_previ...
+    │   ├── PFTP Logo.webp
+    │   └── PNY Logo.webp
+    └── Pages/
+        ├── AboutMe.jsx
+        ├── Awards.jsx
+        ├── Certifications.jsx
+        ├── EducationalDetails.jsx
+        ├── Experience.jsx
+        ├── Footer.jsx
+        ├── Goal.jsx
+        ├── Navigation_Bar_with_Body.jsx
+        ├── Projects.jsx
+        └── Skills.jsx
