@@ -22,11 +22,11 @@ function Projects() {
 
   const backendProjects = [
     { name: "AI-Powered Full Stack Notes Application", desc: "React.js, Node.js, Express.js, MongoDB, Groq API", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/notesapp" },
-    { name: "Task Management System", desc: "Full Stack", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/practice_project_20" },
-    { name: "Role Based CMS", desc: "Auth + Roles", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/backend_project_21" },
-    { name: "Music Player", desc: "API Integration", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/practice_project_19" },
-    { name: "File Writer", desc: "File System", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/practice_project_6" },
-    { name: "Markdown Converter", desc: "Text Utility", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/practice_project_10" },
+    { name: "Task Management System", desc: "Full Stack", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/TaskPulse%20%E2%80%93%20Role-Based%20Task%20Management%20%26%20Administration%20System" },
+    { name: "Role Based CMS", desc: "Auth + Roles", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/PublishPulse%20%E2%80%93%20Role-Based%20Editorial%20%26%20Article%20Management%20Portal" },
+    { name: "Music Player", desc: "API Integration", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/TuneWave" },
+    { name: "File Writer", desc: "File System", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/TextForge%20Express" },
+    { name: "Markdown Converter", desc: "Text Utility", link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/MarkParse%20Express" },
   ];
 
   return (
