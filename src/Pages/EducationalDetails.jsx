@@ -1,6 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaUniversity, FaGraduationCap, FaSchool } from "react-icons/fa";
+import TypingText from "./TypingText";
+
+const PINK = "#ec4899";
+const PURPLE = "#a855f7";
+const INDIGO = "#6366f1";
+const GRAD = `linear-gradient(135deg, ${PINK}, ${PURPLE}, ${INDIGO})`;
+const BG =
+  "radial-gradient(ellipse 80% 50% at 50% 0%, #1a0826 0%, #080612 60%)";
 
 function EducationalDetails() {
   const items = [
@@ -10,15 +18,32 @@ function EducationalDetails() {
       subtitle: "BSc — Computer Science",
       details: (
         <>
-          <p style={{ fontFamily: "'DM Sans', sans-serif" }}><span className="text-emerald-400 font-semibold">Graduated</span></p>
-          <p style={{ fontFamily: "'DM Sans', sans-serif" }}><span className="text-emerald-400 font-semibold">CGPA:</span> 3.12 / 4.00 (Till 7th Semester)</p>
-          <p className="mt-3 text-gray-400 leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px" }}>
-            Focus on Full Stack Development (MERN), Data Structures, and Software Engineering principles. Built several practical web applications as part of coursework and personal projects.
+          <p style={{ fontFamily: "'DM Sans', sans-serif", marginBottom: 4 }}>
+            <span style={{ color: PINK, fontWeight: 600 }}>Graduated:</span>{" "}
+            2026
+          </p>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", marginBottom: 12 }}>
+            <span style={{ color: PINK, fontWeight: 600 }}>CGPA:</span> 3.12 /
+            4.00
+          </p>
+          <p
+            style={{
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: 14,
+              color: "#9ca3af",
+              lineHeight: 1.7,
+            }}
+          >
+            Focus on Full Stack Development (MERN), Data Structures, and
+            Software Engineering principles. Built several practical web
+            applications as part of coursework and personal projects.
           </p>
         </>
       ),
-      icon: <FaUniversity size={36} />,
-      gradient: "from-emerald-500 to-green-600",
+      icon: <FaUniversity size={34} />,
+      accent: PINK,
+      glowColor: PINK,
+      borderGrad: `linear-gradient(135deg, ${PINK}, ${PURPLE})`,
       year: "2022 – 2026",
     },
     {
@@ -27,14 +52,27 @@ function EducationalDetails() {
       subtitle: "Intermediate (ICS)",
       details: (
         <>
-          <p style={{ fontFamily: "'DM Sans', sans-serif" }}><span className="text-emerald-400 font-semibold">Marks:</span> 910 / 1100</p>
-          <p className="mt-3 text-gray-400 leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px" }}>
-            Developed strong fundamentals in computing and mathematics, building a solid base for software and web development.
+          <p style={{ fontFamily: "'DM Sans', sans-serif", marginBottom: 12 }}>
+            <span style={{ color: PURPLE, fontWeight: 600 }}>Marks:</span> 910 /
+            1100
+          </p>
+          <p
+            style={{
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: 14,
+              color: "#9ca3af",
+              lineHeight: 1.7,
+            }}
+          >
+            Developed strong fundamentals in computing and mathematics, building
+            a solid base for software and web development.
           </p>
         </>
       ),
-      icon: <FaGraduationCap size={36} />,
-      gradient: "from-green-500 to-teal-600",
+      icon: <FaGraduationCap size={34} />,
+      accent: PURPLE,
+      glowColor: PURPLE,
+      borderGrad: `linear-gradient(135deg, ${PURPLE}, ${INDIGO})`,
       year: "2019 – 2021",
     },
     {
@@ -43,40 +81,125 @@ function EducationalDetails() {
       subtitle: "Matriculation (Pre-Medical)",
       details: (
         <>
-          <p style={{ fontFamily: "'DM Sans', sans-serif" }}><span className="text-emerald-400 font-semibold">Marks:</span> 810 / 1100</p>
-          <p className="mt-3 text-gray-400 leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px" }}>
-            Early academic background in sciences which later transitioned into technology and programming interests.
+          <p style={{ fontFamily: "'DM Sans', sans-serif", marginBottom: 12 }}>
+            <span style={{ color: INDIGO, fontWeight: 600 }}>Marks:</span> 810 /
+            1100
+          </p>
+          <p
+            style={{
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: 14,
+              color: "#9ca3af",
+              lineHeight: 1.7,
+            }}
+          >
+            Early academic background in sciences which later transitioned into
+            technology and programming interests.
           </p>
         </>
       ),
-      icon: <FaSchool size={36} />,
-      gradient: "from-teal-500 to-cyan-600",
+      icon: <FaSchool size={34} />,
+      accent: INDIGO,
+      glowColor: INDIGO,
+      borderGrad: `linear-gradient(135deg, ${INDIGO}, ${PINK})`,
       year: "2017 – 2019",
     },
   ];
 
   return (
     <>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap');`}</style>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+        @keyframes neonFlicker2 {
+          0%, 100% { filter: drop-shadow(0 0 18px ${PURPLE}55) drop-shadow(0 0 34px ${PINK}33); }
+          50% { filter: drop-shadow(0 0 8px ${PURPLE}30) drop-shadow(0 0 16px ${PINK}22); }
+        }
+        @keyframes iconPulseGlow {
+          0%, 100% { box-shadow: 0 8px 24px rgba(168,85,247,0.35); }
+          50% { box-shadow: 0 8px 36px rgba(236,72,153,0.55); }
+        }
+      `}</style>
+
       <section
         id="EducationalDetails"
-        className="min-h-screen text-white px-6 py-20"
-        style={{ background: "radial-gradient(ellipse 80% 50% at 50% 0%, #0d2d0d 0%, #060d06 60%)" }}
+        style={{
+          minHeight: "100vh",
+          background: BG,
+          color: "#fff",
+          padding: "80px 24px",
+          position: "relative",
+          overflow: "hidden",
+        }}
       >
-        {/* Header */}
-        <div className="text-center mb-16 max-w-5xl mx-auto">
+        {/* Background orbs */}
+        <motion.div
+          animate={{ scale: [1, 1.3, 1], rotate: [0, 60, 0] }}
+          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+          style={{
+            position: "absolute",
+            top: "5%",
+            right: "8%",
+            width: 360,
+            height: 360,
+            background: `radial-gradient(circle, ${PURPLE}18 0%, transparent 70%)`,
+            borderRadius: "50%",
+            filter: "blur(50px)",
+            pointerEvents: "none",
+          }}
+        />
+        <motion.div
+          animate={{ scale: [1.2, 1, 1.2], x: [0, 20, 0] }}
+          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+          style={{
+            position: "absolute",
+            bottom: "10%",
+            left: "5%",
+            width: 300,
+            height: 300,
+            background: `radial-gradient(circle, ${PINK}15 0%, transparent 70%)`,
+            borderRadius: "50%",
+            filter: "blur(50px)",
+            pointerEvents: "none",
+          }}
+        />
+
+        {/* ── Header ── */}
+        <div
+          style={{
+            textAlign: "center",
+            marginBottom: 64,
+            maxWidth: 960,
+            margin: "0 auto 64px",
+          }}
+        >
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="flex items-center justify-center gap-3 mb-4"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: 12,
+              marginBottom: 16,
+            }}
           >
-            <span className="w-10 h-px bg-gradient-to-r from-transparent to-emerald-400" />
-            <span className="text-emerald-400" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11px", fontWeight: 600, letterSpacing: "0.3em", textTransform: "uppercase" }}>
+            <span style={{ width: 40, height: 1, background: GRAD }} />
+            <span
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: 11,
+                fontWeight: 700,
+                letterSpacing: "0.3em",
+                textTransform: "uppercase",
+                color: PINK,
+              }}
+            >
               Academic Background
             </span>
-            <span className="w-10 h-px bg-gradient-to-l from-transparent to-emerald-400" />
+            <span style={{ width: 40, height: 1, background: GRAD }} />
           </motion.div>
 
           <motion.h1
@@ -86,14 +209,15 @@ function EducationalDetails() {
             viewport={{ once: true }}
             style={{
               fontFamily: "'Playfair Display', serif",
-              fontSize: "clamp(42px, 7vw, 72px)",
               fontWeight: 900,
+              fontSize: "clamp(42px, 7vw, 72px)",
               lineHeight: 1.05,
               letterSpacing: "-0.02em",
-              background: "linear-gradient(135deg, #ecfdf5 0%, #6ee7b7 45%, #34d399 100%)",
+              margin: 0,
+              background: GRAD,
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
+              animation: "neonFlicker2 4.5s ease-in-out infinite",
             }}
           >
             Educational Journey
@@ -104,15 +228,36 @@ function EducationalDetails() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="mt-3 text-sm text-white/30"
-            style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300 }}
+            style={{
+              fontFamily: "'DM Sans', sans-serif",
+              fontWeight: 300,
+              fontSize: 14,
+              color: "rgba(255,255,255,0.4)",
+              marginTop: 12,
+              minHeight: 20,
+            }}
           >
-            A solid academic foundation powering my career in software development
+            <TypingText
+              phrases={[
+                "A solid academic foundation powering my career.",
+                "From matriculation to a BSc in Computer Science.",
+              ]}
+              color="rgba(255,255,255,0.45)"
+              cursorColor={PURPLE}
+            />
           </motion.p>
         </div>
 
-        {/* Cards */}
-        <div className="max-w-6xl mx-auto grid gap-8 md:grid-cols-3">
+        {/* ── Cards ── */}
+        <div
+          style={{
+            maxWidth: 1100,
+            margin: "0 auto",
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gap: 24,
+          }}
+        >
           {items.map((item, idx) => (
             <motion.article
               key={idx}
@@ -121,59 +266,153 @@ function EducationalDetails() {
               transition={{ duration: 0.6, delay: idx * 0.15 }}
               viewport={{ once: true }}
               whileHover={{ y: -10 }}
-              className="relative group"
+              style={{ position: "relative" }}
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-10 rounded-2xl blur-2xl transition-opacity duration-500`} />
+              {/* Glow blob */}
               <div
-                className="relative rounded-2xl border border-emerald-500/10 group-hover:border-emerald-400/40 transition-all duration-300 p-8 h-full flex flex-col overflow-hidden"
-                style={{ background: "linear-gradient(160deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%)", backdropFilter: "blur(12px)" }}
-              >
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-400/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  background: `radial-gradient(circle at 50% 30%, ${item.glowColor}22, transparent 65%)`,
+                  borderRadius: 16,
+                  filter: "blur(24px)",
+                  pointerEvents: "none",
+                }}
+              />
 
-                {/* Icon */}
+              {/* Card */}
+              <div
+                style={{
+                  position: "relative",
+                  height: "100%",
+                  borderRadius: 16,
+                  border: `1px solid rgba(236,72,153,0.15)`,
+                  background:
+                    "linear-gradient(160deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%)",
+                  backdropFilter: "blur(16px)",
+                  padding: 32,
+                  display: "flex",
+                  flexDirection: "column",
+                  overflow: "hidden",
+                  transition: "border-color 0.3s",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.borderColor = `${item.accent}55`)
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.borderColor = "rgba(236,72,153,0.15)")
+                }
+              >
+                {/* Top shimmer line */}
+                <div
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    height: 1,
+                    background: `linear-gradient(90deg, transparent, ${item.accent}99, transparent)`,
+                  }}
+                />
+
+                {/* Icon circle */}
                 <motion.div
                   whileHover={{ scale: 1.1, rotate: 5 }}
-                  className={`w-16 h-16 mx-auto mb-5 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center shadow-lg`}
+                  style={{
+                    width: 64,
+                    height: 64,
+                    borderRadius: 16,
+                    background: `linear-gradient(135deg, ${item.accent}, ${INDIGO})`,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    margin: "0 auto 20px",
+                    animation: "iconPulseGlow 3s ease-in-out infinite",
+                  }}
                 >
-                  <div className="text-white">{item.icon}</div>
+                  <div style={{ color: "#fff" }}>{item.icon}</div>
                 </motion.div>
 
                 {/* Year badge */}
-                <div className="flex justify-center mb-5">
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    marginBottom: 20,
+                  }}
+                >
                   <span
-                    className={`text-white bg-gradient-to-r ${item.gradient} rounded-full shadow-lg`}
-                    style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11px", fontWeight: 600, letterSpacing: "0.08em", padding: "5px 16px" }}
+                    style={{
+                      fontFamily: "'DM Sans', sans-serif",
+                      fontSize: 11,
+                      fontWeight: 700,
+                      letterSpacing: "0.1em",
+                      color: "#fff",
+                      background: `linear-gradient(135deg, ${item.accent}, ${INDIGO})`,
+                      borderRadius: 50,
+                      padding: "5px 18px",
+                      boxShadow: `0 4px 12px ${item.accent}40`,
+                    }}
                   >
                     {item.year}
                   </span>
                 </div>
 
                 {/* Divider */}
-                <div className="mb-4 rounded-full mx-auto" style={{ width: 32, height: 2, background: "linear-gradient(90deg, #34d399, #059669)" }} />
+                <div
+                  style={{
+                    width: 32,
+                    height: 2,
+                    borderRadius: 2,
+                    margin: "0 auto 16px",
+                    background: `linear-gradient(90deg, ${item.accent}, ${INDIGO})`,
+                  }}
+                />
 
                 {/* Title */}
                 <h3
-                  className="text-white text-center mb-1"
-                  style={{ fontFamily: "'Playfair Display', serif", fontSize: "18px", fontWeight: 700, lineHeight: 1.3 }}
+                  style={{
+                    fontFamily: "'Playfair Display', serif",
+                    fontSize: 18,
+                    fontWeight: 700,
+                    color: "#f9fafb",
+                    textAlign: "center",
+                    marginBottom: 6,
+                    lineHeight: 1.35,
+                  }}
                 >
                   {item.title}
                 </h3>
 
                 {/* Subtitle */}
-                <p className="text-center mb-5" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", fontWeight: 600, letterSpacing: "0.08em", color: "#34d399" }}>
+                <p
+                  style={{
+                    fontFamily: "'DM Sans', sans-serif",
+                    fontSize: 11,
+                    fontWeight: 700,
+                    letterSpacing: "0.1em",
+                    color: item.accent,
+                    textAlign: "center",
+                    marginBottom: 20,
+                    textTransform: "uppercase",
+                  }}
+                >
                   {item.subtitle}
                 </p>
 
                 {/* Details */}
-                <div className="flex-1 space-y-1 text-white/80" style={{ fontSize: "14px" }}>
-                  {item.details}
-                </div>
+                <div style={{ flex: 1 }}>{item.details}</div>
 
-                {/* Bottom bar */}
+                {/* Bottom accent bar */}
                 <motion.div
-                  className={`h-0.5 mt-6 rounded-full bg-gradient-to-r ${item.gradient}`}
-                  initial={{ width: 0 }}
-                  whileInView={{ width: "100%" }}
+                  style={{
+                    height: 1.5,
+                    marginTop: 24,
+                    borderRadius: 2,
+                    background: `linear-gradient(90deg, ${item.accent}, ${INDIGO})`,
+                  }}
+                  initial={{ scaleX: 0, originX: 0 }}
+                  whileInView={{ scaleX: 1 }}
                   transition={{ duration: 0.8, delay: idx * 0.15 + 0.3 }}
                   viewport={{ once: true }}
                 />
@@ -182,19 +421,30 @@ function EducationalDetails() {
           ))}
         </div>
 
-        {/* CTA */}
+        {/* ── CTA ── */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
           viewport={{ once: true }}
-          className="mt-16 text-center"
+          style={{ marginTop: 64, textAlign: "center" }}
         >
           <motion.a
             href="#Contact"
-            whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(16,185,129,0.4)" }}
-            className="inline-block bg-gradient-to-r from-emerald-500 to-green-600 text-white px-10 py-4 rounded-full shadow-lg shadow-emerald-500/30 transition-all"
-            style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: "17px" }}
+            whileHover={{ scale: 1.05, boxShadow: `0 0 30px ${PINK}55` }}
+            whileTap={{ scale: 0.95 }}
+            style={{
+              display: "inline-block",
+              background: GRAD,
+              color: "#fff",
+              padding: "14px 40px",
+              borderRadius: 50,
+              fontFamily: "'DM Sans', sans-serif",
+              fontWeight: 700,
+              fontSize: 16,
+              textDecoration: "none",
+              boxShadow: `0 4px 24px ${PINK}40`,
+            }}
           >
             Get In Touch →
           </motion.a>

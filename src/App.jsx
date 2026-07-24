@@ -4,7 +4,7 @@ import AboutMe from "./Pages/AboutMe";
 import Goal from "./Pages/Goal";
 import Projects from "./Pages/Projects";
 import Skills from "./Pages/Skills";
-import Certifications from "./Pages/Certifications"; 
+import Certifications from "./Pages/Certifications";
 import EducationalDetails from "./Pages/EducationalDetails";
 import Footer from "./Pages/Footer";
 import Awards from "./Pages/Awards";
@@ -19,7 +19,7 @@ function App() {
       <EducationalDetails />
       <Projects />
       <Skills />
-      <Certifications /> 
+      <Certifications />
       <Awards />
       <Experience />
       <Footer />
