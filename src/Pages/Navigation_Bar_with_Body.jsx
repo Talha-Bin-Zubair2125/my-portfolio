@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import ProfileImage from "../Images/Profile Image.png";
 
-// ── Typing Effect Hook ──────────────────────────────────────────────────────
+// ── Typing Effect ────────────────────────────────────────────────────────────
 function useTypingEffect(
   words,
   typingSpeed = 80,
@@ -11,12 +11,11 @@ function useTypingEffect(
 ) {
   const [displayed, setDisplayed] = useState("");
   const [wordIndex, setWordIndex] = useState(0);
-  const [phase, setPhase] = useState("typing"); // typing | pausing | deleting
+  const [phase, setPhase] = useState("typing");
 
   useEffect(() => {
     const current = words[wordIndex];
     let timeout;
-
     if (phase === "typing") {
       if (displayed.length < current.length) {
         timeout = setTimeout(
@@ -53,31 +52,38 @@ function useTypingEffect(
   return displayed;
 }
 
-// ── Floating Particles ──────────────────────────────────────────────────────
+// ── Particles ────────────────────────────────────────────────────────────────
 function Particles() {
-  const particles = Array.from({ length: 22 }, (_, i) => ({
+  const particles = Array.from({ length: 18 }, (_, i) => ({
     id: i,
     x: Math.random() * 100,
     y: Math.random() * 100,
-    size: Math.random() * 3 + 1,
+    size: Math.random() * 2.5 + 1,
     duration: Math.random() * 12 + 8,
     delay: Math.random() * 5,
     color: i % 3 === 0 ? "#ec4899" : i % 3 === 1 ? "#a855f7" : "#6366f1",
   }));
-
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div
+      style={{
+        position: "absolute",
+        inset: 0,
+        overflow: "hidden",
+        pointerEvents: "none",
+      }}
+    >
       {particles.map((p) => (
         <motion.div
           key={p.id}
-          className="absolute rounded-full"
           style={{
+            position: "absolute",
             left: `${p.x}%`,
             top: `${p.y}%`,
             width: p.size,
             height: p.size,
             background: p.color,
             boxShadow: `0 0 ${p.size * 3}px ${p.color}`,
+            borderRadius: "50%",
           }}
           animate={{
             y: [0, -40, 0],
@@ -97,10 +103,18 @@ function Particles() {
   );
 }
 
-// ── Grid Lines ──────────────────────────────────────────────────────────────
+// ── Grid ─────────────────────────────────────────────────────────────────────
 function GridLines() {
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-10">
+    <div
+      style={{
+        position: "absolute",
+        inset: 0,
+        overflow: "hidden",
+        pointerEvents: "none",
+        opacity: 0.08,
+      }}
+    >
       <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <pattern
@@ -123,25 +137,25 @@ function GridLines() {
   );
 }
 
-// ── Main Component ──────────────────────────────────────────────────────────
+// ── Main ─────────────────────────────────────────────────────────────────────
 export default function NavigationAndHero() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], [0, 280]);
-  const opacity = useTransform(scrollYProgress, [0, 0.45], [1, 0]);
+  const heroY = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.45], [1, 0]);
 
   const typedText = useTypingEffect([
     "MERN Stack Developer",
     "AI/ML Enthusiast",
-    "Building Scalable AI-Powered Web Applications",
+    "Building Scalable AI-Powered Web Apps",
     "Problem Solver",
   ]);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    const fn = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", fn);
+    return () => window.removeEventListener("scroll", fn);
   }, []);
 
   const navItems = [
@@ -155,20 +169,20 @@ export default function NavigationAndHero() {
     "Contact",
   ];
 
-  // ── theme tokens ───────────────────────────────────────────────────────────
-  const BG = "#080c14"; // near-black base
-  const CARD_BG = "rgba(20,8,32,0.85)";
+  // Theme
   const PINK = "#ec4899";
   const PURPLE = "#a855f7";
   const INDIGO = "#6366f1";
-  const GRAD = `linear-gradient(135deg, ${PINK}, ${PURPLE}, ${INDIGO})`;
-  const GRAD_T = `linear-gradient(135deg, ${PINK}22, ${PURPLE}22, ${INDIGO}22)`;
+  const GRAD = `linear-gradient(135deg,${PINK},${PURPLE},${INDIGO})`;
+  const GRAD_T = `linear-gradient(135deg,${PINK}22,${PURPLE}22,${INDIGO}22)`;
 
   return (
     <>
-      {/* ── Google Fonts ── */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+        *, *::before, *::after { box-sizing: border-box; }
+
         .neon-cursor::after {
           content: '|';
           color: #ec4899;
@@ -176,21 +190,119 @@ export default function NavigationAndHero() {
           margin-left: 2px;
         }
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
         .img-ring {
-          background: linear-gradient(135deg, #ec4899, #a855f7, #6366f1);
+          background: linear-gradient(135deg,#ec4899,#a855f7,#6366f1);
           border-radius: 50%;
           padding: 3px;
           display: inline-block;
+          flex-shrink: 0;
         }
         .img-inner {
           border-radius: 50%;
           overflow: hidden;
-          display: block;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           background: #140820;
+        }
+
+        /* ── Hero two-column layout ── */
+        .hero-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 48px;
+          align-items: center;
+          width: 100%;
+          max-width: 1280px;
+          margin: 0 auto;
+          padding: 100px 20px 60px;
+        }
+        @media (min-width: 900px) {
+          .hero-grid {
+            grid-template-columns: 1fr 1fr;
+            padding: 0 48px;
+            min-height: 100vh;
+          }
+        }
+
+        /* ── Image column: center on mobile, push right on desktop ── */
+        .hero-image-col {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          order: -1; /* image on top on mobile */
+        }
+        @media (min-width: 900px) {
+          .hero-image-col { order: 0; }
+        }
+
+        /* ── Image sizing ── */
+        .profile-wrap {
+          position: relative;
+          display: inline-block;
+        }
+        .profile-size {
+          width: clamp(180px, 45vw, 280px);
+          height: clamp(180px, 45vw, 280px);
+        }
+
+        /* ── Floating badges – hide on very small screens ── */
+        .badge-bottom { display: none; }
+        .badge-top    { display: none; }
+        @media (min-width: 480px) {
+          .badge-bottom { display: block; }
+          .badge-top    { display: flex; }
+        }
+
+        /* ── Nav items – smaller on tablet ── */
+        .nav-link { font-size: 13px; }
+        @media (max-width: 1100px) {
+          .nav-link { font-size: 11px; }
+        }
+
+        /* ── Stats row ── */
+        .stats-row {
+          display: flex;
+          gap: 12px;
+          flex-wrap: wrap;
+        }
+        .stat-box {
+          flex: 1 1 80px;
+          min-width: 0;
+          text-align: center;
+        }
+
+        /* ── CTA buttons ── */
+        .cta-row {
+          display: flex;
+          gap: 12px;
+          flex-wrap: wrap;
+        }
+        .cta-btn {
+          flex: 1 1 140px;
+          text-align: center;
+          min-width: 0;
+        }
+
+        /* ── Typing text ── */
+        .typing-text {
+          font-size: clamp(14px, 3.5vw, 22px);
+          word-break: break-word;
+          min-height: 1.4em;
+        }
+
+        /* ── Heading ── */
+        .hero-heading {
+          font-size: clamp(28px, 6vw, 58px);
+          line-height: 1.08;
+          letter-spacing: -0.02em;
+          margin: 0;
+          word-break: break-word;
         }
       `}</style>
 
-      {/* ══════════════════ NAVBAR ══════════════════ */}
+      {/* ══ NAVBAR ══ */}
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -201,8 +313,8 @@ export default function NavigationAndHero() {
           left: 0,
           width: "100%",
           zIndex: 50,
-          transition: "all 0.3s",
-          background: scrolled ? "rgba(8,6,18,0.92)" : "transparent",
+          transition: "background 0.3s, box-shadow 0.3s",
+          background: scrolled ? "rgba(8,6,18,0.94)" : "transparent",
           backdropFilter: scrolled ? "blur(20px)" : "none",
           boxShadow: scrolled ? `0 1px 40px ${PINK}18` : "none",
           borderBottom: scrolled ? `1px solid ${PINK}22` : "none",
@@ -215,19 +327,19 @@ export default function NavigationAndHero() {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            padding: "16px 24px",
+            padding: "14px 20px",
           }}
         >
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            style={{ position: "relative" }}
+            style={{ position: "relative", flexShrink: 0 }}
           >
             <h1
               style={{
-                fontFamily: "'Playfair Display', serif",
+                fontFamily: "'Playfair Display',serif",
                 fontWeight: 900,
-                fontSize: 28,
+                fontSize: "clamp(22px,4vw,28px)",
                 margin: 0,
                 background: GRAD,
                 WebkitBackgroundClip: "text",
@@ -254,13 +366,14 @@ export default function NavigationAndHero() {
 
           {/* Desktop links */}
           <ul
+            className="hidden md:flex"
             style={{
-              gap: 28,
+              gap: "clamp(14px,2vw,28px)",
               listStyle: "none",
               margin: 0,
               padding: 0,
+              flexWrap: "nowrap",
             }}
-            className="hidden md:flex"
           >
             {navItems.map((item, i) => (
               <motion.li
@@ -269,17 +382,18 @@ export default function NavigationAndHero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.07 }}
                 whileHover={{ y: -2 }}
-                style={{ position: "relative" }}
+                style={{ position: "relative", flexShrink: 0 }}
               >
                 <a
                   href={`#${item}`}
+                  className="nav-link"
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
-                    fontSize: 13,
+                    fontFamily: "'DM Sans',sans-serif",
                     fontWeight: 500,
                     color: "#d1d5db",
                     textDecoration: "none",
                     transition: "color 0.2s",
+                    whiteSpace: "nowrap",
                   }}
                   onMouseEnter={(e) => (e.target.style.color = PINK)}
                   onMouseLeave={(e) => (e.target.style.color = "#d1d5db")}
@@ -306,16 +420,17 @@ export default function NavigationAndHero() {
           {/* Mobile toggle */}
           <button
             onClick={() => setMobileMenuOpen((v) => !v)}
+            className="md:hidden"
             style={{
               background: "none",
               border: "none",
               cursor: "pointer",
               fontSize: 24,
               color: PINK,
+              padding: "4px 8px",
             }}
-            className="md:hidden block"
           >
-            ☰
+            {mobileMenuOpen ? "✕" : "☰"}
           </button>
         </div>
 
@@ -324,6 +439,7 @@ export default function NavigationAndHero() {
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
             style={{
               background: "rgba(8,6,18,0.97)",
               backdropFilter: "blur(20px)",
@@ -332,11 +448,11 @@ export default function NavigationAndHero() {
             <ul
               style={{
                 listStyle: "none",
-                padding: "16px 24px",
+                padding: "12px 20px 20px",
                 margin: 0,
                 display: "flex",
                 flexDirection: "column",
-                gap: 16,
+                gap: 14,
               }}
             >
               {navItems.map((item) => (
@@ -345,7 +461,7 @@ export default function NavigationAndHero() {
                     href={`#${item}`}
                     onClick={() => setMobileMenuOpen(false)}
                     style={{
-                      fontFamily: "'DM Sans', sans-serif",
+                      fontFamily: "'DM Sans',sans-serif",
                       fontSize: 16,
                       fontWeight: 500,
                       color: "#d1d5db",
@@ -361,7 +477,7 @@ export default function NavigationAndHero() {
         )}
       </motion.nav>
 
-      {/* ══════════════════ HERO ══════════════════ */}
+      {/* ══ HERO ══ */}
       <div
         id="Home"
         style={{
@@ -371,18 +487,17 @@ export default function NavigationAndHero() {
           alignItems: "center",
           overflow: "hidden",
         }}
-        className="py-20 lg:py-0"
       >
-        {/* ── Background ── */}
+        {/* BG */}
         <div
           style={{
             position: "absolute",
             inset: 0,
-            background: `radial-gradient(ellipse 90% 80% at 50% 50%, #130820 0%, ${BG} 70%)`,
+            background: `radial-gradient(ellipse 90% 80% at 50% 50%, #130820 0%, #080c14 70%)`,
           }}
         />
 
-        {/* Animated gradient orbs */}
+        {/* Orbs */}
         <motion.div
           animate={{ scale: [1, 1.3, 1], x: [0, 30, 0], y: [0, -20, 0] }}
           transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
@@ -390,11 +505,12 @@ export default function NavigationAndHero() {
             position: "absolute",
             top: "10%",
             left: "5%",
-            width: 500,
-            height: 500,
-            background: `radial-gradient(circle, ${PINK}22 0%, transparent 70%)`,
+            width: "min(500px,50vw)",
+            height: "min(500px,50vw)",
+            background: `radial-gradient(circle,${PINK}22 0%,transparent 70%)`,
             borderRadius: "50%",
             filter: "blur(40px)",
+            pointerEvents: "none",
           }}
         />
         <motion.div
@@ -404,11 +520,12 @@ export default function NavigationAndHero() {
             position: "absolute",
             bottom: "10%",
             right: "5%",
-            width: 450,
-            height: 450,
-            background: `radial-gradient(circle, ${PURPLE}20 0%, transparent 70%)`,
+            width: "min(450px,45vw)",
+            height: "min(450px,45vw)",
+            background: `radial-gradient(circle,${PURPLE}20 0%,transparent 70%)`,
             borderRadius: "50%",
             filter: "blur(40px)",
+            pointerEvents: "none",
           }}
         />
         <motion.div
@@ -418,37 +535,33 @@ export default function NavigationAndHero() {
             position: "absolute",
             top: "40%",
             left: "45%",
-            width: 300,
-            height: 300,
-            background: `radial-gradient(circle, ${INDIGO}18 0%, transparent 70%)`,
+            width: "min(300px,30vw)",
+            height: "min(300px,30vw)",
+            background: `radial-gradient(circle,${INDIGO}18 0%,transparent 70%)`,
             borderRadius: "50%",
             filter: "blur(50px)",
+            pointerEvents: "none",
           }}
         />
 
         <GridLines />
         <Particles />
 
-        {/* ── Content Row ── */}
+        {/* Content */}
         <motion.div
-          style={{ y, opacity }}
-          className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12"
+          style={{
+            y: heroY,
+            opacity: heroOpacity,
+            position: "relative",
+            zIndex: 1,
+            width: "100%",
+          }}
         >
-          {/* Changed this div to completely rely on Tailwind classes for grid layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-16 items-center pt-24 lg:pt-0">
-            {/* ── LEFT — Image ── */}
-            <motion.div
-              initial={{ opacity: 0, x: -60 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.9, delay: 0.2 }}
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <div style={{ position: "relative" }}>
-                {/* Rotating ring */}
+          <div className="hero-grid">
+            {/* ── LEFT: Image ── */}
+            <div className="hero-image-col">
+              <div className="profile-wrap">
+                {/* Rotating rings */}
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{
@@ -458,12 +571,12 @@ export default function NavigationAndHero() {
                   }}
                   style={{
                     position: "absolute",
-                    inset: -12,
+                    inset: -10,
                     borderRadius: "50%",
                     border: `2px dashed ${PINK}55`,
+                    pointerEvents: "none",
                   }}
                 />
-                {/* Second ring */}
                 <motion.div
                   animate={{ rotate: -360 }}
                   transition={{
@@ -473,31 +586,28 @@ export default function NavigationAndHero() {
                   }}
                   style={{
                     position: "absolute",
-                    inset: -24,
+                    inset: -22,
                     borderRadius: "50%",
                     border: `2px dashed ${PURPLE}33`,
+                    pointerEvents: "none",
                   }}
                 />
-                {/* Glow behind image */}
+
+                {/* Glow */}
                 <div
                   style={{
                     position: "absolute",
                     inset: -6,
-                    background: `radial-gradient(circle, ${PINK}40 0%, ${PURPLE}20 50%, transparent 70%)`,
+                    background: `radial-gradient(circle,${PINK}40 0%,${PURPLE}20 50%,transparent 70%)`,
                     borderRadius: "50%",
                     filter: "blur(20px)",
+                    pointerEvents: "none",
                   }}
                 />
 
-                {/* Image ring - made width responsive */}
+                {/* Photo */}
                 <div className="img-ring">
-                  <div
-                    className="img-inner"
-                    style={{
-                      width: "clamp(220px, 60vw, 280px)",
-                      height: "clamp(220px, 60vw, 280px)",
-                    }}
-                  >
+                  <div className="img-inner profile-size">
                     <img
                       src={ProfileImage}
                       alt="Talha Bin Zubair"
@@ -509,18 +619,15 @@ export default function NavigationAndHero() {
                       }}
                       onError={(e) => {
                         e.target.style.display = "none";
-                        e.target.parentNode.style.display = "flex";
-                        e.target.parentNode.style.alignItems = "center";
-                        e.target.parentNode.style.justifyContent = "center";
-                        e.target.parentNode.style.background = `linear-gradient(135deg, #1e0b2e, #0e0618)`;
                         e.target.parentNode.innerHTML = `<span style="font-family:'Playfair Display',serif;font-size:72px;font-weight:900;background:linear-gradient(135deg,#ec4899,#a855f7,#6366f1);-webkit-background-clip:text;-webkit-text-fill-color:transparent">T</span>`;
                       }}
                     />
                   </div>
                 </div>
 
-                {/* Floating badge — experience */}
+                {/* Badge: MERN */}
                 <motion.div
+                  className="badge-bottom"
                   animate={{ y: [0, -8, 0] }}
                   transition={{
                     duration: 3,
@@ -529,19 +636,19 @@ export default function NavigationAndHero() {
                   }}
                   style={{
                     position: "absolute",
-                    bottom: -10,
-                    right: -20,
+                    bottom: -8,
+                    right: "clamp(-8px,-3vw,-16px)",
                     background: "rgba(20,8,40,0.95)",
                     border: `1px solid ${PINK}55`,
-                    borderRadius: 12,
-                    padding: "8px 14px",
+                    borderRadius: 10,
+                    padding: "7px 12px",
                     backdropFilter: "blur(10px)",
                   }}
                 >
                   <div
                     style={{
-                      fontFamily: "'DM Sans', sans-serif",
-                      fontSize: 11,
+                      fontFamily: "'DM Sans',sans-serif",
+                      fontSize: 10,
                       color: PINK,
                       fontWeight: 700,
                       letterSpacing: "0.1em",
@@ -551,8 +658,8 @@ export default function NavigationAndHero() {
                   </div>
                   <div
                     style={{
-                      fontFamily: "'DM Sans', sans-serif",
-                      fontSize: 10,
+                      fontFamily: "'DM Sans',sans-serif",
+                      fontSize: 9,
                       color: "#d1d5db",
                       marginTop: 2,
                     }}
@@ -561,8 +668,9 @@ export default function NavigationAndHero() {
                   </div>
                 </motion.div>
 
-                {/* Floating badge — available */}
+                {/* Badge: Available */}
                 <motion.div
+                  className="badge-top"
                   animate={{ y: [0, -6, 0] }}
                   transition={{
                     duration: 4,
@@ -572,22 +680,21 @@ export default function NavigationAndHero() {
                   }}
                   style={{
                     position: "absolute",
-                    top: -10,
-                    left: -20,
+                    top: -8,
+                    left: "clamp(-8px,-3vw,-16px)",
                     background: "rgba(20,8,40,0.95)",
                     border: `1px solid ${PURPLE}55`,
-                    borderRadius: 12,
-                    padding: "8px 14px",
+                    borderRadius: 10,
+                    padding: "7px 12px",
                     backdropFilter: "blur(10px)",
-                    display: "flex",
                     alignItems: "center",
                     gap: 6,
                   }}
                 >
                   <div
                     style={{
-                      width: 7,
-                      height: 7,
+                      width: 6,
+                      height: 6,
                       borderRadius: "50%",
                       background: "#4ade80",
                       boxShadow: "0 0 6px #4ade80",
@@ -596,45 +703,47 @@ export default function NavigationAndHero() {
                   />
                   <div
                     style={{
-                      fontFamily: "'DM Sans', sans-serif",
-                      fontSize: 11,
+                      fontFamily: "'DM Sans',sans-serif",
+                      fontSize: 10,
                       color: "#d1d5db",
+                      whiteSpace: "nowrap",
                     }}
                   >
                     Available for work
                   </div>
                 </motion.div>
               </div>
-            </motion.div>
+            </div>
 
-            {/* ── RIGHT — Introduction ── */}
+            {/* ── RIGHT: Text ── */}
             <motion.div
-              initial={{ opacity: 0, x: 60 }}
+              initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.9, delay: 0.3 }}
-              style={{ display: "flex", flexDirection: "column", gap: 20 }}
+              style={{ display: "flex", flexDirection: "column", gap: 18 }}
             >
               {/* Eyebrow */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                style={{ display: "flex", alignItems: "center", gap: 12 }}
+                style={{ display: "flex", alignItems: "center", gap: 10 }}
               >
                 <div
                   style={{
-                    width: 32,
+                    width: 28,
                     height: 1.5,
                     background: GRAD,
                     borderRadius: 1,
+                    flexShrink: 0,
                   }}
                 />
                 <span
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
-                    fontSize: 11,
+                    fontFamily: "'DM Sans',sans-serif",
+                    fontSize: "clamp(9px,1.5vw,11px)",
                     fontWeight: 700,
-                    letterSpacing: "0.25em",
+                    letterSpacing: "0.22em",
                     color: PINK,
                     textTransform: "uppercase",
                   }}
@@ -645,16 +754,13 @@ export default function NavigationAndHero() {
 
               {/* Name */}
               <motion.h1
+                className="hero-heading"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
                 style={{
-                  fontFamily: "'Playfair Display', serif",
+                  fontFamily: "'Playfair Display',serif",
                   fontWeight: 900,
-                  margin: 0,
-                  fontSize: "clamp(32px, 8vw, 58px)", // Updated vw for better mobile scaling
-                  lineHeight: 1.05,
-                  letterSpacing: "-0.02em",
                 }}
               >
                 <span style={{ color: "#f9fafb" }}>Hi, I'm </span>
@@ -669,7 +775,7 @@ export default function NavigationAndHero() {
                 </span>
               </motion.h1>
 
-              {/* Typing line */}
+              {/* Typing */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -679,20 +785,18 @@ export default function NavigationAndHero() {
                 <div
                   style={{
                     width: 4,
-                    height: 28,
+                    height: 26,
                     background: GRAD,
                     borderRadius: 2,
                     flexShrink: 0,
                   }}
                 />
                 <span
-                  className="neon-cursor"
+                  className="neon-cursor typing-text"
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "'DM Sans',sans-serif",
                     fontWeight: 600,
-                    fontSize: "clamp(16px, 4vw, 22px)", // Increased vw
                     color: "#e879f9",
-                    minHeight: "1.4em",
                   }}
                 >
                   {typedText}
@@ -705,13 +809,12 @@ export default function NavigationAndHero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7, duration: 0.8 }}
                 style={{
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'DM Sans',sans-serif",
                   fontWeight: 300,
-                  fontSize: "clamp(14px, 1.6vw, 17px)",
+                  fontSize: "clamp(13px,1.6vw,16px)",
                   color: "#9ca3af",
-                  lineHeight: 1.75,
+                  lineHeight: 1.8,
                   margin: 0,
-                  maxWidth: 460,
                 }}
               >
                 A passionate full-stack developer specializing in the{" "}
@@ -726,12 +829,12 @@ export default function NavigationAndHero() {
                 .
               </motion.p>
 
-              {/* Stats row - Added flexWrap so it doesn't break on narrow devices */}
+              {/* Stats */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.85, duration: 0.6 }}
-                style={{ display: "flex", gap: 16, flexWrap: "wrap" }}
+                className="stats-row"
               >
                 {[
                   { value: "2+", label: "Internships" },
@@ -740,21 +843,19 @@ export default function NavigationAndHero() {
                 ].map((s, i) => (
                   <div
                     key={i}
+                    className="stat-box"
                     style={{
                       background: GRAD_T,
                       border: `1px solid ${PINK}30`,
-                      borderRadius: 12,
-                      padding: "10px 18px",
-                      textAlign: "center",
-                      flex: "1 1 auto", // Let items grow to fill space on mobile
-                      minWidth: "100px",
+                      borderRadius: 10,
+                      padding: "10px 14px",
                     }}
                   >
                     <div
                       style={{
-                        fontFamily: "'Playfair Display', serif",
+                        fontFamily: "'Playfair Display',serif",
                         fontWeight: 900,
-                        fontSize: 22,
+                        fontSize: "clamp(18px,3vw,22px)",
                         background: GRAD,
                         WebkitBackgroundClip: "text",
                         WebkitTextFillColor: "transparent",
@@ -764,8 +865,8 @@ export default function NavigationAndHero() {
                     </div>
                     <div
                       style={{
-                        fontFamily: "'DM Sans', sans-serif",
-                        fontSize: 11,
+                        fontFamily: "'DM Sans',sans-serif",
+                        fontSize: "clamp(9px,1.2vw,11px)",
                         color: "#9ca3af",
                         marginTop: 2,
                       }}
@@ -781,47 +882,45 @@ export default function NavigationAndHero() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1, duration: 0.5 }}
-                style={{ display: "flex", gap: 14, flexWrap: "wrap" }}
+                className="cta-row"
               >
                 <motion.a
                   href="#Projects"
+                  className="cta-btn"
                   whileHover={{ scale: 1.05, boxShadow: `0 0 30px ${PINK}60` }}
                   whileTap={{ scale: 0.95 }}
                   style={{
                     background: GRAD,
                     color: "#fff",
-                    padding: "13px 30px",
+                    padding: "12px 24px",
                     borderRadius: 50,
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "'DM Sans',sans-serif",
                     fontWeight: 700,
-                    fontSize: 15,
+                    fontSize: "clamp(13px,1.5vw,15px)",
                     textDecoration: "none",
-                    display: "inline-block",
+                    display: "block",
                     boxShadow: `0 4px 24px ${PINK}40`,
-                    textAlign: "center",
-                    flex: "1 1 auto",
                   }}
                 >
                   View My Work →
                 </motion.a>
                 <motion.a
                   href="#Contact"
-                  whileHover={{ scale: 1.05, borderColor: PURPLE }}
+                  className="cta-btn"
+                  whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   style={{
                     background: "transparent",
                     border: `2px solid ${PINK}66`,
                     color: PINK,
-                    padding: "13px 30px",
+                    padding: "12px 24px",
                     borderRadius: 50,
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "'DM Sans',sans-serif",
                     fontWeight: 600,
-                    fontSize: 15,
+                    fontSize: "clamp(13px,1.5vw,15px)",
                     textDecoration: "none",
-                    display: "inline-block",
+                    display: "block",
                     transition: "all 0.2s",
-                    textAlign: "center",
-                    flex: "1 1 auto",
                   }}
                 >
                   Get In Touch
@@ -831,37 +930,37 @@ export default function NavigationAndHero() {
           </div>
         </motion.div>
 
-        {/* Scroll indicator - Hidden on mobile if space is too tight */}
+        {/* Scroll indicator */}
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
           className="hidden md:flex"
           style={{
             position: "absolute",
-            bottom: "40px",
+            bottom: 32,
             left: "50%",
             transform: "translateX(-50%)",
             flexDirection: "column",
             alignItems: "center",
-            gap: "8px",
+            gap: 6,
           }}
         >
-          <div
+          <span
             style={{
-              fontFamily: "'DM Sans', sans-serif",
-              fontSize: 10,
-              color: "#9ca3af",
+              fontFamily: "'DM Sans',sans-serif",
+              fontSize: 9,
+              color: "#6b7280",
               letterSpacing: "0.2em",
               textTransform: "uppercase",
             }}
           >
             Scroll
-          </div>
+          </span>
           <div
             style={{
               width: 1,
-              height: 30,
-              background: `linear-gradient(to bottom, ${PINK}, transparent)`,
+              height: 28,
+              background: `linear-gradient(to bottom,${PINK},transparent)`,
             }}
           />
         </motion.div>
