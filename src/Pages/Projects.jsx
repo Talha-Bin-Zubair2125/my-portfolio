@@ -63,7 +63,7 @@ function Projects() {
     {
       name: "Role Based CMS",
       desc: "Auth + Roles, Content Management, User Administration",
-      link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/PublishPulse%20%E2%80%93%20Role-Based%20Editorial%20%26%20Article%20Management%20Portal",
+      link: "https://github.com/Talha-Bin-Zubair2125/backend_projects/tree/main/PublishPulse",
     },
     {
       name: "Music Player",
