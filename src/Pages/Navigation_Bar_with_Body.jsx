@@ -124,7 +124,7 @@ function GridLines() {
 }
 
 // ── Main Component ──────────────────────────────────────────────────────────
-function NavigationAndHero() {
+export default function NavigationAndHero() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { scrollYProgress } = useScroll();
@@ -836,40 +836,37 @@ function NavigationAndHero() {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
-          className="hidden md:block"
+          className="hidden md:flex"
           style={{
             position: "absolute",
-            bottom: 32,
+            bottom: "40px",
             left: "50%",
             transform: "translateX(-50%)",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "8px",
           }}
         >
           <div
             style={{
-              width: 24,
-              height: 40,
-              border: `2px solid ${PINK}55`,
-              borderRadius: 12,
-              display: "flex",
-              justifyContent: "center",
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: 10,
+              color: "#9ca3af",
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
             }}
           >
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              style={{
-                width: 5,
-                height: 5,
-                background: PINK,
-                borderRadius: "50%",
-                marginTop: 6,
-              }}
-            />
+            Scroll
           </div>
+          <div
+            style={{
+              width: 1,
+              height: 30,
+              background: `linear-gradient(to bottom, ${PINK}, transparent)`,
+            }}
+          />
         </motion.div>
       </div>
     </>
   );
 }
-
-export default NavigationAndHero;
