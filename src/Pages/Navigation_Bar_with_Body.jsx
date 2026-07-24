@@ -255,7 +255,6 @@ export default function NavigationAndHero() {
           {/* Desktop links */}
           <ul
             style={{
-              display: "flex",
               gap: 28,
               listStyle: "none",
               margin: 0,
@@ -314,7 +313,7 @@ export default function NavigationAndHero() {
               fontSize: 24,
               color: PINK,
             }}
-            className="md:hidden"
+            className="md:hidden block"
           >
             ☰
           </button>
