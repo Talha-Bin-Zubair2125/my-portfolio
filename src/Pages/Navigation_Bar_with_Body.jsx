@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import ProfileImage from "../Images/Profile Image.png";
 
 // ── Typing Effect Hook ──────────────────────────────────────────────────────
 function useTypingEffect(
@@ -501,9 +502,8 @@ function NavigationAndHero() {
                     className="img-inner"
                     style={{ width: 280, height: 280 }}
                   >
-                    {/* ── Replace src below with your actual image path ── */}
                     <img
-                      src="../Images/Profile Image.png"
+                      src={ProfileImage}
                       alt="Talha Bin Zubair"
                       style={{
                         width: "100%",
@@ -512,7 +512,7 @@ function NavigationAndHero() {
                         display: "block",
                       }}
                       onError={(e) => {
-                        // Fallback avatar if no image found
+                        // Fallback avatar if the image genuinely fails to load
                         e.target.style.display = "none";
                         e.target.parentNode.style.display = "flex";
                         e.target.parentNode.style.alignItems = "center";
@@ -722,9 +722,9 @@ function NavigationAndHero() {
                 A passionate full-stack developer specializing in the{" "}
                 <span style={{ color: PINK, fontWeight: 500 }}>MERN stack</span>
                 , building fast, scalable, and visually stunning web
-                applications. Currently in Semester 8 at{" "}
+                applications. A recent{" "}
                 <span style={{ color: PURPLE, fontWeight: 500 }}>NUML</span>{" "}
-                with a CGPA of{" "}
+                graduate with a CGPA of{" "}
                 <span style={{ color: INDIGO, fontWeight: 600 }}>
                   3.20 / 4.00
                 </span>
@@ -741,7 +741,7 @@ function NavigationAndHero() {
                 {[
                   { value: "2+", label: "Internships" },
                   { value: "10+", label: "Projects" },
-                  { value: "3.12", label: "CGPA" },
+                  { value: "3.20", label: "CGPA" },
                 ].map((s, i) => (
                   <div
                     key={i}

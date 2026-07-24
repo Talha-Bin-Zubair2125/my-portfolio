@@ -169,114 +169,49 @@ function Projects() {
         </div>
 
         {/* Final Year Project */}
-        <motion.div
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="max-w-4xl mx-auto mb-20"
-        >
-          <div className="flex flex-col items-center justify-center gap-4 mb-10">
-            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center shadow-lg mb-2">
-              <Smartphone size={28} className="text-white" />
-            </div>
-            <div className="text-center">
-              <h2
-                style={{
-                  fontFamily: "'Playfair Display', serif",
-                  fontSize: "clamp(24px, 4vw, 34px)",
-                  fontWeight: 700,
-                  color: "#fff",
-                }}
-              >
-                Final Year Project
-              </h2>
-              <p
-                className="text-pink-400 mt-1"
-                style={{
-                  fontFamily: "'DM Sans', sans-serif",
-                  fontSize: "13px",
-                  letterSpacing: "0.1em",
-                }}
-              >
-                Unity • ARCore • Android
-              </p>
-            </div>
-          </div>
-          <motion.div whileHover={{ y: -5 }} className="relative group">
-            <div className="absolute inset-0 bg-gradient-to-br from-pink-500 to-purple-600 opacity-0 group-hover:opacity-10 rounded-2xl blur-2xl transition-opacity duration-500" />
-            <div
-              className="relative rounded-2xl border border-pink-500/20 group-hover:border-pink-400/40 transition-all p-8 md:p-10 overflow-hidden"
+        <ul className="space-y-4 max-w-3xl mx-auto">
+          {finalYearProject.achievements.map((a, idx) => (
+            <li
+              key={idx}
+              className="flex gap-3 text-gray-300 leading-relaxed"
               style={{
-                background:
-                  "linear-gradient(160deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%)",
-                backdropFilter: "blur(12px)",
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "14px",
               }}
             >
-              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-pink-400/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="flex flex-col items-center text-center mb-6">
-                <h3
-                  style={{
-                    fontFamily: "'Playfair Display', serif",
-                    fontSize: "clamp(18px, 3vw, 26px)",
-                    fontWeight: 700,
-                    color: "#fdf4ff",
-                    marginBottom: "16px",
-                  }}
-                >
-                  {finalYearProject.name}
-                </h3>
-                <div className="flex flex-wrap gap-2 justify-center mb-4">
-                  {finalYearProject.tags.map((tag, i) => (
-                    <span
-                      key={i}
-                      className="px-4 py-1.5 rounded-full text-white bg-pink-500"
-                      style={{
-                        fontFamily: "'DM Sans', sans-serif",
-                        fontSize: "12px",
-                        fontWeight: 600,
-                      }}
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <span
-                  className="px-5 py-2 text-center rounded-2xl text-white font-medium bg-gradient-to-r from-pink-500/20 to-purple-600/20 border border-pink-500/30 shadow-lg"
-                  style={{
-                    fontFamily: "'DM Sans', sans-serif",
-                    fontSize: "12px",
-                    letterSpacing: "0.05em",
-                  }}
-                >
-                  {finalYearProject.desc}
-                </span>
-              </div>
-              <ul className="space-y-4 max-w-3xl mx-auto">
-                {finalYearProject.achievements.map((a, idx) => (
-                  <li
-                    key={idx}
-                    className="flex gap-3 text-gray-300 leading-relaxed"
-                    style={{
-                      fontFamily: "'DM Sans', sans-serif",
-                      fontSize: "14px",
-                    }}
-                  >
-                    <span className="text-pink-400 mt-1 flex-shrink-0">▹</span>
-                    <span>{a}</span>
-                  </li>
-                ))}
-              </ul>
-              <motion.div
-                className="h-0.5 mt-8 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 max-w-2xl mx-auto"
-                initial={{ width: 0 }}
-                whileInView={{ width: "100%" }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                viewport={{ once: true }}
-              />
-            </div>
-          </motion.div>
-        </motion.div>
+              <span className="text-pink-400 mt-1 flex-shrink-0">▹</span>
+              <span>{a}</span>
+            </li>
+          ))}
+        </ul>
+
+        {/* Project Demonstration Button */}
+        {finalYearProject["Project Demonstration"] && (
+          <motion.a
+            href={finalYearProject["Project Demonstration"]}
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05, y: -3 }}
+            transition={{ duration: 0.3 }}
+            className="mt-8 mx-auto flex items-center gap-2 w-fit px-6 py-3 rounded-full text-white font-medium border border-pink-500/30 bg-gradient-to-r from-pink-500/20 to-purple-600/20 hover:border-pink-400 transition-all shadow-lg"
+            style={{
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: "13px",
+              letterSpacing: "0.05em",
+            }}
+          >
+            <ExternalLink size={16} />
+            Project Demonstration
+          </motion.a>
+        )}
+
+        <motion.div
+          className="h-0.5 mt-8 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 max-w-2xl mx-auto"
+          initial={{ width: 0 }}
+          whileInView={{ width: "100%" }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+        />
 
         {/* React Projects */}
         <ProjectCategory
