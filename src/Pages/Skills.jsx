@@ -19,6 +19,8 @@ import {
   FaCode,
   FaTools,
 } from "react-icons/fa";
+// Added Si icons for Data Science stack
+import { SiNumpy, SiPandas, SiScikitlearn } from "react-icons/si";
 import TypingText from "./TypingText";
 
 const PINK = "#ec4899";
@@ -57,6 +59,18 @@ function Skills() {
         { icon: <FaServer />, name: "Express.js", color: "#9CA3AF" },
         { icon: <FaDatabase />, name: "MySQL", color: "#4479A1" },
         { icon: <FaDatabase />, name: "MongoDB", color: "#47A248" },
+      ],
+    },
+    {
+      title: "AI & Machine Learning",
+      icon: "🤖",
+      gradient: "from-blue-500 to-indigo-600",
+      skills: [
+        { icon: <FaPython />, name: "Python", color: "#3776AB" },
+        { icon: <SiNumpy />, name: "NumPy", color: "#013243" },
+        { icon: <SiPandas />, name: "Pandas", color: "#150458" },
+        { icon: <SiScikitlearn />, name: "Scikit-Learn", color: "#F7931E" },
+        { icon: <FaBrain />, name: "Machine Learning", color: PINK },
       ],
     },
     {

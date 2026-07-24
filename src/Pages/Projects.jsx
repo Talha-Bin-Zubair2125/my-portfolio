@@ -205,8 +205,9 @@ function Projects() {
           </motion.a>
         )}
 
+        {/* Fix: Added mt-16 and mb-16 for proper spacing */}
         <motion.div
-          className="h-0.5 mt-8 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 max-w-2xl mx-auto"
+          className="h-0.5 mt-16 mb-16 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 max-w-2xl mx-auto"
           initial={{ width: 0 }}
           whileInView={{ width: "100%" }}
           transition={{ duration: 0.8, delay: 0.3 }}
@@ -287,7 +288,6 @@ function ProjectCategory({ title, subtitle, icon, projects, gradient, delay }) {
         </div>
       </div>
 
-      {/* Centralized Grid Wrapper using justify-center */}
       <div className="flex flex-wrap justify-center gap-5">
         {projects.map((project, i) => (
           <motion.a

@@ -23,7 +23,7 @@ function EducationalDetails() {
             2026
           </p>
           <p style={{ fontFamily: "'DM Sans', sans-serif", marginBottom: 12 }}>
-            <span style={{ color: PINK, fontWeight: 600 }}>CGPA:</span> 3.12 /
+            <span style={{ color: PINK, fontWeight: 600 }}>CGPA:</span> 3.20 /
             4.00
           </p>
           <p
