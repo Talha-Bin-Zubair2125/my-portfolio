@@ -372,6 +372,7 @@ function NavigationAndHero() {
           alignItems: "center",
           overflow: "hidden",
         }}
+        className="py-20 lg:py-0"
       >
         {/* ── Background ── */}
         <div
@@ -434,15 +435,8 @@ function NavigationAndHero() {
           style={{ y, opacity }}
           className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12"
         >
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: 64,
-              alignItems: "center",
-            }}
-            className="grid-cols-1 lg:grid-cols-2"
-          >
+          {/* Changed this div to completely rely on Tailwind classes for grid layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-16 items-center pt-24 lg:pt-0">
             {/* ── LEFT — Image ── */}
             <motion.div
               initial={{ opacity: 0, x: -60 }}
@@ -496,11 +490,14 @@ function NavigationAndHero() {
                   }}
                 />
 
-                {/* Image ring */}
+                {/* Image ring - made width responsive */}
                 <div className="img-ring">
                   <div
                     className="img-inner"
-                    style={{ width: 280, height: 280 }}
+                    style={{
+                      width: "clamp(220px, 60vw, 280px)",
+                      height: "clamp(220px, 60vw, 280px)",
+                    }}
                   >
                     <img
                       src={ProfileImage}
@@ -512,13 +509,12 @@ function NavigationAndHero() {
                         display: "block",
                       }}
                       onError={(e) => {
-                        // Fallback avatar if the image genuinely fails to load
                         e.target.style.display = "none";
                         e.target.parentNode.style.display = "flex";
                         e.target.parentNode.style.alignItems = "center";
                         e.target.parentNode.style.justifyContent = "center";
                         e.target.parentNode.style.background = `linear-gradient(135deg, #1e0b2e, #0e0618)`;
-                        e.target.parentNode.innerHTML = `<span style="font-family:'Playfair Display',serif;font-size:96px;font-weight:900;background:linear-gradient(135deg,#ec4899,#a855f7,#6366f1);-webkit-background-clip:text;-webkit-text-fill-color:transparent">T</span>`;
+                        e.target.parentNode.innerHTML = `<span style="font-family:'Playfair Display',serif;font-size:72px;font-weight:900;background:linear-gradient(135deg,#ec4899,#a855f7,#6366f1);-webkit-background-clip:text;-webkit-text-fill-color:transparent">T</span>`;
                       }}
                     />
                   </div>
@@ -657,7 +653,7 @@ function NavigationAndHero() {
                   fontFamily: "'Playfair Display', serif",
                   fontWeight: 900,
                   margin: 0,
-                  fontSize: "clamp(32px, 4.5vw, 58px)",
+                  fontSize: "clamp(32px, 8vw, 58px)", // Updated vw for better mobile scaling
                   lineHeight: 1.05,
                   letterSpacing: "-0.02em",
                 }}
@@ -695,7 +691,7 @@ function NavigationAndHero() {
                   style={{
                     fontFamily: "'DM Sans', sans-serif",
                     fontWeight: 600,
-                    fontSize: "clamp(16px, 2.2vw, 22px)",
+                    fontSize: "clamp(16px, 4vw, 22px)", // Increased vw
                     color: "#e879f9",
                     minHeight: "1.4em",
                   }}
@@ -731,12 +727,12 @@ function NavigationAndHero() {
                 .
               </motion.p>
 
-              {/* Stats row */}
+              {/* Stats row - Added flexWrap so it doesn't break on narrow devices */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.85, duration: 0.6 }}
-                style={{ display: "flex", gap: 24 }}
+                style={{ display: "flex", gap: 16, flexWrap: "wrap" }}
               >
                 {[
                   { value: "2+", label: "Internships" },
@@ -751,6 +747,8 @@ function NavigationAndHero() {
                       borderRadius: 12,
                       padding: "10px 18px",
                       textAlign: "center",
+                      flex: "1 1 auto", // Let items grow to fill space on mobile
+                      minWidth: "100px",
                     }}
                   >
                     <div
@@ -801,6 +799,8 @@ function NavigationAndHero() {
                     textDecoration: "none",
                     display: "inline-block",
                     boxShadow: `0 4px 24px ${PINK}40`,
+                    textAlign: "center",
+                    flex: "1 1 auto",
                   }}
                 >
                   View My Work →
@@ -821,6 +821,8 @@ function NavigationAndHero() {
                     textDecoration: "none",
                     display: "inline-block",
                     transition: "all 0.2s",
+                    textAlign: "center",
+                    flex: "1 1 auto",
                   }}
                 >
                   Get In Touch
@@ -830,10 +832,11 @@ function NavigationAndHero() {
           </div>
         </motion.div>
 
-        {/* Scroll indicator */}
+        {/* Scroll indicator - Hidden on mobile if space is too tight */}
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
+          className="hidden md:block"
           style={{
             position: "absolute",
             bottom: 32,
