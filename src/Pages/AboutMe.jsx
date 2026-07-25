@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import TypingText from "./TypingText";
-
 const PINK = "#ec4899";
 const PURPLE = "#a855f7";
 const INDIGO = "#6366f1";
@@ -141,7 +140,7 @@ function AboutMe() {
             zIndex: 1,
           }}
         >
-          {/* ── Header ── */}
+          {/*  Header  */}
           <div style={{ textAlign: "center", marginBottom: 56 }}>
             <motion.div
               initial={{ opacity: 0 }}
@@ -220,7 +219,7 @@ function AboutMe() {
             </motion.p>
           </div>
 
-          {/* ── Cards ── */}
+          {/*  Cards  */}
           <div
             style={{
               display: "grid",
@@ -362,7 +361,7 @@ function AboutMe() {
             ))}
           </div>
 
-          {/* ── CTA ── */}
+          {/*  CTA  */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
