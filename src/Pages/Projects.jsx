@@ -169,6 +169,9 @@ function Projects() {
         </div>
 
         {/* Final Year Project */}
+        <p className="text-center text-gray-400 mb-6">
+          {finalYearProject.name} - <span className="text-pink-400">{finalYearProject.desc}</span>
+        </p>
         <ul className="space-y-4 max-w-3xl mx-auto">
           {finalYearProject.achievements.map((a, idx) => (
             <li
@@ -180,7 +183,7 @@ function Projects() {
               }}
             >
               <span className="text-pink-400 mt-1 flex-shrink-0">▹</span>
-              <span>{a.name}</span>
+              <span>{a}</span>
             </li>
           ))}
         </ul>
