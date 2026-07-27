@@ -180,7 +180,7 @@ function Projects() {
               }}
             >
               <span className="text-pink-400 mt-1 flex-shrink-0">▹</span>
-              <span>{a}</span>
+              <span>{a.name}</span>
             </li>
           ))}
         </ul>
@@ -205,7 +205,7 @@ function Projects() {
           </motion.a>
         )}
 
-        {/* Fix: Added mt-16 and mb-16 for proper spacing */}
+        {/* Added mt-16 and mb-16 for proper spacing */}
         <motion.div
           className="h-0.5 mt-16 mb-16 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 max-w-2xl mx-auto"
           initial={{ width: 0 }}
