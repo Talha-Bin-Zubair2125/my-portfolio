@@ -39,7 +39,12 @@ function Projects() {
     },
   ];
 
-  const backendProjects = [
+  const FullStackProjects = [
+    {
+      name: "Nutro-Attend",
+      desc: "React.js, Node.js, Express.js, MongoDB, jsPDF, joi, Attendance Management",
+      link: "https://github.com/Talha-Bin-Zubair2125/FirmTrack",
+    },
     {
       name: "AI-Customer-Support-Ticket-System",
       desc: "React.js, Node.js, Express.js, MongoDB, Groq API, AI Integration",
@@ -234,12 +239,13 @@ function Projects() {
           className="my-16 h-px bg-gradient-to-r from-transparent via-pink-500/40 to-transparent max-w-4xl mx-auto"
         />
 
-        {/* Backend Projects */}
+
+        {/* Full Stack Projects */}
         <ProjectCategory
-          title="Backend Projects"
-          subtitle="Node.js + Express"
+          title="Full Stack Projects"
+          subtitle="React.js + Node.js + Express + MongoDB"
           icon={<Server size={28} />}
-          projects={backendProjects}
+          projects={FullStackProjects}
           gradient="from-purple-500 to-indigo-600"
           delay={0.2}
         />
