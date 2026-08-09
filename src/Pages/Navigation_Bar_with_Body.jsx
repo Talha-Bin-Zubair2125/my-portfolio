@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import ProfileImage from "../Images/Profile Image.png";
+import ProfileImage from "../Images/Profile_Image.png";
 
 //  Typing Effect 
 function useTypingEffect(words, typingSpeed = 80, deletingSpeed = 50, pauseTime = 1800) {

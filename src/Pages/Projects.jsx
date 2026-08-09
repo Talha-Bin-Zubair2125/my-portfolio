@@ -225,6 +225,7 @@ function Projects() {
         {/* React Projects */}
         <ProjectCategory
           title="React Projects"
+          subtitle="React.js"
           icon={<Code2 size={28} />}
           projects={reactProjects}
           gradient="from-pink-500 to-purple-600"
@@ -243,7 +244,7 @@ function Projects() {
         {/* Full Stack Projects */}
         <ProjectCategory
           title="Full Stack Projects"
-          subtitle="React.js + Node.js + Express + MongoDB"
+          subtitle="React.js + Node.js + Express.js + MongoDB + Cookie-Session + JWT + REST API + AI Integration"
           icon={<Server size={28} />}
           projects={FullStackProjects}
           gradient="from-purple-500 to-indigo-600"
