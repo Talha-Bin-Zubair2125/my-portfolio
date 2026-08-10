@@ -89,7 +89,7 @@ export default function NavigationAndHero() {
     return () => window.removeEventListener("scroll", fn);
   }, []);
 
-  const navItems = ["Home","About","Goal","Projects","Skills","Certifications","Experience","Contact","Awards & Achievements"];
+  const navItems = ["Home","About","Goal","Projects","Skills","Certifications","Experience","Contact","Awards"];
 
   const PINK   = "#ec4899";
   const PURPLE = "#a855f7";
