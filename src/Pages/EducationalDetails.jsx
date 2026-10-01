@@ -16,43 +16,23 @@ function EducationalDetails() {
       abbr: "NUML",
       subtitle: "BSc — Computer Science",
       details: (
-        <>
-          <p
-            style={{
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              marginBottom: 4,
-            }}
-          >
-            <span style={{ color: PINK, fontWeight: 700 }}>Graduated:</span>{" "}
-            2026
-          </p>
-          <p
-            style={{
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              marginBottom: 12,
-            }}
-          >
-            <span style={{ color: PINK, fontWeight: 700 }}>CGPA:</span> 3.20 /
-            4.00
-          </p>
-          <p
-            style={{
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              fontSize: 14,
-              color: "#9ca3af",
-              lineHeight: 1.7,
-            }}
-          >
-            Focus on Full Stack Development (MERN), Data Structures, and
-            Software Engineering principles. Built several practical web
-            applications as part of coursework and personal projects.
-          </p>
-        </>
+        <p
+          style={{
+            fontFamily: "'Plus Jakarta Sans', sans-serif",
+            fontSize: 14,
+            color: "#9ca3af",
+            margin: 0,
+            lineHeight: 1.6,
+          }}
+        >
+          <span style={{ color: PINK, fontWeight: 700 }}>Graduated:</span> 2026
+          | <span style={{ color: PINK, fontWeight: 700 }}>CGPA:</span> 3.20 /
+          4.00 | Focus on Full Stack Development (MERN), Data Structures, and
+          Software Engineering principles.
+        </p>
       ),
-      icon: <FaUniversity size={34} />,
+      icon: <FaUniversity size={28} />,
       accent: PINK,
-      glowColor: PINK,
-      borderGrad: `linear-gradient(135deg, ${PINK}, ${PURPLE})`,
       year: "2022 – 2026",
     },
     {
@@ -60,33 +40,22 @@ function EducationalDetails() {
       abbr: null,
       subtitle: "Intermediate (ICS)",
       details: (
-        <>
-          <p
-            style={{
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              marginBottom: 12,
-            }}
-          >
-            <span style={{ color: PURPLE, fontWeight: 700 }}>Marks:</span> 910 /
-            1100
-          </p>
-          <p
-            style={{
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              fontSize: 14,
-              color: "#9ca3af",
-              lineHeight: 1.7,
-            }}
-          >
-            Developed strong fundamentals in computing and mathematics, building
-            a solid base for software and web development.
-          </p>
-        </>
+        <p
+          style={{
+            fontFamily: "'Plus Jakarta Sans', sans-serif",
+            fontSize: 14,
+            color: "#9ca3af",
+            margin: 0,
+            lineHeight: 1.6,
+          }}
+        >
+          <span style={{ color: PURPLE, fontWeight: 700 }}>Marks:</span> 910 /
+          1100 | Developed strong fundamentals in computing, mathematics, and
+          software development.
+        </p>
       ),
-      icon: <FaGraduationCap size={34} />,
+      icon: <FaGraduationCap size={28} />,
       accent: PURPLE,
-      glowColor: PURPLE,
-      borderGrad: `linear-gradient(135deg, ${PURPLE}, ${INDIGO})`,
       year: "2019 – 2021",
     },
     {
@@ -94,33 +63,22 @@ function EducationalDetails() {
       abbr: null,
       subtitle: "Matriculation (Pre-Medical)",
       details: (
-        <>
-          <p
-            style={{
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              marginBottom: 12,
-            }}
-          >
-            <span style={{ color: INDIGO, fontWeight: 700 }}>Marks:</span> 810 /
-            1100
-          </p>
-          <p
-            style={{
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              fontSize: 14,
-              color: "#9ca3af",
-              lineHeight: 1.7,
-            }}
-          >
-            Early academic background in sciences which later transitioned into
-            technology and programming interests.
-          </p>
-        </>
+        <p
+          style={{
+            fontFamily: "'Plus Jakarta Sans', sans-serif",
+            fontSize: 14,
+            color: "#9ca3af",
+            margin: 0,
+            lineHeight: 1.6,
+          }}
+        >
+          <span style={{ color: INDIGO, fontWeight: 700 }}>Marks:</span> 810 /
+          1100 | Early academic foundation in sciences transitioning into
+          technology and programming interests.
+        </p>
       ),
-      icon: <FaSchool size={34} />,
+      icon: <FaSchool size={28} />,
       accent: INDIGO,
-      glowColor: INDIGO,
-      borderGrad: `linear-gradient(135deg, ${INDIGO}, ${PINK})`,
       year: "2017 – 2019",
     },
   ];
@@ -263,11 +221,11 @@ function EducationalDetails() {
 
         <div
           style={{
-            maxWidth: 1100,
+            maxWidth: 850,
             margin: "0 auto",
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: 24,
+            display: "flex",
+            flexDirection: "column",
+            gap: 20,
           }}
         >
           {items.map((item, idx) => (
@@ -277,16 +235,16 @@ function EducationalDetails() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: idx * 0.15 }}
               viewport={{ once: true }}
-              whileHover={{ y: -8 }}
+              whileHover={{ y: -4, scale: 1.01 }}
               style={{ position: "relative" }}
             >
               <div
                 style={{
                   position: "absolute",
                   inset: 0,
-                  background: `radial-gradient(circle at 50% 30%, ${item.glowColor}22, transparent 65%)`,
+                  background: `radial-gradient(circle at 30% 50%, ${item.accent}22, transparent 70%)`,
                   borderRadius: 16,
-                  filter: "blur(24px)",
+                  filter: "blur(20px)",
                   pointerEvents: "none",
                 }}
               />
@@ -294,15 +252,16 @@ function EducationalDetails() {
               <div
                 style={{
                   position: "relative",
-                  height: "100%",
                   borderRadius: 16,
                   border: `1px solid rgba(236,72,153,0.15)`,
                   background:
                     "linear-gradient(160deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%)",
                   backdropFilter: "blur(16px)",
-                  padding: 32,
+                  padding: "24px 32px",
                   display: "flex",
-                  flexDirection: "column",
+                  alignItems: "center",
+                  gap: 24,
+                  flexWrap: "wrap",
                   overflow: "hidden",
                   transition: "border-color 0.3s",
                 }}
@@ -327,14 +286,14 @@ function EducationalDetails() {
                 <motion.div
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   style={{
-                    width: 64,
-                    height: 64,
-                    borderRadius: 16,
+                    width: 56,
+                    height: 56,
+                    borderRadius: 14,
                     background: `linear-gradient(135deg, ${item.accent}, ${INDIGO})`,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    margin: "0 auto 20px",
+                    flexShrink: 0,
                     animation: "iconPulseGlow 3s ease-in-out infinite",
                     willChange: "transform",
                   }}
@@ -342,83 +301,61 @@ function EducationalDetails() {
                   <div style={{ color: "#fff" }}>{item.icon}</div>
                 </motion.div>
 
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    marginBottom: 20,
-                  }}
-                >
-                  <span
+                <div style={{ flex: 1, minWidth: "260px" }}>
+                  <div
                     style={{
-                      fontFamily: "'Plus Jakarta Sans', sans-serif",
-                      fontSize: 11,
-                      fontWeight: 700,
-                      letterSpacing: "0.1em",
-                      color: "#fff",
-                      background: `linear-gradient(135deg, ${item.accent}, ${INDIGO})`,
-                      borderRadius: 50,
-                      padding: "5px 18px",
-                      boxShadow: `0 4px 12px ${item.accent}40`,
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "baseline",
+                      flexWrap: "wrap",
+                      gap: 8,
+                      marginBottom: 4,
                     }}
                   >
-                    {item.year}
-                  </span>
+                    <h3
+                      style={{
+                        fontFamily: "'Plus Jakarta Sans', sans-serif",
+                        fontSize: 18,
+                        fontWeight: 700,
+                        color: "#f9fafb",
+                        margin: 0,
+                      }}
+                    >
+                      {item.title}
+                    </h3>
+                    <span
+                      style={{
+                        fontFamily: "'Plus Jakarta Sans', sans-serif",
+                        fontSize: 11,
+                        fontWeight: 700,
+                        letterSpacing: "0.1em",
+                        color: "#fff",
+                        background: `linear-gradient(135deg, ${item.accent}, ${INDIGO})`,
+                        borderRadius: 50,
+                        padding: "4px 14px",
+                        boxShadow: `0 4px 12px ${item.accent}40`,
+                      }}
+                    >
+                      {item.year}
+                    </span>
+                  </div>
+
+                  <p
+                    style={{
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                      fontSize: 12,
+                      fontWeight: 700,
+                      letterSpacing: "0.08em",
+                      color: item.accent,
+                      margin: "0 0 8px 0",
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    {item.subtitle}
+                  </p>
+
+                  {item.details}
                 </div>
-
-                <div
-                  style={{
-                    width: 32,
-                    height: 2,
-                    borderRadius: 2,
-                    margin: "0 auto 16px",
-                    background: `linear-gradient(90deg, ${item.accent}, ${INDIGO})`,
-                  }}
-                />
-
-                <h3
-                  style={{
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    fontSize: 18,
-                    fontWeight: 700,
-                    color: "#f9fafb",
-                    textAlign: "center",
-                    marginBottom: 6,
-                    lineHeight: 1.35,
-                  }}
-                >
-                  {item.title}
-                </h3>
-
-                <p
-                  style={{
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    fontSize: 11,
-                    fontWeight: 700,
-                    letterSpacing: "0.1em",
-                    color: item.accent,
-                    textAlign: "center",
-                    marginBottom: 20,
-                    textTransform: "uppercase",
-                  }}
-                >
-                  {item.subtitle}
-                </p>
-
-                <div style={{ flex: 1 }}>{item.details}</div>
-
-                <motion.div
-                  style={{
-                    height: 1.5,
-                    marginTop: 24,
-                    borderRadius: 2,
-                    background: `linear-gradient(90deg, ${item.accent}, ${INDIGO})`,
-                  }}
-                  initial={{ scaleX: 0, originX: 0 }}
-                  whileInView={{ scaleX: 1 }}
-                  transition={{ duration: 0.8, delay: idx * 0.15 + 0.3 }}
-                  viewport={{ once: true }}
-                />
               </div>
             </motion.article>
           ))}
