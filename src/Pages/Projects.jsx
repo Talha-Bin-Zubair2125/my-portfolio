@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, Code2, Server, Smartphone } from "lucide-react";
-import TypingText from "./TypingText";
+import { ExternalLink, Code2, Server } from "lucide-react";
 
 const PINK = "#ec4899";
 const PURPLE = "#a855f7";
@@ -90,7 +89,7 @@ function Projects() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
         @keyframes neonFlickerP {
           0%, 100% { filter: drop-shadow(0 0 18px ${PINK}55) drop-shadow(0 0 30px ${PURPLE}33); }
           50% { filter: drop-shadow(0 0 8px ${PINK}30) drop-shadow(0 0 14px ${PURPLE}22); }
@@ -104,7 +103,6 @@ function Projects() {
             "radial-gradient(ellipse 80% 50% at 50% 0%, #1a0826 0%, #080612 60%)",
         }}
       >
-        {/* Header */}
         <div className="text-center mb-16 max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -117,9 +115,9 @@ function Projects() {
             <span
               className="text-pink-400"
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
                 fontSize: "11px",
-                fontWeight: 600,
+                fontWeight: 700,
                 letterSpacing: "0.3em",
                 textTransform: "uppercase",
               }}
@@ -130,14 +128,14 @@ function Projects() {
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
             style={{
-              fontFamily: "'Playfair Display', serif",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontSize: "clamp(42px, 7vw, 72px)",
-              fontWeight: 900,
+              fontWeight: 800,
               lineHeight: 1.05,
               letterSpacing: "-0.02em",
               background: `linear-gradient(135deg, ${PINK}, ${PURPLE}, ${INDIGO})`,
@@ -155,27 +153,23 @@ function Projects() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="mt-3 text-sm text-white/40"
+            className="mt-3 text-sm text-white/60 font-medium"
             style={{
-              fontFamily: "'DM Sans', sans-serif",
-              fontWeight: 300,
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
               minHeight: 20,
             }}
           >
-            <TypingText
-              phrases={[
-                "Building real-world applications with modern technologies.",
-                "React, Node.js, Express, MongoDB & AI integrations.",
-              ]}
-              color="rgba(255,255,255,0.4)"
-              cursorColor={PINK}
-            />
+            Building real-world applications with modern technologies like
+            React, Node.js, Express, MongoDB & AI integrations.
           </motion.p>
         </div>
 
-        {/* Final Year Project */}
-        <p className="text-center text-gray-400 mb-6">
-          {finalYearProject.name} - <span className="text-pink-400">{finalYearProject.desc}</span>
+        <p
+          className="text-center text-gray-300 mb-6 font-semibold text-lg"
+          style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+        >
+          {finalYearProject.name} -{" "}
+          <span className="text-pink-400">{finalYearProject.desc}</span>
         </p>
         <ul className="space-y-4 max-w-3xl mx-auto">
           {finalYearProject.achievements.map((a, idx) => (
@@ -183,7 +177,7 @@ function Projects() {
               key={idx}
               className="flex gap-3 text-gray-300 leading-relaxed"
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
                 fontSize: "14px",
               }}
             >
@@ -193,7 +187,6 @@ function Projects() {
           ))}
         </ul>
 
-        {/* Project Demonstration Button */}
         {finalYearProject["Project Demonstration"] && (
           <motion.a
             href={finalYearProject["Project Demonstration"]}
@@ -203,7 +196,7 @@ function Projects() {
             transition={{ duration: 0.3 }}
             className="mt-8 mx-auto flex items-center gap-2 w-fit px-6 py-3 rounded-full text-white font-medium border border-pink-500/30 bg-gradient-to-r from-pink-500/20 to-purple-600/20 hover:border-pink-400 transition-all shadow-lg"
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontSize: "13px",
               letterSpacing: "0.05em",
             }}
@@ -213,7 +206,6 @@ function Projects() {
           </motion.a>
         )}
 
-        {/* Added mt-16 and mb-16 for proper spacing */}
         <motion.div
           className="h-0.5 mt-16 mb-16 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 max-w-2xl mx-auto"
           initial={{ width: 0 }}
@@ -222,7 +214,6 @@ function Projects() {
           viewport={{ once: true }}
         />
 
-        {/* React Projects */}
         <ProjectCategory
           title="React Projects"
           subtitle="React.js"
@@ -240,8 +231,6 @@ function Projects() {
           className="my-16 h-px bg-gradient-to-r from-transparent via-pink-500/40 to-transparent max-w-4xl mx-auto"
         />
 
-
-        {/* Full Stack Projects */}
         <ProjectCategory
           title="Full Stack Projects"
           subtitle="React.js + Node.js + Express.js + MongoDB + Cookie-Session + JWT + REST API + AI Integration"
@@ -258,7 +247,7 @@ function Projects() {
 function ProjectCategory({ title, subtitle, icon, projects, gradient, delay }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 80 }}
+      initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay }}
       viewport={{ once: true }}
@@ -269,15 +258,16 @@ function ProjectCategory({ title, subtitle, icon, projects, gradient, delay }) {
           whileHover={{ rotate: 360 }}
           transition={{ duration: 0.6 }}
           className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center shadow-lg mb-2`}
+          style={{ willChange: "transform" }}
         >
           <div className="text-white">{icon}</div>
         </motion.div>
         <div className="text-center">
           <h2
             style={{
-              fontFamily: "'Playfair Display', serif",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontSize: "clamp(22px, 4vw, 32px)",
-              fontWeight: 700,
+              fontWeight: 800,
               color: "#fff",
             }}
           >
@@ -285,11 +275,11 @@ function ProjectCategory({ title, subtitle, icon, projects, gradient, delay }) {
           </h2>
           {subtitle && (
             <p
-              className="text-pink-400 mt-1"
+              className="text-pink-400 mt-1 font-medium"
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
                 fontSize: "13px",
-                letterSpacing: "0.1em",
+                letterSpacing: "0.05em",
               }}
             >
               {subtitle}
@@ -305,11 +295,11 @@ function ProjectCategory({ title, subtitle, icon, projects, gradient, delay }) {
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: i * 0.06 }}
             viewport={{ once: true }}
-            whileHover={{ y: -8, scale: 1.02 }}
+            whileHover={{ y: -6, scale: 1.01 }}
             className="group relative w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)] xl:w-[calc(25%-15px)] max-w-sm"
           >
             <div
@@ -327,7 +317,7 @@ function ProjectCategory({ title, subtitle, icon, projects, gradient, delay }) {
               <h3
                 className="text-white mb-2 group-hover:text-pink-400 transition-colors text-center sm:text-left"
                 style={{
-                  fontFamily: "'Playfair Display', serif",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
                   fontSize: "16px",
                   fontWeight: 700,
                 }}
@@ -336,13 +326,11 @@ function ProjectCategory({ title, subtitle, icon, projects, gradient, delay }) {
               </h3>
               <div className="flex justify-center sm:justify-start">
                 <span
-                  className="inline-block text-white mb-4 w-fit rounded-xl bg-pink-500/10 border border-pink-500/20"
+                  className="inline-block text-white mb-4 w-fit rounded-xl bg-pink-500/10 border border-pink-500/20 font-medium"
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
                     fontSize: "11px",
-                    fontWeight: 500,
                     padding: "4px 12px",
-                    tracking: "wide",
                   }}
                 >
                   {project.desc}
@@ -351,9 +339,9 @@ function ProjectCategory({ title, subtitle, icon, projects, gradient, delay }) {
               <div className="mt-auto flex items-center justify-center sm:justify-start gap-2 text-gray-400 group-hover:text-pink-400 transition-colors">
                 <span
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
                     fontSize: "12px",
-                    fontWeight: 500,
+                    fontWeight: 600,
                   }}
                 >
                   View on GitHub

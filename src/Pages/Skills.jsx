@@ -20,18 +20,17 @@ import {
   FaTools,
   FaHandshake,
 } from "react-icons/fa";
-import { 
-  SiCplusplus, 
-  SiExpress, 
-  SiMysql, 
-  SiMongodb, 
-  SiNumpy, 
-  SiPandas, 
-  SiScikitlearn, 
-  SiGit,  
+import {
+  SiCplusplus,
+  SiExpress,
+  SiMysql,
+  SiMongodb,
+  SiNumpy,
+  SiPandas,
+  SiScikitlearn,
+  SiGit,
 } from "react-icons/si";
 import { BiLogoVisualStudio } from "react-icons/bi";
-import TypingText from "./TypingText";
 
 const PINK = "#ec4899";
 const PURPLE = "#a855f7";
@@ -44,9 +43,24 @@ function Skills() {
       icon: <FaCode />,
       gradient: "from-pink-500 to-fuchsia-600",
       skills: [
-        { icon: <SiCplusplus />, name: "C++", color: "#00599C", },
-        { icon: <FaJava />, name: "Java", color: "#007396", },
-        { icon: <FaPython />, name: "Python", color: "#3776AB", },
+        {
+          icon: <SiCplusplus />,
+          name: "C++",
+          color: "#00599C",
+          level: "Advanced",
+        },
+        {
+          icon: <FaJava />,
+          name: "Java",
+          color: "#007396",
+          level: "Intermediate",
+        },
+        {
+          icon: <FaPython />,
+          name: "Python",
+          color: "#3776AB",
+          level: "Advanced",
+        },
       ],
     },
     {
@@ -54,10 +68,25 @@ function Skills() {
       icon: <FaLaptopCode />,
       gradient: "from-fuchsia-500 to-purple-600",
       skills: [
-        { icon: <FaHtml5 />, name: "HTML5", color: "#E34F26",  },
-        { icon: <FaCss3Alt />, name: "CSS3", color: "#1572B6", },
-        { icon: <FaJsSquare />, name: "JavaScript", color: "#F7DF1E", },
-        { icon: <FaReact />, name: "React.js", color: "#61DAFB", },
+        { icon: <FaHtml5 />, name: "HTML5", color: "#E34F26", level: "Expert" },
+        {
+          icon: <FaCss3Alt />,
+          name: "CSS3",
+          color: "#1572B6",
+          level: "Expert",
+        },
+        {
+          icon: <FaJsSquare />,
+          name: "JavaScript",
+          color: "#F7DF1E",
+          level: "Advanced",
+        },
+        {
+          icon: <FaReact />,
+          name: "React.js",
+          color: "#61DAFB",
+          level: "Advanced",
+        },
       ],
     },
     {
@@ -65,10 +94,30 @@ function Skills() {
       icon: <FaServer />,
       gradient: "from-purple-500 to-violet-600",
       skills: [
-        { icon: <FaNode />, name: "Node.js", color: "#339933", },
-        { icon: <SiExpress />, name: "Express.js", color: "#9CA3AF", },
-        { icon: <SiMysql />, name: "MySQL", color: "#4479A1", },
-        { icon: <SiMongodb />, name: "MongoDB", color: "#47A248", },
+        {
+          icon: <FaNode />,
+          name: "Node.js",
+          color: "#339933",
+          level: "Advanced",
+        },
+        {
+          icon: <SiExpress />,
+          name: "Express.js",
+          color: "#9CA3AF",
+          level: "Advanced",
+        },
+        {
+          icon: <SiMysql />,
+          name: "MySQL",
+          color: "#4479A1",
+          level: "Intermediate",
+        },
+        {
+          icon: <SiMongodb />,
+          name: "MongoDB",
+          color: "#47A248",
+          level: "Advanced",
+        },
       ],
     },
     {
@@ -76,10 +125,30 @@ function Skills() {
       icon: <FaRobot />,
       gradient: "from-blue-500 to-indigo-600",
       skills: [
-        { icon: <SiNumpy />, name: "NumPy", color: "#013243", },
-        { icon: <SiPandas />, name: "Pandas", color: "#150458", },
-        { icon: <SiScikitlearn />, name: "Scikit-Learn", color: "#F7931E", },
-        { icon: <FaBrain />, name: "Machine Learning Concepts", color: PINK, },
+        {
+          icon: <SiNumpy />,
+          name: "NumPy",
+          color: "#013243",
+          level: "Intermediate",
+        },
+        {
+          icon: <SiPandas />,
+          name: "Pandas",
+          color: "#150458",
+          level: "Intermediate",
+        },
+        {
+          icon: <SiScikitlearn />,
+          name: "Scikit-Learn",
+          color: "#F7931E",
+          level: "Intermediate",
+        },
+        {
+          icon: <FaBrain />,
+          name: "Machine Learning Concepts",
+          color: PINK,
+          level: "Advanced",
+        },
       ],
     },
     {
@@ -87,9 +156,19 @@ function Skills() {
       icon: <FaTools />,
       gradient: "from-violet-500 to-indigo-600",
       skills: [
-        { icon: <SiGit />, name: "Git", color: "#F05032", },
-        { icon: <FaGithub />, name: "GitHub", color: "#9CA3AF", },
-        { icon: <BiLogoVisualStudio />, name: "VS Code", color: "#007ACC", },
+        { icon: <SiGit />, name: "Git", color: "#F05032", level: "Advanced" },
+        {
+          icon: <FaGithub />,
+          name: "GitHub",
+          color: "#9CA3AF",
+          level: "Advanced",
+        },
+        {
+          icon: <BiLogoVisualStudio />,
+          name: "VS Code",
+          color: "#007ACC",
+          level: "Expert",
+        },
       ],
     },
     {
@@ -97,10 +176,30 @@ function Skills() {
       icon: <FaHandshake />,
       gradient: "from-indigo-500 to-pink-600",
       skills: [
-        { icon: <FaUsers />, name: "Team Collaboration", color: PINK },
-        { icon: <FaBrain />, name: "Problem Solving", color: PURPLE },
-        { icon: <FaLightbulb />, name: "Continuous Learning", color: "#d946ef" },
-        { icon: <FaClock />, name: "Time Management", color: INDIGO },
+        {
+          icon: <FaUsers />,
+          name: "Team Collaboration",
+          color: PINK,
+          level: "Professional",
+        },
+        {
+          icon: <FaBrain />,
+          name: "Problem Solving",
+          color: PURPLE,
+          level: "Professional",
+        },
+        {
+          icon: <FaLightbulb />,
+          name: "Continuous Learning",
+          color: "#d946ef",
+          level: "Professional",
+        },
+        {
+          icon: <FaClock />,
+          name: "Time Management",
+          color: INDIGO,
+          level: "Professional",
+        },
       ],
     },
   ];
@@ -108,7 +207,7 @@ function Skills() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
         @keyframes neonFlickerS {
           0%, 100% { filter: drop-shadow(0 0 18px ${PINK}55) drop-shadow(0 0 30px ${PURPLE}33); }
           50% { filter: drop-shadow(0 0 8px ${PINK}30) drop-shadow(0 0 14px ${PURPLE}22); }
@@ -122,7 +221,6 @@ function Skills() {
             "radial-gradient(ellipse 80% 50% at 50% 0%, #1a0826 0%, #080612 60%)",
         }}
       >
-        {/* Header */}
         <div className="text-center mb-16 max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -135,9 +233,9 @@ function Skills() {
             <span
               className="text-pink-400"
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
                 fontSize: "11px",
-                fontWeight: 600,
+                fontWeight: 700,
                 letterSpacing: "0.3em",
                 textTransform: "uppercase",
               }}
@@ -148,14 +246,14 @@ function Skills() {
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
             style={{
-              fontFamily: "'Playfair Display', serif",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontSize: "clamp(36px, 6vw, 72px)",
-              fontWeight: 900,
+              fontWeight: 800,
               lineHeight: 1.1,
               letterSpacing: "-0.02em",
               background: `linear-gradient(135deg, ${PINK}, ${PURPLE}, ${INDIGO})`,
@@ -173,30 +271,22 @@ function Skills() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="mt-3 text-sm text-white/40 px-4"
+            className="mt-3 text-sm text-white/60 px-4 font-medium"
             style={{
-              fontFamily: "'DM Sans', sans-serif",
-              fontWeight: 300,
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
               minHeight: 24,
             }}
           >
-            <TypingText
-              phrases={[
-                "A blend of technical expertise and soft skills.",
-                "Fueling my journey as a Full-Stack & AI Developer.",
-              ]}
-              color="rgba(255,255,255,0.4)"
-              cursorColor={PINK}
-            />
+            A blend of technical expertise and professional soft skills fueling
+            my journey as a Full-Stack & AI Developer.
           </motion.p>
         </div>
 
-        {/* Categories as Clean Stacked Tables */}
         <div className="max-w-3xl mx-auto space-y-12">
           {skillCategories.map((category, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
               viewport={{ once: true }}
@@ -206,7 +296,6 @@ function Skills() {
                   "linear-gradient(160deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%)",
               }}
             >
-              {/* Category header */}
               <div className="flex items-center gap-4 mb-6">
                 <div
                   className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.gradient} flex items-center justify-center shadow-lg text-xl text-white shrink-0`}
@@ -215,7 +304,7 @@ function Skills() {
                 </div>
                 <h2
                   style={{
-                    fontFamily: "'Playfair Display', serif",
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
                     fontSize: "20px",
                     fontWeight: 700,
                   }}
@@ -225,7 +314,6 @@ function Skills() {
                 </h2>
               </div>
 
-              {/* Skills One Per Line */}
               <div className="flex flex-col gap-3">
                 {category.skills.map((skill, index) => (
                   <motion.div
@@ -248,7 +336,7 @@ function Skills() {
                       <span
                         className="text-white group-hover:text-pink-300 transition-colors"
                         style={{
-                          fontFamily: "'DM Sans', sans-serif",
+                          fontFamily: "'Plus Jakarta Sans', sans-serif",
                           fontSize: "14px",
                           fontWeight: 600,
                           letterSpacing: "0.02em",
@@ -261,7 +349,7 @@ function Skills() {
                     <span
                       className="text-xs px-3 py-1 rounded-full border border-pink-500/20 text-pink-300/80 shrink-0"
                       style={{
-                        fontFamily: "'DM Sans', sans-serif",
+                        fontFamily: "'Plus Jakarta Sans', sans-serif",
                         background: "rgba(236, 72, 153, 0.05)",
                       }}
                     >
@@ -274,9 +362,8 @@ function Skills() {
           ))}
         </div>
 
-        {/* CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
@@ -291,7 +378,7 @@ function Skills() {
             whileTap={{ scale: 0.95 }}
             className="inline-block bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-3.5 rounded-full shadow-lg shadow-pink-500/30 transition-all"
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontWeight: 700,
               fontSize: "15px",
             }}

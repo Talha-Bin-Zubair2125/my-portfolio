@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import TypingText from "./TypingText";
+
 const PINK = "#ec4899";
 const PURPLE = "#a855f7";
 const INDIGO = "#6366f1";
@@ -47,7 +47,7 @@ function AboutMe() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
         @keyframes neonFlicker {
           0%, 100% { filter: drop-shadow(0 0 18px ${PINK}55) drop-shadow(0 0 34px ${PURPLE}33); }
@@ -76,7 +76,6 @@ function AboutMe() {
           overflow: "hidden",
         }}
       >
-        {/* Background orbs */}
         <motion.div
           animate={{ scale: [1, 1.2, 1], x: [0, 20, 0] }}
           transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
@@ -90,6 +89,7 @@ function AboutMe() {
             borderRadius: "50%",
             filter: "blur(50px)",
             pointerEvents: "none",
+            willChange: "transform",
           }}
         />
         <motion.div
@@ -105,10 +105,10 @@ function AboutMe() {
             borderRadius: "50%",
             filter: "blur(50px)",
             pointerEvents: "none",
+            willChange: "transform",
           }}
         />
 
-        {/* Floating ambient particles */}
         {[...Array(10)].map((_, i) => (
           <span
             key={i}
@@ -129,7 +129,7 @@ function AboutMe() {
         ))}
 
         <motion.div
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
@@ -140,7 +140,6 @@ function AboutMe() {
             zIndex: 1,
           }}
         >
-          {/*  Header  */}
           <div style={{ textAlign: "center", marginBottom: 56 }}>
             <motion.div
               initial={{ opacity: 0 }}
@@ -158,7 +157,7 @@ function AboutMe() {
               <span style={{ width: 40, height: 1, background: GRAD }} />
               <span
                 style={{
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
                   fontSize: 11,
                   fontWeight: 700,
                   letterSpacing: "0.3em",
@@ -172,13 +171,13 @@ function AboutMe() {
             </motion.div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
               style={{
-                fontFamily: "'Playfair Display', serif",
-                fontWeight: 900,
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontWeight: 800,
                 fontSize: "clamp(42px, 7vw, 72px)",
                 lineHeight: 1.05,
                 letterSpacing: "-0.02em",
@@ -198,28 +197,19 @@ function AboutMe() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
               style={{
-                fontFamily: "'DM Sans', sans-serif",
-                fontWeight: 300,
-                fontSize: 14,
-                color: "rgba(255,255,255,0.5)",
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontWeight: 500,
+                fontSize: 15,
+                color: "rgba(255,255,255,0.65)",
                 marginTop: 12,
                 minHeight: 20,
               }}
             >
-              <TypingText
-                phrases={[
-                  "Passionate developer.",
-                  "Creative thinker.",
-                  "Lifelong learner.",
-                  "MERN stack builder.",
-                ]}
-                color="rgba(255,255,255,0.55)"
-                cursorColor={PINK}
-              />
+              Passionate developer and MERN stack builder turning ideas into
+              reality.
             </motion.p>
           </div>
 
-          {/*  Cards  */}
           <div
             style={{
               display: "grid",
@@ -230,15 +220,14 @@ function AboutMe() {
             {cards.map((card, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, x: i === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: i * 0.2 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -8 }}
+                whileHover={{ y: -6 }}
                 style={{ position: "relative" }}
                 className="group"
               >
-                {/* Glow */}
                 <div
                   style={{
                     position: "absolute",
@@ -248,6 +237,7 @@ function AboutMe() {
                     filter: "blur(20px)",
                     opacity: 0,
                     transition: "opacity 0.4s",
+                    pointerEvents: "none",
                   }}
                   onMouseEnter={(e) => (e.currentTarget.style.opacity = 1)}
                   onMouseLeave={(e) => (e.currentTarget.style.opacity = 0)}
@@ -274,7 +264,6 @@ function AboutMe() {
                       "rgba(236,72,153,0.15)")
                   }
                 >
-                  {/* Top shimmer */}
                   <div
                     style={{
                       position: "absolute",
@@ -290,10 +279,9 @@ function AboutMe() {
                     onMouseLeave={(e) => (e.currentTarget.style.opacity = 0)}
                   />
 
-                  {/* Label */}
                   <p
                     style={{
-                      fontFamily: "'DM Sans', sans-serif",
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
                       fontSize: 10,
                       fontWeight: 700,
                       letterSpacing: "0.2em",
@@ -305,10 +293,9 @@ function AboutMe() {
                     {card.label}
                   </p>
 
-                  {/* Title */}
                   <h3
                     style={{
-                      fontFamily: "'Playfair Display', serif",
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
                       fontSize: 22,
                       fontWeight: 700,
                       color: "#f9fafb",
@@ -319,7 +306,6 @@ function AboutMe() {
                     {card.title}
                   </h3>
 
-                  {/* Accent bar */}
                   <div
                     style={{
                       width: 32,
@@ -330,10 +316,9 @@ function AboutMe() {
                     }}
                   />
 
-                  {/* Body */}
                   <p
                     style={{
-                      fontFamily: "'DM Sans', sans-serif",
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
                       fontSize: 15,
                       fontWeight: 400,
                       color: "#9ca3af",
@@ -343,7 +328,6 @@ function AboutMe() {
                     {card.content}
                   </p>
 
-                  {/* Bottom bar */}
                   <motion.div
                     style={{
                       height: 1.5,
@@ -361,9 +345,8 @@ function AboutMe() {
             ))}
           </div>
 
-          {/*  CTA  */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
             viewport={{ once: true }}
@@ -381,7 +364,7 @@ function AboutMe() {
                 color: "#fff",
                 padding: "14px 40px",
                 borderRadius: 50,
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
                 fontWeight: 700,
                 fontSize: 16,
                 textDecoration: "none",

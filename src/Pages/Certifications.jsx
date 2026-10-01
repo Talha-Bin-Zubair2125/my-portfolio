@@ -8,7 +8,6 @@ import CodeCelixCertificate from "../Images/CodeCelix Internship Certificate.jpg
 import ArchTechCertificate from "../Images/Arch Technologies Internship Certificate.jpg";
 import NavttcCertificate from "../Images/Navttc_Certificate.jpg";
 import PFTPLogo from "../Images/PFTP Logo.webp";
-import TypingText from "./TypingText";
 
 const PINK = "#ec4899";
 const PURPLE = "#a855f7";
@@ -66,7 +65,7 @@ function Certifications() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
         @keyframes pulseDot { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
         @keyframes neonFlickerC {
           0%, 100% { filter: drop-shadow(0 0 18px ${PINK}55) drop-shadow(0 0 30px ${PURPLE}33); }
@@ -81,7 +80,6 @@ function Certifications() {
             "radial-gradient(ellipse 80% 50% at 50% 0%, #1a0826 0%, #080612 60%)",
         }}
       >
-        {/* Header */}
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -94,9 +92,9 @@ function Certifications() {
             <span
               className="text-pink-400"
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
                 fontSize: "11px",
-                fontWeight: 600,
+                fontWeight: 700,
                 letterSpacing: "0.3em",
                 textTransform: "uppercase",
               }}
@@ -107,14 +105,14 @@ function Certifications() {
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
             style={{
-              fontFamily: "'Playfair Display', serif",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontSize: "clamp(36px, 6vw, 72px)",
-              fontWeight: 900,
+              fontWeight: 800,
               lineHeight: 1.1,
               letterSpacing: "-0.02em",
               background: `linear-gradient(135deg, ${PINK}, ${PURPLE}, ${INDIGO})`,
@@ -132,31 +130,23 @@ function Certifications() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="mt-3 text-sm text-white/40 px-4"
+            className="mt-3 text-sm text-white/60 px-4 font-medium"
             style={{
-              fontFamily: "'DM Sans', sans-serif",
-              fontWeight: 300,
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
               letterSpacing: "0.01em",
               minHeight: 24,
             }}
           >
-            <TypingText
-              phrases={[
-                "Verified skills from industry-recognized programs.",
-                "Backed by real internships & training.",
-              ]}
-              color="rgba(255,255,255,0.4)"
-              cursorColor={PINK}
-            />
+            Verified skills and technical competence from industry-recognized
+            programs.
           </motion.p>
         </div>
 
-        {/* Cards Stacked - One per line */}
         <div className="flex flex-col gap-6 max-w-3xl mx-auto">
           {certifications.map((cert, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
               viewport={{ once: true }}
@@ -179,16 +169,15 @@ function Certifications() {
                 <span
                   className="absolute top-4 right-4 text-pink-400/30"
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
                     fontSize: "11px",
-                    fontWeight: 600,
+                    fontWeight: 700,
                     letterSpacing: "0.1em",
                   }}
                 >
                   {cert.num}
                 </span>
 
-                {/* Left side: Logo & Details */}
                 <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-5 w-full">
                   <motion.div
                     whileHover={{ scale: 1.06, rotate: 2 }}
@@ -199,6 +188,7 @@ function Certifications() {
                       background: "rgba(255,255,255,0.06)",
                       border: "1px solid rgba(255,255,255,0.08)",
                       overflow: "hidden",
+                      willChange: "transform",
                     }}
                   >
                     <img
@@ -212,9 +202,9 @@ function Certifications() {
                     <p
                       className="text-pink-400 mb-1"
                       style={{
-                        fontFamily: "'DM Sans', sans-serif",
+                        fontFamily: "'Plus Jakarta Sans', sans-serif",
                         fontSize: "10px",
-                        fontWeight: 600,
+                        fontWeight: 700,
                         letterSpacing: "0.18em",
                         textTransform: "uppercase",
                       }}
@@ -225,7 +215,7 @@ function Certifications() {
                     <h2
                       className="text-white mb-1"
                       style={{
-                        fontFamily: "'Playfair Display', serif",
+                        fontFamily: "'Plus Jakarta Sans', sans-serif",
                         fontSize: "18px",
                         fontWeight: 700,
                         lineHeight: 1.3,
@@ -237,10 +227,10 @@ function Certifications() {
                     <p
                       className="mb-3"
                       style={{
-                        fontFamily: "'DM Sans', sans-serif",
+                        fontFamily: "'Plus Jakarta Sans', sans-serif",
                         fontSize: "13px",
                         fontWeight: 400,
-                        color: "rgba(255,255,255,0.4)",
+                        color: "rgba(255,255,255,0.5)",
                         letterSpacing: "0.03em",
                       }}
                     >
@@ -265,7 +255,7 @@ function Certifications() {
                       <span
                         className="text-pink-300"
                         style={{
-                          fontFamily: "'DM Sans', sans-serif",
+                          fontFamily: "'Plus Jakarta Sans', sans-serif",
                           fontSize: "10px",
                           fontWeight: 600,
                           letterSpacing: "0.05em",
@@ -277,7 +267,6 @@ function Certifications() {
                   </div>
                 </div>
 
-                {/* Right side: Button */}
                 <motion.a
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
@@ -286,7 +275,7 @@ function Certifications() {
                   rel="noopener noreferrer"
                   className={`w-full sm:w-auto shrink-0 text-center text-white rounded-xl shadow-lg bg-gradient-to-r ${cert.color} transition-all`}
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
                     fontSize: "12px",
                     fontWeight: 600,
                     letterSpacing: "0.04em",

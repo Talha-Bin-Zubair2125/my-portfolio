@@ -17,7 +17,6 @@ const INDIGO = "#6366f1";
 function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
-  // Added "Awards" to the quick links array
   const quickLinks = [
     { name: "Home", href: "#Home" },
     { name: "About", href: "#About" },
@@ -31,7 +30,7 @@ function Footer() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
         @keyframes footerGlowPulse {
           0%, 100% { text-shadow: 0 0 14px ${PINK}55; }
           50% { text-shadow: 0 0 22px ${PURPLE}66; }
@@ -64,9 +63,9 @@ function Footer() {
               <motion.h2
                 whileHover={{ scale: 1.03 }}
                 style={{
-                  fontFamily: "'Playfair Display', serif",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
                   fontSize: "28px",
-                  fontWeight: 900,
+                  fontWeight: 800,
                   animation: "footerGlowPulse 3.5s ease-in-out infinite",
                 }}
               >
@@ -75,21 +74,20 @@ function Footer() {
                 </span>
               </motion.h2>
               <p
-                className="text-gray-400 leading-relaxed"
+                className="text-gray-400 leading-relaxed font-normal"
                 style={{
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
                   fontSize: "14px",
-                  fontWeight: 400,
                 }}
               >
                 Passionate about creating dynamic, user-focused web solutions.
                 Let's connect and build something amazing together!
               </p>
               <p
-                className="text-sm min-h-[20px]"
+                className="text-sm min-h-[20px] font-medium"
                 style={{
-                  fontFamily: "'DM Sans', sans-serif",
-                  color: "rgba(255,255,255,0.35)",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  color: "rgba(255,255,255,0.6)",
                 }}
               >
                 <TypingText
@@ -97,7 +95,7 @@ function Footer() {
                     "Always shipping something new.",
                     "Open to new opportunities.",
                   ]}
-                  color="rgba(255,255,255,0.35)"
+                  color="rgba(255,255,255,0.6)"
                   cursorColor={PINK}
                 />
               </p>
@@ -133,7 +131,7 @@ function Footer() {
             >
               <h3
                 style={{
-                  fontFamily: "'Playfair Display', serif",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
                   fontSize: "20px",
                   fontWeight: 700,
                   color: "#f472b6",
@@ -147,9 +145,9 @@ function Footer() {
                   <motion.li key={i} whileHover={{ x: 5 }} className="group">
                     <a
                       href={link.href}
-                      className="text-gray-400 hover:text-pink-400 transition-colors flex items-center gap-2"
+                      className="text-gray-400 hover:text-pink-400 transition-colors flex items-center gap-2 font-medium"
                       style={{
-                        fontFamily: "'DM Sans', sans-serif",
+                        fontFamily: "'Plus Jakarta Sans', sans-serif",
                         fontSize: "14px",
                       }}
                     >
@@ -172,7 +170,7 @@ function Footer() {
             >
               <h3
                 style={{
-                  fontFamily: "'Playfair Display', serif",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
                   fontSize: "20px",
                   fontWeight: 700,
                   color: "#f472b6",
@@ -191,8 +189,9 @@ function Footer() {
                     <FaEnvelope size={15} />
                   </div>
                   <span
+                    className="font-medium"
                     style={{
-                      fontFamily: "'DM Sans', sans-serif",
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
                       fontSize: "13px",
                     }}
                   >
@@ -208,8 +207,9 @@ function Footer() {
                     <FaPhoneAlt size={15} />
                   </div>
                   <span
+                    className="font-medium"
                     style={{
-                      fontFamily: "'DM Sans', sans-serif",
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
                       fontSize: "13px",
                     }}
                   >
@@ -223,7 +223,7 @@ function Footer() {
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 mt-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-3 rounded-xl font-bold shadow-lg shadow-pink-500/30 hover:shadow-pink-500/50 transition-all"
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
                     fontWeight: 700,
                     fontSize: "14px",
                   }}
@@ -250,13 +250,13 @@ function Footer() {
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.8 }}
               viewport={{ once: true }}
-              className="text-gray-400 text-sm text-center md:text-left"
-              style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400 }}
+              className="text-gray-400 text-sm text-center md:text-left font-medium"
+              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
               © {new Date().getFullYear()} Developed by
               <span
-                className="text-pink-400 font-semibold"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                className="text-pink-400 font-bold"
+                style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
               >
                 {" "}
                 Talha Bin Zubair

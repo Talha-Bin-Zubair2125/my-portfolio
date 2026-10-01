@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Briefcase, Code, GraduationCap } from "lucide-react";
-import TypingText from "./TypingText";
 
 const PINK = "#ec4899";
 const PURPLE = "#a855f7";
@@ -72,7 +71,7 @@ function Experience() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
         @keyframes neonFlickerE {
           0%, 100% { filter: drop-shadow(0 0 18px ${PINK}55) drop-shadow(0 0 30px ${PURPLE}33); }
           50% { filter: drop-shadow(0 0 8px ${PINK}30) drop-shadow(0 0 14px ${PURPLE}22); }
@@ -94,7 +93,6 @@ function Experience() {
             "radial-gradient(ellipse 80% 50% at 50% 0%, #1a0826 0%, #080612 60%)",
         }}
       >
-        {/* Header */}
         <div className="text-center mb-16 max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -107,9 +105,9 @@ function Experience() {
             <span
               className="text-pink-400"
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
                 fontSize: "11px",
-                fontWeight: 600,
+                fontWeight: 700,
                 letterSpacing: "0.3em",
                 textTransform: "uppercase",
               }}
@@ -120,14 +118,14 @@ function Experience() {
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
             style={{
-              fontFamily: "'Playfair Display', serif",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontSize: "clamp(42px, 7vw, 72px)",
-              fontWeight: 900,
+              fontWeight: 800,
               lineHeight: 1.05,
               letterSpacing: "-0.02em",
               background: `linear-gradient(135deg, ${PINK}, ${PURPLE}, ${INDIGO})`,
@@ -145,27 +143,18 @@ function Experience() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="mt-3 text-sm text-white/40"
+            className="mt-3 text-sm text-white/60 font-medium"
             style={{
-              fontFamily: "'DM Sans', sans-serif",
-              fontWeight: 300,
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
               minHeight: 20,
             }}
           >
-            <TypingText
-              phrases={[
-                "Building real-world solutions.",
-                "Empowering the next generation of developers.",
-              ]}
-              color="rgba(255,255,255,0.4)"
-              cursorColor={PINK}
-            />
+            Building real-world solutions and empowering the next generation of
+            developers.
           </motion.p>
         </div>
 
-        {/* Timeline */}
         <div className="max-w-5xl mx-auto relative">
-          {/* Centre line */}
           <div
             className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-px opacity-30"
             style={{
@@ -179,7 +168,7 @@ function Experience() {
             {experiences.map((exp, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 80 }}
+                initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: i * 0.15 }}
                 viewport={{ once: true }}
@@ -187,16 +176,17 @@ function Experience() {
                   i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                 }`}
               >
-                {/* Timeline dot */}
                 <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 z-10">
                   <motion.div
                     whileHover={{ scale: 1.4 }}
                     className={`w-5 h-5 rounded-full bg-gradient-to-br ${exp.gradient} border-4 border-[#080612]`}
-                    style={{ animation: "dotPulseE 2.4s ease-in-out infinite" }}
+                    style={{
+                      animation: "dotPulseE 2.4s ease-in-out infinite",
+                      willChange: "transform",
+                    }}
                   />
                 </div>
 
-                {/* Card */}
                 <motion.div
                   whileHover={{ y: -8 }}
                   className="w-full md:w-[calc(50%-2rem)] group relative"
@@ -212,22 +202,21 @@ function Experience() {
                       backdropFilter: "blur(12px)",
                     }}
                   >
-                    {/* Top shimmer */}
                     <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-pink-400/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                    {/* Icon + type badge */}
                     <div className="flex items-center justify-between mb-5">
                       <motion.div
                         whileHover={{ rotate: 360 }}
                         transition={{ duration: 0.6 }}
                         className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${exp.gradient} flex items-center justify-center text-white shadow-lg`}
+                        style={{ willChange: "transform" }}
                       >
                         {exp.icon}
                       </motion.div>
                       <span
                         className={`rounded-full text-white bg-gradient-to-r ${exp.gradient} shadow-lg`}
                         style={{
-                          fontFamily: "'DM Sans', sans-serif",
+                          fontFamily: "'Plus Jakarta Sans', sans-serif",
                           fontSize: "11px",
                           fontWeight: 700,
                           letterSpacing: "0.08em",
@@ -238,7 +227,6 @@ function Experience() {
                       </span>
                     </div>
 
-                    {/* Divider */}
                     <div
                       className="mb-4 rounded-full"
                       style={{
@@ -248,11 +236,10 @@ function Experience() {
                       }}
                     />
 
-                    {/* Role */}
                     <h3
                       className="text-white mb-1"
                       style={{
-                        fontFamily: "'Playfair Display', serif",
+                        fontFamily: "'Plus Jakarta Sans', sans-serif",
                         fontSize: "20px",
                         fontWeight: 700,
                         lineHeight: 1.3,
@@ -261,11 +248,10 @@ function Experience() {
                       {exp.role}
                     </h3>
 
-                    {/* Company */}
                     <p
                       className="mb-3"
                       style={{
-                        fontFamily: "'Playfair Display', serif",
+                        fontFamily: "'Plus Jakarta Sans', sans-serif",
                         fontSize: "15px",
                         fontWeight: 700,
                         color: "#f472b6",
@@ -274,12 +260,11 @@ function Experience() {
                       {exp.company}
                     </p>
 
-                    {/* Location + Duration */}
                     <div className="flex flex-wrap gap-4 mb-5">
                       <span
                         className="flex items-center gap-2 text-gray-400"
                         style={{
-                          fontFamily: "'DM Sans', sans-serif",
+                          fontFamily: "'Plus Jakarta Sans', sans-serif",
                           fontSize: "12px",
                         }}
                       >
@@ -289,7 +274,7 @@ function Experience() {
                       <span
                         className="flex items-center gap-2 text-gray-400"
                         style={{
-                          fontFamily: "'DM Sans', sans-serif",
+                          fontFamily: "'Plus Jakarta Sans', sans-serif",
                           fontSize: "12px",
                         }}
                       >
@@ -298,7 +283,6 @@ function Experience() {
                       </span>
                     </div>
 
-                    {/* Achievements */}
                     <ul className="space-y-3">
                       {exp.achievements.map((achievement, idx) => (
                         <motion.li
@@ -309,7 +293,7 @@ function Experience() {
                           viewport={{ once: true }}
                           className="flex gap-3 text-gray-300 leading-relaxed"
                           style={{
-                            fontFamily: "'DM Sans', sans-serif",
+                            fontFamily: "'Plus Jakarta Sans', sans-serif",
                             fontSize: "13px",
                           }}
                         >
@@ -321,7 +305,6 @@ function Experience() {
                       ))}
                     </ul>
 
-                    {/* Bottom bar */}
                     <motion.div
                       className={`h-0.5 mt-6 rounded-full bg-gradient-to-r ${exp.gradient}`}
                       initial={{ width: 0 }}
@@ -332,16 +315,14 @@ function Experience() {
                   </div>
                 </motion.div>
 
-                {/* Spacer for alternating layout */}
                 <div className="hidden md:block w-[calc(50%-2rem)]" />
               </motion.div>
             ))}
           </div>
         </div>
 
-        {/* CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
           viewport={{ once: true }}
@@ -355,7 +336,7 @@ function Experience() {
             }}
             className="inline-block bg-gradient-to-r from-pink-500 to-purple-600 text-white px-10 py-4 rounded-full shadow-lg shadow-pink-500/30 transition-all"
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontWeight: 700,
               fontSize: "17px",
             }}

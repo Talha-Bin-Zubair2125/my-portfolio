@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaUniversity, FaGraduationCap, FaSchool } from "react-icons/fa";
-import TypingText from "./TypingText";
 
 const PINK = "#ec4899";
 const PURPLE = "#a855f7";
@@ -18,17 +17,27 @@ function EducationalDetails() {
       subtitle: "BSc — Computer Science",
       details: (
         <>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", marginBottom: 4 }}>
-            <span style={{ color: PINK, fontWeight: 600 }}>Graduated:</span>{" "}
+          <p
+            style={{
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              marginBottom: 4,
+            }}
+          >
+            <span style={{ color: PINK, fontWeight: 700 }}>Graduated:</span>{" "}
             2026
           </p>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", marginBottom: 12 }}>
-            <span style={{ color: PINK, fontWeight: 600 }}>CGPA:</span> 3.20 /
+          <p
+            style={{
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              marginBottom: 12,
+            }}
+          >
+            <span style={{ color: PINK, fontWeight: 700 }}>CGPA:</span> 3.20 /
             4.00
           </p>
           <p
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontSize: 14,
               color: "#9ca3af",
               lineHeight: 1.7,
@@ -52,13 +61,18 @@ function EducationalDetails() {
       subtitle: "Intermediate (ICS)",
       details: (
         <>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", marginBottom: 12 }}>
-            <span style={{ color: PURPLE, fontWeight: 600 }}>Marks:</span> 910 /
+          <p
+            style={{
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              marginBottom: 12,
+            }}
+          >
+            <span style={{ color: PURPLE, fontWeight: 700 }}>Marks:</span> 910 /
             1100
           </p>
           <p
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontSize: 14,
               color: "#9ca3af",
               lineHeight: 1.7,
@@ -81,13 +95,18 @@ function EducationalDetails() {
       subtitle: "Matriculation (Pre-Medical)",
       details: (
         <>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", marginBottom: 12 }}>
-            <span style={{ color: INDIGO, fontWeight: 600 }}>Marks:</span> 810 /
+          <p
+            style={{
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              marginBottom: 12,
+            }}
+          >
+            <span style={{ color: INDIGO, fontWeight: 700 }}>Marks:</span> 810 /
             1100
           </p>
           <p
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontSize: 14,
               color: "#9ca3af",
               lineHeight: 1.7,
@@ -109,7 +128,7 @@ function EducationalDetails() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
         @keyframes neonFlicker2 {
           0%, 100% { filter: drop-shadow(0 0 18px ${PURPLE}55) drop-shadow(0 0 34px ${PINK}33); }
@@ -132,7 +151,6 @@ function EducationalDetails() {
           overflow: "hidden",
         }}
       >
-        {/* Background orbs */}
         <motion.div
           animate={{ scale: [1, 1.3, 1], rotate: [0, 60, 0] }}
           transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
@@ -146,6 +164,7 @@ function EducationalDetails() {
             borderRadius: "50%",
             filter: "blur(50px)",
             pointerEvents: "none",
+            willChange: "transform",
           }}
         />
         <motion.div
@@ -161,10 +180,10 @@ function EducationalDetails() {
             borderRadius: "50%",
             filter: "blur(50px)",
             pointerEvents: "none",
+            willChange: "transform",
           }}
         />
 
-        {/* ── Header ── */}
         <div
           style={{
             textAlign: "center",
@@ -189,7 +208,7 @@ function EducationalDetails() {
             <span style={{ width: 40, height: 1, background: GRAD }} />
             <span
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
                 fontSize: 11,
                 fontWeight: 700,
                 letterSpacing: "0.3em",
@@ -203,13 +222,13 @@ function EducationalDetails() {
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
             style={{
-              fontFamily: "'Playfair Display', serif",
-              fontWeight: 900,
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontWeight: 800,
               fontSize: "clamp(42px, 7vw, 72px)",
               lineHeight: 1.05,
               letterSpacing: "-0.02em",
@@ -229,26 +248,19 @@ function EducationalDetails() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
             style={{
-              fontFamily: "'DM Sans', sans-serif",
-              fontWeight: 300,
-              fontSize: 14,
-              color: "rgba(255,255,255,0.4)",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontWeight: 500,
+              fontSize: 15,
+              color: "rgba(255,255,255,0.65)",
               marginTop: 12,
               minHeight: 20,
             }}
           >
-            <TypingText
-              phrases={[
-                "A solid academic foundation powering my career.",
-                "From matriculation to a BSc in Computer Science.",
-              ]}
-              color="rgba(255,255,255,0.45)"
-              cursorColor={PURPLE}
-            />
+            A solid academic foundation powering my career from matriculation to
+            a BSc in Computer Science.
           </motion.p>
         </div>
 
-        {/* ── Cards ── */}
         <div
           style={{
             maxWidth: 1100,
@@ -261,14 +273,13 @@ function EducationalDetails() {
           {items.map((item, idx) => (
             <motion.article
               key={idx}
-              initial={{ opacity: 0, y: 80 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: idx * 0.15 }}
               viewport={{ once: true }}
-              whileHover={{ y: -10 }}
+              whileHover={{ y: -8 }}
               style={{ position: "relative" }}
             >
-              {/* Glow blob */}
               <div
                 style={{
                   position: "absolute",
@@ -280,7 +291,6 @@ function EducationalDetails() {
                 }}
               />
 
-              {/* Card */}
               <div
                 style={{
                   position: "relative",
@@ -303,7 +313,6 @@ function EducationalDetails() {
                   (e.currentTarget.style.borderColor = "rgba(236,72,153,0.15)")
                 }
               >
-                {/* Top shimmer line */}
                 <div
                   style={{
                     position: "absolute",
@@ -315,7 +324,6 @@ function EducationalDetails() {
                   }}
                 />
 
-                {/* Icon circle */}
                 <motion.div
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   style={{
@@ -328,12 +336,12 @@ function EducationalDetails() {
                     justifyContent: "center",
                     margin: "0 auto 20px",
                     animation: "iconPulseGlow 3s ease-in-out infinite",
+                    willChange: "transform",
                   }}
                 >
                   <div style={{ color: "#fff" }}>{item.icon}</div>
                 </motion.div>
 
-                {/* Year badge */}
                 <div
                   style={{
                     display: "flex",
@@ -343,7 +351,7 @@ function EducationalDetails() {
                 >
                   <span
                     style={{
-                      fontFamily: "'DM Sans', sans-serif",
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
                       fontSize: 11,
                       fontWeight: 700,
                       letterSpacing: "0.1em",
@@ -358,7 +366,6 @@ function EducationalDetails() {
                   </span>
                 </div>
 
-                {/* Divider */}
                 <div
                   style={{
                     width: 32,
@@ -369,10 +376,9 @@ function EducationalDetails() {
                   }}
                 />
 
-                {/* Title */}
                 <h3
                   style={{
-                    fontFamily: "'Playfair Display', serif",
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
                     fontSize: 18,
                     fontWeight: 700,
                     color: "#f9fafb",
@@ -384,10 +390,9 @@ function EducationalDetails() {
                   {item.title}
                 </h3>
 
-                {/* Subtitle */}
                 <p
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
                     fontSize: 11,
                     fontWeight: 700,
                     letterSpacing: "0.1em",
@@ -400,10 +405,8 @@ function EducationalDetails() {
                   {item.subtitle}
                 </p>
 
-                {/* Details */}
                 <div style={{ flex: 1 }}>{item.details}</div>
 
-                {/* Bottom accent bar */}
                 <motion.div
                   style={{
                     height: 1.5,
@@ -421,9 +424,8 @@ function EducationalDetails() {
           ))}
         </div>
 
-        {/* ── CTA ── */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
           viewport={{ once: true }}
@@ -439,7 +441,7 @@ function EducationalDetails() {
               color: "#fff",
               padding: "14px 40px",
               borderRadius: 50,
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontWeight: 700,
               fontSize: 16,
               textDecoration: "none",

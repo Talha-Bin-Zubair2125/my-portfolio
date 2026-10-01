@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Target, Rocket, Code } from "lucide-react";
-import TypingText from "./TypingText";
 
 const PINK = "#ec4899";
 const PURPLE = "#a855f7";
@@ -41,7 +40,7 @@ export default function Goal() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
         @keyframes neonFlickerG {
           0%, 100% { filter: drop-shadow(0 0 18px ${PINK}55) drop-shadow(0 0 34px ${PURPLE}33); }
@@ -74,7 +73,6 @@ export default function Goal() {
           overflow: "hidden",
         }}
       >
-        {/* ── Orbs ── */}
         {[
           { c: PINK, top: "8%", left: "5%", w: 380, dur: 18 },
           { c: INDIGO, top: "55%", right: "4%", w: 320, dur: 22 },
@@ -100,11 +98,11 @@ export default function Goal() {
               borderRadius: "50%",
               filter: "blur(50px)",
               pointerEvents: "none",
+              willChange: "transform",
             }}
           />
         ))}
 
-        {/* Floating ambient particles */}
         {[...Array(9)].map((_, i) => (
           <span
             key={i}
@@ -124,9 +122,8 @@ export default function Goal() {
           />
         ))}
 
-        {/* ── Header ── */}
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
@@ -158,7 +155,7 @@ export default function Goal() {
             />
             <span
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
                 fontSize: 11,
                 fontWeight: 700,
                 letterSpacing: "0.3em",
@@ -176,13 +173,13 @@ export default function Goal() {
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             viewport={{ once: true }}
             style={{
-              fontFamily: "'Playfair Display', serif",
-              fontWeight: 900,
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontWeight: 800,
               fontSize: "clamp(42px,7vw,72px)",
               lineHeight: 1.05,
               letterSpacing: "-0.02em",
@@ -202,27 +199,19 @@ export default function Goal() {
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
             style={{
-              fontFamily: "'DM Sans', sans-serif",
-              fontWeight: 300,
-              fontSize: 14,
-              color: "rgba(255,255,255,0.5)",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontWeight: 500,
+              fontSize: 15,
+              color: "rgba(255,255,255,0.65)",
               marginTop: 12,
               minHeight: 20,
             }}
           >
-            <TypingText
-              phrases={[
-                "Driven by passion.",
-                "Guided by purpose.",
-                "Committed to excellence.",
-              ]}
-              color="rgba(255,255,255,0.55)"
-              cursorColor={PINK}
-            />
+            Driven by passion, guided by purpose, and committed to technical
+            excellence.
           </motion.p>
         </motion.div>
 
-        {/* ── Cards ── */}
         <div
           style={{
             display: "grid",
@@ -237,19 +226,16 @@ export default function Goal() {
           {goals.map((g, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 80, rotateX: 15 }}
-              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{
-                duration: 0.7,
+                duration: 0.6,
                 delay: i * 0.15,
-                type: "spring",
-                stiffness: 80,
               }}
               viewport={{ once: true }}
-              whileHover={{ y: -12, scale: 1.03 }}
+              whileHover={{ y: -8, scale: 1.02 }}
               style={{ position: "relative" }}
             >
-              {/* glow */}
               <motion.div
                 whileHover={{ opacity: 1 }}
                 initial={{ opacity: 0 }}
@@ -286,7 +272,6 @@ export default function Goal() {
                   (e.currentTarget.style.borderColor = `${g.accent}22`)
                 }
               >
-                {/* shimmer */}
                 <div
                   style={{
                     position: "absolute",
@@ -312,6 +297,7 @@ export default function Goal() {
                     marginBottom: 20,
                     color: "#fff",
                     animation: "iconPulseGlowG 3s ease-in-out infinite",
+                    willChange: "transform",
                   }}
                 >
                   {g.icon}
@@ -329,7 +315,7 @@ export default function Goal() {
 
                 <h2
                   style={{
-                    fontFamily: "'Playfair Display', serif",
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
                     fontSize: 20,
                     fontWeight: 700,
                     color: "#f9fafb",
@@ -341,7 +327,7 @@ export default function Goal() {
                 </h2>
                 <p
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
                     fontSize: 14,
                     fontWeight: 400,
                     color: "#9ca3af",
@@ -371,9 +357,8 @@ export default function Goal() {
           ))}
         </div>
 
-        {/* ── CTA ── */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
           viewport={{ once: true }}
@@ -386,7 +371,7 @@ export default function Goal() {
         >
           <motion.a
             href="#Projects"
-            whileHover={{ scale: 1.07, boxShadow: `0 0 36px ${PINK}66` }}
+            whileHover={{ scale: 1.05, boxShadow: `0 0 36px ${PINK}66` }}
             whileTap={{ scale: 0.95 }}
             style={{
               display: "inline-block",
@@ -396,7 +381,7 @@ export default function Goal() {
               color: "#fff",
               padding: "14px 42px",
               borderRadius: 50,
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontWeight: 700,
               fontSize: 16,
               textDecoration: "none",
