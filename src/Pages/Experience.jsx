@@ -10,19 +10,15 @@ const INDIGO = "#6366f1";
 function Experience() {
   const experiences = [
     {
-      role: "Full Stack Developer Intern",
-      company: "Arch Technologies",
-      location: "Rawalpindi, Pakistan",
-      duration: "Dec 2025 – Jan 2026",
-      type: "Internship",
-      icon: <Code size={28} />,
-      gradient: "from-pink-500 to-fuchsia-600",
+      role: "Junior Software Developer",
+      company: "CBMC Consultants",
+      location: "Islamabad, Pakistan",
+      duration: "Sep 2026 – Present",
+      type: "Full-time",
+      icon: <Briefcase size={28} />,
+      gradient: "from-pink-500 to-purple-600",
       achievements: [
-        "Built a full-stack music player web application using React.js and Node.js with Express framework",
-        "Integrated public music APIs for dynamic data fetching and streaming capabilities",
-        "Developed backend routes and connected frontend using Axios for seamless API communication",
-        "Designed responsive UI with focus on user experience and modern web design principles",
-        "Used Git and GitHub for version control and collaboration throughout the development process",
+        "Contributing to the development of scalable, business-focused software solutions across frontend and backend systems. Actively involved in building new features, developing APIs, optimizing application functionality, resolving technical issues, and enhancing user experience across AxonDigits, Axon Finance Suite, Axon Employee Management, and Axon Practice Manager.",
       ],
     },
     {
@@ -39,6 +35,22 @@ function Experience() {
         "AI-Based Business Automation Website: Integrated frontend components with backend APIs for automated workflows",
         "Online Polling & Survey Platform: Built modules for poll creation, voting mechanisms, and real-time result display",
         "Collaborated using Git for version control and tested APIs with Postman to ensure reliability",
+      ],
+    },
+    {
+      role: "Full Stack Developer Intern",
+      company: "Arch Technologies",
+      location: "Rawalpindi, Pakistan",
+      duration: "Dec 2025 – Jan 2026",
+      type: "Internship",
+      icon: <Code size={28} />,
+      gradient: "from-pink-500 to-fuchsia-600",
+      achievements: [
+        "Built a full-stack music player web application using React.js and Node.js with Express framework",
+        "Integrated public music APIs for dynamic data fetching and streaming capabilities",
+        "Developed backend routes and connected frontend using Axios for seamless API communication",
+        "Designed responsive UI with focus on user experience and modern web design principles",
+        "Used Git and GitHub for version control and collaboration throughout the development process",
       ],
     },
     {

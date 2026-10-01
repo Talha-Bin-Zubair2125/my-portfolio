@@ -218,7 +218,7 @@ function Footer() {
                 </motion.a>
                 <motion.a
                   whileHover={{ scale: 1.02 }}
-                  href="https://drive.google.com/file/d/13GPr6EXLDddwn0rJo10GKRaU_hCauT32/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1DzeG4Qd5M6Aik12wIbFqI8G4APPVIKkM/view?usp=drive_link"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 mt-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-3 rounded-xl font-bold shadow-lg shadow-pink-500/30 hover:shadow-pink-500/50 transition-all"

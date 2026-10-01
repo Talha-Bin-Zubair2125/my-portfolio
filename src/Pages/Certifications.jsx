@@ -3,8 +3,10 @@ import { motion } from "framer-motion";
 import ArchTechLogo from "../Images/Arch Technologies Logo.jpg";
 import CodeCelixLogo from "../Images/CodeCelix Logo.webp";
 import PNYLogo from "../Images/PNY Logo.webp";
+import PMYDLogo from "../Images/PMYDP.jpg";
 import CodeCelixCertificate from "../Images/CodeCelix Internship Certificate.jpg";
 import ArchTechCertificate from "../Images/Arch Technologies Internship Certificate.jpg";
+import NavttcCertificate from "../Images/Navttc_Certificate.jpg";
 import PFTPLogo from "../Images/PFTP Logo.webp";
 import TypingText from "./TypingText";
 
@@ -33,13 +35,22 @@ function Certifications() {
       num: "02",
     },
     {
+      type: "Course Certificate",
+      title: "AI & Machine Learning",
+      organization: "Prime Minister's Youth Programme - NAVTTC",
+      link: NavttcCertificate,
+      image: PMYDLogo,
+      color: "from-purple-500 to-indigo-600",
+      num: "03",
+    },
+    {
       type: "Internship Certificate",
       title: "Full Stack Web Development",
       organization: "Arch Technologies",
       link: ArchTechCertificate,
       image: ArchTechLogo,
       color: "from-purple-500 to-indigo-600",
-      num: "03",
+      num: "04",
     },
     {
       type: "Internship Certificate",
@@ -48,7 +59,7 @@ function Certifications() {
       link: CodeCelixCertificate,
       image: CodeCelixLogo,
       color: "from-indigo-500 to-pink-600",
-      num: "04",
+      num: "05",
     },
   ];
 
@@ -64,14 +75,14 @@ function Certifications() {
       `}</style>
       <section
         id="Certifications"
-        className="min-h-screen text-white py-20 px-6"
+        className="min-h-screen text-white py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
         style={{
           background:
             "radial-gradient(ellipse 80% 50% at 50% 0%, #1a0826 0%, #080612 60%)",
         }}
       >
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -79,7 +90,7 @@ function Certifications() {
             viewport={{ once: true }}
             className="flex items-center justify-center gap-3 mb-4"
           >
-            <span className="w-10 h-px bg-gradient-to-r from-transparent to-pink-400" />
+            <span className="w-8 sm:w-10 h-px bg-gradient-to-r from-transparent to-pink-400" />
             <span
               className="text-pink-400"
               style={{
@@ -92,7 +103,7 @@ function Certifications() {
             >
               Credentials &amp; Achievements
             </span>
-            <span className="w-10 h-px bg-gradient-to-l from-transparent to-pink-400" />
+            <span className="w-8 sm:w-10 h-px bg-gradient-to-l from-transparent to-pink-400" />
           </motion.div>
 
           <motion.h1
@@ -102,9 +113,9 @@ function Certifications() {
             viewport={{ once: true }}
             style={{
               fontFamily: "'Playfair Display', serif",
-              fontSize: "clamp(42px, 7vw, 72px)",
+              fontSize: "clamp(36px, 6vw, 72px)",
               fontWeight: 900,
-              lineHeight: 1.05,
+              lineHeight: 1.1,
               letterSpacing: "-0.02em",
               background: `linear-gradient(135deg, ${PINK}, ${PURPLE}, ${INDIGO})`,
               WebkitBackgroundClip: "text",
@@ -121,12 +132,12 @@ function Certifications() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="mt-3 text-sm text-white/40"
+            className="mt-3 text-sm text-white/40 px-4"
             style={{
               fontFamily: "'DM Sans', sans-serif",
               fontWeight: 300,
               letterSpacing: "0.01em",
-              minHeight: 20,
+              minHeight: 24,
             }}
           >
             <TypingText
@@ -140,23 +151,23 @@ function Certifications() {
           </motion.p>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        {/* Cards Grid - Updated to auto-fit gracefully for 5 items */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {certifications.map((cert, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.12 }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ y: -10 }}
-              className="relative group"
+              whileHover={{ y: -8 }}
+              className="relative group flex"
             >
               <div
                 className={`absolute inset-0 bg-gradient-to-br ${cert.color} opacity-0 group-hover:opacity-15 rounded-2xl blur-2xl transition-opacity duration-500`}
               />
               <div
-                className="relative flex flex-col items-center h-full rounded-2xl border border-pink-500/10 group-hover:border-pink-400/40 transition-all duration-300 p-7 overflow-hidden"
+                className="relative flex flex-col items-center w-full rounded-2xl border border-pink-500/10 group-hover:border-pink-400/40 transition-all duration-300 p-6 sm:p-7 overflow-hidden"
                 style={{
                   background:
                     "linear-gradient(160deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%)",
@@ -175,9 +186,10 @@ function Certifications() {
                 >
                   {cert.num}
                 </span>
+
                 <motion.div
                   whileHover={{ scale: 1.06, rotate: 2 }}
-                  className="flex items-center justify-center mb-5 rounded-2xl"
+                  className="flex items-center justify-center mb-5 rounded-2xl shrink-0"
                   style={{
                     width: 72,
                     height: 72,
@@ -192,14 +204,16 @@ function Certifications() {
                     style={{ width: 50, height: 50, objectFit: "contain" }}
                   />
                 </motion.div>
+
                 <div
-                  className="mb-4 rounded-full"
+                  className="mb-4 rounded-full shrink-0"
                   style={{
                     width: 32,
                     height: 2,
                     background: `linear-gradient(90deg, ${PINK}, ${PURPLE})`,
                   }}
                 />
+
                 <p
                   className="text-pink-400 text-center mb-2"
                   style={{
@@ -212,6 +226,7 @@ function Certifications() {
                 >
                   {cert.type}
                 </p>
+
                 <h2
                   className="text-white text-center mb-2"
                   style={{
@@ -223,6 +238,7 @@ function Certifications() {
                 >
                   {cert.title}
                 </h2>
+
                 <p
                   className="text-center mb-5"
                   style={{
@@ -235,8 +251,9 @@ function Certifications() {
                 >
                   {cert.organization}
                 </p>
+
                 <div
-                  className="flex items-center gap-2 mb-5 rounded-full border border-pink-500/20"
+                  className="flex items-center gap-2 mb-6 rounded-full border border-pink-500/20 shrink-0"
                   style={{
                     background: "rgba(236,72,153,0.08)",
                     padding: "5px 14px",
@@ -262,9 +279,10 @@ function Certifications() {
                     Completed
                   </span>
                 </div>
+
                 <motion.a
-                  whileHover={{ scale: 1.04 }}
-                  whileTap={{ scale: 0.96 }}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                   href={cert.link}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -274,10 +292,10 @@ function Certifications() {
                     fontSize: "13px",
                     fontWeight: 600,
                     letterSpacing: "0.04em",
-                    padding: "10px 0",
+                    padding: "11px 0",
                   }}
                 >
-                  View Certificate →
+                  View Certificate &rarr;
                 </motion.a>
               </div>
             </motion.div>
