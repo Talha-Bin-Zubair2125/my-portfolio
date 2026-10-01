@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaUniversity, FaGraduationCap, FaSchool } from "react-icons/fa";
+import sspsLogo from "../Images/ssps.png";
+import kipsLogo from "../Images/kips-college-Logo.png";
+import numlLogo from "../Images/NUML_LOGO_removebg_preview.png";
 
 const PINK = "#ec4899";
 const PURPLE = "#a855f7";
@@ -31,9 +33,10 @@ function EducationalDetails() {
           Software Engineering principles.
         </p>
       ),
-      icon: <FaUniversity size={28} />,
       accent: PINK,
       year: "2022 – 2026",
+      logo: numlLogo,
+      logoPlaceholder: "NUML Logo", 
     },
     {
       title: "KIPS College",
@@ -54,9 +57,10 @@ function EducationalDetails() {
           software development.
         </p>
       ),
-      icon: <FaGraduationCap size={28} />,
       accent: PURPLE,
       year: "2019 – 2021",
+      logo: kipsLogo,
+      logoPlaceholder: "KIPS Logo", // Replace or use this space for your <img src="..." alt="..." />
     },
     {
       title: "Sir Syed Public School",
@@ -77,9 +81,10 @@ function EducationalDetails() {
           technology and programming interests.
         </p>
       ),
-      icon: <FaSchool size={28} />,
       accent: INDIGO,
       year: "2017 – 2019",
+      logo: sspsLogo,
+      logoPlaceholder: "School Logo", // Replace or use this space for your <img src="..." alt="..." />
     },
   ];
 
@@ -92,9 +97,9 @@ function EducationalDetails() {
           0%, 100% { filter: drop-shadow(0 0 18px ${PURPLE}55) drop-shadow(0 0 34px ${PINK}33); }
           50% { filter: drop-shadow(0 0 8px ${PURPLE}30) drop-shadow(0 0 16px ${PINK}22); }
         }
-        @keyframes iconPulseGlow {
-          0%, 100% { box-shadow: 0 8px 24px rgba(168,85,247,0.35); }
-          50% { box-shadow: 0 8px 36px rgba(236,72,153,0.55); }
+        @keyframes logoPulseGlow {
+          0%, 100% { box-shadow: 0 4px 20px rgba(168,85,247,0.25); }
+          50% { box-shadow: 0 4px 30px rgba(236,72,153,0.45); }
         }
       `}</style>
 
@@ -283,22 +288,37 @@ function EducationalDetails() {
                   }}
                 />
 
+                {/* Logo Container / Space */}
                 <motion.div
-                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  whileHover={{ scale: 1.05 }}
                   style={{
-                    width: 56,
-                    height: 56,
+                    width: 64,
+                    height: 64,
                     borderRadius: 14,
-                    background: `linear-gradient(135deg, ${item.accent}, ${INDIGO})`,
+                    background: "rgba(255, 255, 255, 0.03)",
+                    border: `1px dashed ${item.accent}55`,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     flexShrink: 0,
-                    animation: "iconPulseGlow 3s ease-in-out infinite",
+                    overflow: "hidden",
+                    animation: "logoPulseGlow 3s ease-in-out infinite",
                     willChange: "transform",
                   }}
                 >
-                  <div style={{ color: "#fff" }}>{item.icon}</div>
+                  {/* Replace this inner element with your <img src="logo-url.png" alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'contain' }} /> */}
+                  <span
+                    style={{
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                      fontSize: 10,
+                      fontWeight: 600,
+                      color: "rgba(255,255,255,0.4)",
+                      textAlign: "center",
+                      padding: 4,
+                    }}
+                  >
+                    {item.logoPlaceholder}
+                  </span>
                 </motion.div>
 
                 <div style={{ flex: 1, minWidth: "260px" }}>
