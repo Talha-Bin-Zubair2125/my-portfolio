@@ -317,7 +317,15 @@ function EducationalDetails() {
                       padding: 4,
                     }}
                   >
-                    {item.logo}
+                    {item.logo ? (
+                      <img
+                        src={item.logo}
+                        alt={item.title}
+                        style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                      />
+                    ) : (
+                      item.logoPlaceholder
+                    )}
                   </span>
                 </motion.div>
 
