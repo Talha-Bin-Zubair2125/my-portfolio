@@ -175,7 +175,7 @@ function Certifications() {
                 }}
               >
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-pink-400/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
+
                 <span
                   className="absolute top-4 right-4 text-pink-400/30"
                   style={{
