@@ -84,7 +84,7 @@ function EducationalDetails() {
       accent: INDIGO,
       year: "2017 – 2019",
       logo: sspsLogo,
-      logoPlaceholder:sspsLogo, // Replace or use this space for your <img src="..." alt="..." />
+      logoPlaceholder: "School Logo", // Replace or use this space for your <img src="..." alt="..." />
     },
   ];
 
@@ -317,7 +317,7 @@ function EducationalDetails() {
                       padding: 4,
                     }}
                   >
-                    {item.logoPlaceholder}
+                    {item.logo}
                   </span>
                 </motion.div>
 
