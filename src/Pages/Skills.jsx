@@ -23,7 +23,7 @@ import {
   SiPandas, 
   SiScikitlearn, 
   SiGit, 
-  SiVisualstudiocode 
+  BiLogoVisualStudio, 
 } from "react-icons/si";
 import TypingText from "./TypingText";
 
@@ -83,7 +83,7 @@ function Skills() {
       skills: [
         { icon: <SiGit />, name: "Git", color: "#F05032", level: "Advanced" },
         { icon: <FaGithub />, name: "GitHub", color: "#9CA3AF", level: "Advanced" },
-        { icon: <SiVisualstudiocode />, name: "VS Code", color: "#007ACC", level: "Expert" },
+        { icon: <BiLogoVisualStudio />, name: "VS Code", color: "#007ACC", level: "Expert" },
       ],
     },
     {
