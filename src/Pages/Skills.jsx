@@ -38,9 +38,9 @@ function Skills() {
       icon: "💻",
       gradient: "from-pink-500 to-fuchsia-600",
       skills: [
-        { icon: <SiCplusplus />, name: "C++", color: "#00599C", level: "Advanced" },
+        { icon: <SiCplusplus />, name: "C++", color: "#00599C", level: "Intermediate" },
         { icon: <FaJava />, name: "Java", color: "#007396", level: "Intermediate" },
-        { icon: <FaPython />, name: "Python", color: "#3776AB", level: "Advanced" },
+        { icon: <FaPython />, name: "Python", color: "#3776AB", level: "Intermediate" },
       ],
     },
     {
@@ -48,10 +48,10 @@ function Skills() {
       icon: "🎨",
       gradient: "from-fuchsia-500 to-purple-600",
       skills: [
-        { icon: <FaHtml5 />, name: "HTML5", color: "#E34F26", level: "Expert" },
-        { icon: <FaCss3Alt />, name: "CSS3", color: "#1572B6", level: "Expert" },
-        { icon: <FaJsSquare />, name: "JavaScript", color: "#F7DF1E", level: "Advanced" },
-        { icon: <FaReact />, name: "React.js", color: "#61DAFB", level: "Advanced" },
+        { icon: <FaHtml5 />, name: "HTML5", color: "#E34F26", level: "Intermediate" },
+        { icon: <FaCss3Alt />, name: "CSS3", color: "#1572B6", level: "Intermediate" },
+        { icon: <FaJsSquare />, name: "JavaScript", color: "#F7DF1E", level: "Intermediate" },
+        { icon: <FaReact />, name: "React.js", color: "#61DAFB", level: "Intermediate" },
       ],
     },
     {
@@ -81,9 +81,9 @@ function Skills() {
       icon: "🛠️",
       gradient: "from-violet-500 to-indigo-600",
       skills: [
-        { icon: <SiGit />, name: "Git", color: "#F05032", level: "Advanced" },
-        { icon: <FaGithub />, name: "GitHub", color: "#9CA3AF", level: "Advanced" },
-        { icon: <BiLogoVisualStudio />, name: "VS Code", color: "#007ACC", level: "Expert" },
+        { icon: <SiGit />, name: "Git", color: "#F05032", level: "Intermediate" },
+        { icon: <FaGithub />, name: "GitHub", color: "#9CA3AF", level: "Intermediate" },
+        { icon: <BiLogoVisualStudio />, name: "VS Code", color: "#007ACC", level: "Intermediate" },
       ],
     },
     {
