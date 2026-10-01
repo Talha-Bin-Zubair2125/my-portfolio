@@ -13,6 +13,12 @@ import {
   FaClock,
   FaLightbulb,
   FaBrain,
+  FaCode,
+  FaLaptopCode,
+  FaServer,
+  FaRobot,
+  FaTools,
+  FaHandshake,
 } from "react-icons/fa";
 import { 
   SiCplusplus, 
@@ -22,7 +28,7 @@ import {
   SiNumpy, 
   SiPandas, 
   SiScikitlearn, 
-  SiGit, 
+  SiGit,  
 } from "react-icons/si";
 import { BiLogoVisualStudio } from "react-icons/bi";
 import TypingText from "./TypingText";
@@ -35,28 +41,28 @@ function Skills() {
   const skillCategories = [
     {
       title: "Programming Languages",
-      icon: "💻",
+      icon: <FaCode />,
       gradient: "from-pink-500 to-fuchsia-600",
       skills: [
-        { icon: <SiCplusplus />, name: "C++", color: "#00599C", level: "Intermediate" },
+        { icon: <SiCplusplus />, name: "C++", color: "#00599C", level: "Advanced" },
         { icon: <FaJava />, name: "Java", color: "#007396", level: "Intermediate" },
-        { icon: <FaPython />, name: "Python", color: "#3776AB", level: "Intermediate" },
+        { icon: <FaPython />, name: "Python", color: "#3776AB", level: "Advanced" },
       ],
     },
     {
       title: "Front-End Skills",
-      icon: "🎨",
+      icon: <FaLaptopCode />,
       gradient: "from-fuchsia-500 to-purple-600",
       skills: [
-        { icon: <FaHtml5 />, name: "HTML5", color: "#E34F26", level: "Intermediate" },
-        { icon: <FaCss3Alt />, name: "CSS3", color: "#1572B6", level: "Intermediate" },
-        { icon: <FaJsSquare />, name: "JavaScript", color: "#F7DF1E", level: "Intermediate" },
-        { icon: <FaReact />, name: "React.js", color: "#61DAFB", level: "Intermediate" },
+        { icon: <FaHtml5 />, name: "HTML5", color: "#E34F26", level: "Expert" },
+        { icon: <FaCss3Alt />, name: "CSS3", color: "#1572B6", level: "Expert" },
+        { icon: <FaJsSquare />, name: "JavaScript", color: "#F7DF1E", level: "Advanced" },
+        { icon: <FaReact />, name: "React.js", color: "#61DAFB", level: "Advanced" },
       ],
     },
     {
       title: "Back-End & Databases",
-      icon: "⚙️",
+      icon: <FaServer />,
       gradient: "from-purple-500 to-violet-600",
       skills: [
         { icon: <FaNode />, name: "Node.js", color: "#339933", level: "Intermediate" },
@@ -67,7 +73,7 @@ function Skills() {
     },
     {
       title: "AI & Machine Learning",
-      icon: "🤖",
+      icon: <FaRobot />,
       gradient: "from-blue-500 to-indigo-600",
       skills: [
         { icon: <SiNumpy />, name: "NumPy", color: "#013243", level: "Intermediate" },
@@ -78,17 +84,17 @@ function Skills() {
     },
     {
       title: "Version Control & Tools",
-      icon: "🛠️",
+      icon: <FaTools />,
       gradient: "from-violet-500 to-indigo-600",
       skills: [
-        { icon: <SiGit />, name: "Git", color: "#F05032", level: "Intermediate" },
-        { icon: <FaGithub />, name: "GitHub", color: "#9CA3AF", level: "Intermediate" },
-        { icon: <BiLogoVisualStudio />, name: "VS Code", color: "#007ACC", level: "Intermediate" },
+        { icon: <SiGit />, name: "Git", color: "#F05032", level: "Advanced" },
+        { icon: <FaGithub />, name: "GitHub", color: "#9CA3AF", level: "Advanced" },
+        { icon: <BiLogoVisualStudio />, name: "VS Code", color: "#007ACC", level: "Expert" },
       ],
     },
     {
       title: "Soft Skills",
-      icon: "🚀",
+      icon: <FaHandshake />,
       gradient: "from-indigo-500 to-pink-600",
       skills: [
         { icon: <FaUsers />, name: "Team Collaboration", color: PINK, level: "Professional" },
@@ -203,7 +209,7 @@ function Skills() {
               {/* Category header */}
               <div className="flex items-center gap-4 mb-6">
                 <div
-                  className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.gradient} flex items-center justify-center shadow-lg text-xl shrink-0`}
+                  className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.gradient} flex items-center justify-center shadow-lg text-xl text-white shrink-0`}
                 >
                   {category.icon}
                 </div>
