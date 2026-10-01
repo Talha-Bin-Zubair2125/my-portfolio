@@ -23,8 +23,8 @@ import {
   SiPandas, 
   SiScikitlearn, 
   SiGit, 
-  BiLogoVisualStudio, 
 } from "react-icons/si";
+import { BiLogoVisualStudio } from "react-icons/bi";
 import TypingText from "./TypingText";
 
 const PINK = "#ec4899";
