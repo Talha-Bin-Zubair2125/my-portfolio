@@ -44,9 +44,9 @@ function Skills() {
       icon: <FaCode />,
       gradient: "from-pink-500 to-fuchsia-600",
       skills: [
-        { icon: <SiCplusplus />, name: "C++", color: "#00599C", level: "Advanced" },
-        { icon: <FaJava />, name: "Java", color: "#007396", level: "Intermediate" },
-        { icon: <FaPython />, name: "Python", color: "#3776AB", level: "Advanced" },
+        { icon: <SiCplusplus />, name: "C++", color: "#00599C", },
+        { icon: <FaJava />, name: "Java", color: "#007396", },
+        { icon: <FaPython />, name: "Python", color: "#3776AB", },
       ],
     },
     {
@@ -54,10 +54,10 @@ function Skills() {
       icon: <FaLaptopCode />,
       gradient: "from-fuchsia-500 to-purple-600",
       skills: [
-        { icon: <FaHtml5 />, name: "HTML5", color: "#E34F26", level: "Expert" },
-        { icon: <FaCss3Alt />, name: "CSS3", color: "#1572B6", level: "Expert" },
-        { icon: <FaJsSquare />, name: "JavaScript", color: "#F7DF1E", level: "Advanced" },
-        { icon: <FaReact />, name: "React.js", color: "#61DAFB", level: "Advanced" },
+        { icon: <FaHtml5 />, name: "HTML5", color: "#E34F26",  },
+        { icon: <FaCss3Alt />, name: "CSS3", color: "#1572B6", },
+        { icon: <FaJsSquare />, name: "JavaScript", color: "#F7DF1E", },
+        { icon: <FaReact />, name: "React.js", color: "#61DAFB", },
       ],
     },
     {
@@ -65,10 +65,10 @@ function Skills() {
       icon: <FaServer />,
       gradient: "from-purple-500 to-violet-600",
       skills: [
-        { icon: <FaNode />, name: "Node.js", color: "#339933", level: "Intermediate" },
-        { icon: <SiExpress />, name: "Express.js", color: "#9CA3AF", level: "Intermediate" },
-        { icon: <SiMysql />, name: "MySQL", color: "#4479A1", level: "Intermediate" },
-        { icon: <SiMongodb />, name: "MongoDB", color: "#47A248", level: "Intermediate" },
+        { icon: <FaNode />, name: "Node.js", color: "#339933", },
+        { icon: <SiExpress />, name: "Express.js", color: "#9CA3AF", },
+        { icon: <SiMysql />, name: "MySQL", color: "#4479A1", },
+        { icon: <SiMongodb />, name: "MongoDB", color: "#47A248", },
       ],
     },
     {
@@ -76,10 +76,10 @@ function Skills() {
       icon: <FaRobot />,
       gradient: "from-blue-500 to-indigo-600",
       skills: [
-        { icon: <SiNumpy />, name: "NumPy", color: "#013243", level: "Intermediate" },
-        { icon: <SiPandas />, name: "Pandas", color: "#150458", level: "Intermediate" },
-        { icon: <SiScikitlearn />, name: "Scikit-Learn", color: "#F7931E", level: "Intermediate" },
-        { icon: <FaBrain />, name: "Machine Learning Concepts", color: PINK, level: "Intermediate" },
+        { icon: <SiNumpy />, name: "NumPy", color: "#013243", },
+        { icon: <SiPandas />, name: "Pandas", color: "#150458", },
+        { icon: <SiScikitlearn />, name: "Scikit-Learn", color: "#F7931E", },
+        { icon: <FaBrain />, name: "Machine Learning Concepts", color: PINK, },
       ],
     },
     {
@@ -87,9 +87,9 @@ function Skills() {
       icon: <FaTools />,
       gradient: "from-violet-500 to-indigo-600",
       skills: [
-        { icon: <SiGit />, name: "Git", color: "#F05032", level: "Advanced" },
-        { icon: <FaGithub />, name: "GitHub", color: "#9CA3AF", level: "Advanced" },
-        { icon: <BiLogoVisualStudio />, name: "VS Code", color: "#007ACC", level: "Expert" },
+        { icon: <SiGit />, name: "Git", color: "#F05032", },
+        { icon: <FaGithub />, name: "GitHub", color: "#9CA3AF", },
+        { icon: <BiLogoVisualStudio />, name: "VS Code", color: "#007ACC", },
       ],
     },
     {
@@ -97,10 +97,10 @@ function Skills() {
       icon: <FaHandshake />,
       gradient: "from-indigo-500 to-pink-600",
       skills: [
-        { icon: <FaUsers />, name: "Team Collaboration", color: PINK, level: "Professional" },
-        { icon: <FaBrain />, name: "Problem Solving", color: PURPLE, level: "Professional" },
-        { icon: <FaLightbulb />, name: "Continuous Learning", color: "#d946ef", level: "Professional" },
-        { icon: <FaClock />, name: "Time Management", color: INDIGO, level: "Professional" },
+        { icon: <FaUsers />, name: "Team Collaboration", color: PINK },
+        { icon: <FaBrain />, name: "Problem Solving", color: PURPLE },
+        { icon: <FaLightbulb />, name: "Continuous Learning", color: "#d946ef" },
+        { icon: <FaClock />, name: "Time Management", color: INDIGO },
       ],
     },
   ];
