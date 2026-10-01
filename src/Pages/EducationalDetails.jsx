@@ -36,7 +36,7 @@ function EducationalDetails() {
       accent: PINK,
       year: "2022 – 2026",
       logo: numlLogo,
-      logoPlaceholder: "NUML Logo", 
+      logoPlaceholder: "NUML Logo",
     },
     {
       title: "KIPS College",
@@ -60,7 +60,7 @@ function EducationalDetails() {
       accent: PURPLE,
       year: "2019 – 2021",
       logo: kipsLogo,
-      logoPlaceholder: "KIPS Logo", // Replace or use this space for your <img src="..." alt="..." />
+      logoPlaceholder: "KIPS Logo",
     },
     {
       title: "Sir Syed Public School",
@@ -84,7 +84,7 @@ function EducationalDetails() {
       accent: INDIGO,
       year: "2017 – 2019",
       logo: sspsLogo,
-      logoPlaceholder: "School Logo", // Replace or use this space for your <img src="..." alt="..." />
+      logoPlaceholder: "School Logo",
     },
   ];
 
@@ -288,45 +288,51 @@ function EducationalDetails() {
                   }}
                 />
 
-                {/* Logo Container / Space */}
+                {/* Refined Logo Container */}
                 <motion.div
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.08 }}
                   style={{
-                    width: 64,
-                    height: 64,
-                    borderRadius: 14,
-                    background: "rgba(255, 255, 255, 0.03)",
-                    border: `1px dashed ${item.accent}55`,
+                    width: 72,
+                    height: 72,
+                    borderRadius: 16,
+                    background: "rgba(255, 255, 255, 0.04)",
+                    border: `1px solid ${item.accent}40`,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     flexShrink: 0,
+                    padding: "8px",
                     overflow: "hidden",
+                    backdropFilter: "blur(8px)",
+                    boxShadow: `0 8px 24px rgba(0,0,0,0.3)`,
                     animation: "logoPulseGlow 3s ease-in-out infinite",
                     willChange: "transform",
                   }}
                 >
-                  {/* Replace this inner element with your <img src="logo-url.png" alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'contain' }} /> */}
-                  <span
-                    style={{
-                      fontFamily: "'Plus Jakarta Sans', sans-serif",
-                      fontSize: 10,
-                      fontWeight: 600,
-                      color: "rgba(255,255,255,0.4)",
-                      textAlign: "center",
-                      padding: 4,
-                    }}
-                  >
-                    {item.logo ? (
-                      <img
-                        src={item.logo}
-                        alt={item.title}
-                        style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-                      />
-                    ) : (
-                      item.logoPlaceholder
-                    )}
-                  </span>
+                  {item.logo ? (
+                    <img
+                      src={item.logo}
+                      alt={item.title}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "contain",
+                        filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.2))",
+                      }}
+                    />
+                  ) : (
+                    <span
+                      style={{
+                        fontFamily: "'Plus Jakarta Sans', sans-serif",
+                        fontSize: 10,
+                        fontWeight: 600,
+                        color: "rgba(255,255,255,0.4)",
+                        textAlign: "center",
+                      }}
+                    >
+                      {item.logoPlaceholder}
+                    </span>
+                  )}
                 </motion.div>
 
                 <div style={{ flex: 1, minWidth: "260px" }}>
